@@ -19,8 +19,6 @@ function start() {
 window.onload = function(){
 start();
 }
-
-let test = 10;
 /* function hide() {
     opacity = Number(window.getComputedStyle(cycleImages).getPropertyValue("opacity"));
         if (opacity > 0) {
