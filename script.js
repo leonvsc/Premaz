@@ -19,7 +19,7 @@ function start() {
 window.onload = function(){
 start();
 }
-/*function hide() {
+/* function hide() {
     opacity = Number(window.getComputedStyle(cycleImages).getPropertyValue("opacity"));
         if (opacity > 0) {
             opacity = opacity - 0.1;
@@ -28,4 +28,4 @@ start();
             clearInterval(intervalID);
             cycleImages.style.opacity = opacity;
         }
-}*/
+} */
