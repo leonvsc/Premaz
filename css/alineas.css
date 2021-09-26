@@ -1,0 +1,60 @@
+.section {
+    padding: 5rem 3rem;
+    transition: transform 1s, opacity 1s;
+  }
+  
+.section_title {
+    max-width: 80%;
+    margin: 0 auto 8rem auto;
+    display: flex;
+    align-items: center;
+}
+
+.section_title img {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+  
+.section_description {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: left;
+    list-style: none;
+}
+
+.afbeelding-alinea-1 {
+    height: 30rem;
+    border-radius: 8px;
+}
+
+.section_2 {
+    transition: transform 1s, opacity 1s;
+  }
+
+.section_title_2 {
+    max-width: 80%;
+    margin: 0 auto 8rem auto;
+    display: flex;
+    align-items: center;
+}
+
+.section_title_2 img {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+  
+.section_description_2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: left;
+    list-style: none;
+}
+
+.afbeelding-alinea-2 {
+    height: 30rem;
+    border-radius: 8px;
+}
