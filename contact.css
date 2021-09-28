@@ -1,0 +1,12 @@
+.contactForm li {
+    display: flex;
+    flex-direction: column;
+}
+
+.map {
+    display: flex;
+}
+
+.main {
+    display: flex;
+}
