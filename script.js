@@ -1,13 +1,16 @@
 let opacity = 0;
-let intervalID = 0; 
+let intervalID = 0;
 
 function start() {
-    const cycleImages = document.getElementById('cycleImages');  
-    const imageDir = 'img/Cycle images/';                          
-    const delayInSeconds = 1;    
-    const images = ['achtergrond-afbeelding-1.1.jpg', 'afbeelding-alinea-1.jpg'];
+    const cycleImages = document.getElementById("cycleImages");
+    const imageDir = "img/Cycle images/";
+    const delayInSeconds = 1;
+    const images = [
+        "achtergrond-afbeelding-1.1.jpg",
+        "afbeelding-alinea-1.jpg",
+    ];
     let num = 0;
-    const changeImage = function() {
+    const changeImage = function () {
         const len = images.length;
         cycleImages.src = imageDir + images[num++];
         if (num == len) {
@@ -15,10 +18,10 @@ function start() {
         }
     };
     setInterval(changeImage, delayInSeconds * 2500);
-};
-window.onload = function(){
-start();
 }
+window.onload = function () {
+    start();
+};
 /* function hide() {
     opacity = Number(window.getComputedStyle(cycleImages).getPropertyValue("opacity"));
         if (opacity > 0) {

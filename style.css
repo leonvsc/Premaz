@@ -3,20 +3,20 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-  
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 100;
     color: #444;
     line-height: 1.9;
-    background-image: linear-gradient(#f7feff42, #e2f8fd42);   
+    background-image: linear-gradient(#f7feff42, #e2f8fd42);
 }
 
 .nav_logo {
     height: 8rem;
     width: auto;
 }
-  
+
 .nav_links {
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ body {
     margin-right: auto;
     width: 10rem;
 }
-  
+
 .center {
     transition: 0.3s;
     margin-left: 4rem;
@@ -82,8 +82,8 @@ body {
     display: block;
     transition: all 0.3s;
 }
-  
-.header_title { 
+
+.header_title {
     text-align: center;
 }
 
@@ -132,12 +132,12 @@ body {
     box-shadow: 0px 0px 1px 1px #7e7e7e93;
     transition: 0.2s;
 }
-  
+
 h1 {
     font-size: 4rem;
-    line-height: 1.50;
+    line-height: 1.5;
 }
-  
+
 h4 {
     font-size: 2rem;
     font-weight: 500;
@@ -146,8 +146,8 @@ h4 {
 .section {
     padding: 10rem 3rem;
     transition: transform 1s, opacity 1s;
-  }
-  
+}
+
 .section_title {
     max-width: 80%;
     margin: 0 auto 8rem auto;
@@ -159,7 +159,7 @@ h4 {
     flex-grow: 0;
     flex-shrink: 0;
 }
-  
+
 .section_description {
     font-size: 1.8rem;
     font-weight: 600;
@@ -168,7 +168,7 @@ h4 {
     text-align: left;
     list-style: none;
 }
-  
+
 .section_header {
     font-size: 4rem;
     line-height: 1.3;

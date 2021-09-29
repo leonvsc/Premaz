@@ -1,12 +1,46 @@
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .contactForm li {
     display: flex;
     flex-direction: column;
+    width: 60rem;
+    margin-left: 20rem;
+    font-size: 1.5rem;
+}
+
+.contactForm {
+    margin-top: 5rem;
 }
 
 .map {
     display: flex;
+    margin-right: 20rem;
+    margin-top: 3rem;
 }
 
-.main {
-    display: flex;
+.button {
+    transition: 0.3s;
+    margin-left: 4rem;
+    display: block;
+    max-width: 25%;
+    height: 25px;
+    background: #002ca56c;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin-top: 1rem;
+}
+
+.contactDescription {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 60rem;
+    margin-left: 24rem;
 }
