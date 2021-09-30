@@ -1,182 +1,236 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/navigatiebalk.css"/>
-    <link rel="stylesheet" href="css/alineas.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
-    <!-- <script src="script.js"></script> -->
-    <title>Premaz</title>
-</head>
-<body>
-    <header>
-        <!--Navigatie menu en logo website-->
-        <nav>
-            <ul class="nav_links">
-                <li class="left">
-                    <a href="https://www.google.nl/">
-                        <img
-                        src="img/logo-premaz-website.png"
-                        alt="Premaz logo"
-                        class="nav_logo"
-                        id="logo" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/navigatiebalk.css" />
+        <link rel="stylesheet" href="css/alineas.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/modal.css" />
+        <!-- <script src="script.js"></script> -->
+
+        <title>Premaz</title>
+    </head>
+    <body>
+        <header>
+            <!--Navigatie menu en logo website-->
+            <nav>
+                <ul class="nav_links">
+                    <li class="left">
+                        <a href="https://www.google.nl/">
+                            <img
+                                src="img/logo-premaz-website.png"
+                                alt="Premaz logo"
+                                class="nav_logo"
+                                id="logo"
+                            />
+                        </a>
+                    </li>
+                    <li class="center">
+                        <a class="nav_link" href="#section--1">Over ons</a>
+                    </li>
+                    <li class="center">
+                        <a class="nav_link" href="https://www.google.nl/">
+                            Meer informatie
+                        </a>
+                    </li>
+                    <li class="center">
+                        <a class="nav_link" href="https://www.google.nl/">
+                            Referenties
+                        </a>
+                    </li>
+                    <li class="center">
+                        <a class="nav_link" href="https://www.google.nl/">
+                            Contact
+                        </a>
+                    </li>
+                    <li class="right">
+                        <a
+                            class="nav_link show_modal"
+                            onclick="openModal()"
+                            style="cursor: pointer"
+                        >
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="modal hidden">
+                <button class="close-modal">&times;</button>
+                <h1>I'm a modal window 😍</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="overlay hidden"></div>
+            <!--Achtergrond en tekst header-->
+            <div class="header_background">
+                <img
+                    id="cycleImages"
+                    src="img/Cycle images/achtergrond-afbeelding-1.1.jpg"
+                    alt="Achtergrond header"
+                />
+                <div class="header_center">
+                    <h1>
+                        Migreren naar de cloud?
+                        <br />
+                        Wij helpen u daar graag bij.
+                    </h1>
+                    <h4>
+                        Bij Premaz ondersteunen wij u bij het migreren naar
+                        Azure
+                    </h4>
+                    <div class="arrow_down">
+                        <a class="nav_link" href="#section--1">Lees meer</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Alinea met tekst en afbeelding-->
+        <section class="section" id="section--1">
+            <div class="section__title">
+                <h2 class="section_description">Korte titel</h2>
+                <h3 class="section_header">
+                    Hier komt een pakkende zin over de mogelijkheden en
+                    werkzaamheden van Premaz
+                </h3>
+            </div>
+
+            <div class="features">
+                <img
+                    src="img/afbeelding-alinea-1.jpg"
+                    alt="Afbeelding 1"
+                    class="afbeelding-alinea-1"
+                />
+                <div class="section_title" id="section">
+                    <div class="features_icon">
+                        <svg>
+                            <use xlink:href="img/icons.svg#icon-monitor"></use>
+                        </svg>
+                    </div>
+                    <h5 class="features_header">
+                        Dit is een kop voor de tekst
+                    </h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+
+                <div class="section_title" id="section">
+                    <div class="features_icon">
+                        <svg>
+                            <use xlink:href="img/icons.svg#icon-monitor"></use>
+                        </svg>
+                    </div>
+                    <h5 class="features_header">
+                        Dit is een kop voor de tekst
+                    </h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+                <img
+                    src="img/afbeelding-alinea-1.jpg"
+                    alt="Afbeelding 1"
+                    class="afbeelding-alinea-1"
+                />
+
+                <img
+                    src="img/afbeelding-alinea-1.jpg"
+                    alt="Afbeelding 1"
+                    class="afbeelding-alinea-1"
+                />
+                <div class="section_title" id="section">
+                    <div class="features_icon">
+                        <svg>
+                            <use xlink:href="img/icons.svg#icon-monitor"></use>
+                        </svg>
+                    </div>
+                    <h5 class="features_header">
+                        Dit is een kop voor de tekst
+                    </h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Dit is dezelfde footer als het voorbeeld welke ik doorgestuurd heb, 
+    deze ga ik als template gebruiken en aanpassen naar smaak van de site -->
+        <footer class="footer">
+            <ul class="footer_nav">
+                <li class="footer_item">
+                    <a class="footer_link" href="#">Home</a>
+                </li>
+                <li class="footer_item">
+                    <a class="footer_link" href="https://google.com">
+                        Diensten
                     </a>
                 </li>
-                <li class="center">
-                    <a class="nav_link" href="#section--1">Over ons</a>
+                <li class="footer_item">
+                    <a class="footer_link" href="https://google.com">
+                        Over ons
+                    </a>
                 </li>
-                <li class="center">
-                    <a class="nav_link" href="https://www.google.nl/">Meer informatie</a>
+                <li class="footer_item">
+                    <a class="footer_link" href="https://google.com">Contact</a>
                 </li>
-                <li class="center">
-                    <a class="nav_link" href="https://www.google.nl/">Referenties</a>
-                </li>
-                <li class="center">
-                    <a class="nav_link" href="https://www.google.nl/">Contact</a>
-                </li>
-                <li class="right">
-                    <a class="nav_link" href="https://www.google.nl/">Login</a>
-                </li>               
-            </ul>
-        </nav>
-        <!--Achtergrond en tekst header-->
-        <div class="header_background">
-                <img id="cycleImages" src="img/Cycle images/achtergrond-afbeelding-1.1.jpg"           
-                alt="Achtergrond header"/>
-            <div class="header_center">
-                <h1>
-                Migreren naar de cloud? 
-                <br />
-                Wij helpen u daar graag bij.
-                </h1>
-                <h4>Bij Premaz ondersteunen wij u bij het migreren naar Azure</h4>
-                <div class="arrow_down">
-                    <a class="nav_link" href="#section--1">Lees meer</a>
-                </div>
-            </div> 
-        </div>
-    </header>
-    <!--Alinea met tekst en afbeelding-->
-    <section class="section" id="section--1">
-        <div class="section__title">
-          <h2 class="section_description">Korte titel</h2>
-          <h3 class="section_header">
-            Hier komt een pakkende zin over de mogelijkheden en werkzaamheden van Premaz
-          </h3>
-        </div>
-
-    <div class="features">
-        <img 
-            src="img/afbeelding-alinea-1.jpg"
-            alt="Afbeelding 1"
-            class="afbeelding-alinea-1"/>
-        <div class="section_title" id="section">   
-            <div class="features_icon">
-                <svg>
-                  <use xlink:href="img/icons.svg#icon-monitor"></use>
-                </svg>
-              </div>
-                    <h5 class="features_header">Dit is een kop voor de tekst</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    </p>
-            
-        </div>
-
-        <div class="section_title" id="section">
-            <div class="features_icon">
-                <svg>
-                    <use xlink:href="img/icons.svg#icon-monitor"></use>
-                </svg>
-            </div>   
-                <h5 class="features_header">Dit is een kop voor de tekst</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
-                </p>
-        </div>
-        <img 
-                src="img/afbeelding-alinea-1.jpg"
-                alt="Afbeelding 1"
-                class="afbeelding-alinea-1"/>
-
-        <img 
-            src="img/afbeelding-alinea-1.jpg"
-            alt="Afbeelding 1"
-            class="afbeelding-alinea-1"/>
-        <div class="section_title" id="section">
-            <div class="features_icon">
-                <svg>
-                  <use xlink:href="img/icons.svg#icon-monitor"></use>
-                </svg>
-              </div>   
-                    <h5 class="features_header">Dit is een kop voor de tekst</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
-                    </p>
-        
-        </div>
-    </div>
-    </section>
-    <!-- Dit is dezelfde footer als het voorbeeld welke ik doorgestuurd heb, 
-    deze ga ik als template gebruiken en aanpassen naar smaak van de site -->
-    <footer class="footer">
-        <ul class="footer_nav">
-            <li class="footer_item">
-            <a class="footer_link" href="#">Home</a>
-            </li>
-            <li class="footer_item">
-            <a class="footer_link" href="https://google.com">Diensten</a>
-            </li>
-            <li class="footer_item">
-            <a class="footer_link" href="https://google.com">Over ons</a>
-            </li>
-            <li class="footer_item">
-            <a class="footer_link" href="https://google.com">Contact</a>
-            </li>
-            <li class="footer_item">
-            <a class="footer_link" href="https://google.com">Nog iets?</a>
-            </li>
-        </ul>
-        <div class="contactgegevens">
-            <ul>
-                <li class="gegevens">
-                    Adres:
-                </li>
-                <li class="gegevens">
-                    Telefoonnummer
-                </li>
-                <li class="gegevens">
-                    E-mailadres
-                </li>
-                <li class="gegevens">
-                    KVK-nummer
-                </li>
-                <li class="gegevens">
-                    BTW-nummer
-                </li>
-                <li class="gegevens">
-                    <img src="img/logo-premaz-website.png" alt="Logo" class="footer_logo" />
+                <li class="footer_item">
+                    <a class="footer_link" href="https://google.com">
+                        Nog iets?
+                    </a>
                 </li>
             </ul>
-        </div>
-        
-        <p class="footer_copyright">
-          &copy; Copyright by
-          <a
-            class="footer_link twitter-link"
-            target="_blank"
-            href="https://premaz.nl/"
-            >Premaz</a>. Dit is een voorbeeldtekst van de footer.
-        </p>
-      </footer>
-</body>
+            <div class="contactgegevens">
+                <ul>
+                    <li class="gegevens">Adres:</li>
+                    <li class="gegevens">Telefoonnummer</li>
+                    <li class="gegevens">E-mailadres</li>
+                    <li class="gegevens">KVK-nummer</li>
+                    <li class="gegevens">BTW-nummer</li>
+                    <li class="gegevens">
+                        <img
+                            src="img/logo-premaz-website.png"
+                            alt="Logo"
+                            class="footer_logo"
+                        />
+                    </li>
+                </ul>
+            </div>
+
+            <p class="footer_copyright">
+                &copy; Copyright by
+                <a
+                    class="footer_link twitter-link"
+                    target="_blank"
+                    href="https://premaz.nl/"
+                >
+                    Premaz
+                </a>
+                . Dit is een voorbeeldtekst van de footer.
+            </p>
+        </footer>
+        <script type="text/javascript" src="js/modal.js"></script>
+    </body>
 </html>

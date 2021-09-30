@@ -2,7 +2,7 @@
     height: 8rem;
     width: auto;
 }
-  
+
 .nav_links {
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@
     margin-right: auto;
     width: 10rem;
 }
-  
+
 .center {
     transition: 0.3s;
     margin-left: 4rem;
