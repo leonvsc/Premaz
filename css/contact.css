@@ -6,8 +6,7 @@
 .contactForm li {
     display: flex;
     flex-direction: column;
-    width: 200%;
-    margin-left: 80%;
+    width: 100%;
     font-size: 1.5rem;
 }
 
@@ -42,7 +41,6 @@
     font-weight: 600;
     text-align: center;
     max-width: 60rem;
-    margin-left: 24rem;
     margin-top: 5%;
 }
 
