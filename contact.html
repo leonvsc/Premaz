@@ -101,40 +101,89 @@
                     <form>
                         <ul>
                             <li>
-                                <label for="name">Naam:</label>
-                                <input id="name" type="text" />
-                            </li>
-                            <li>
-                                <label for="telephoneNumber">
-                                    Telefoonnummer:
+                                <label class="col-1" for="name">
+                                    <img
+                                        src="img/Icons/user.png"
+                                        alt="User"
+                                        class="icon"
+                                    />
                                 </label>
-                                <input id="telephoneNumber" type="text" />
+                                <input
+                                    id="name"
+                                    type="text"
+                                    placeholder="Naam*"
+                                    class="col-10"
+                                    required
+                                />
                             </li>
                             <li>
-                                <label for="email">Email:</label>
-                                <input type="email" name="email" id="email" />
+                                <label class="col-1" for="telephoneNumber">
+                                    <img
+                                        src="img/Icons/phone-call.png"
+                                        alt="Telephone"
+                                        class="icon"
+                                    />
+                                </label>
+                                <input
+                                    id="telephoneNumber"
+                                    type="text"
+                                    placeholder="Telefoonnummer*"
+                                    class="col-10"
+                                    required
+                                />
                             </li>
                             <li>
-                                <label for="message">Uw vraag:</label>
+                                <label class="col-1" for="email">
+                                    <img
+                                        src="img/Icons/email.png"
+                                        alt="Email"
+                                        class="icon"
+                                    />
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Email*"
+                                    class="col-10"
+                                    required
+                                />
+                            </li>
+                            <li>
+                                <label class="col-1" for="message">
+                                    <img
+                                        src="img/Icons/question-mark.png"
+                                        alt="Question"
+                                        class="icon"
+                                    />
+                                </label>
                                 <textarea
                                     name="message"
                                     id="message"
                                     cols="30"
                                     rows="10"
+                                    placeholder="Uw vraag*"
+                                    class="col-10"
+                                    required
                                 ></textarea>
                             </li>
-                            <li class="button">
+                            <!-- <li class="button">
                                 <a
                                     class="nav_link"
                                     href="https://www.google.nl/"
                                 >
                                     Versturen
                                 </a>
-                            </li>
+                            </li> -->
+                            <input
+                                type="submit"
+                                value="Versturen"
+                                class="submitButton"
+                            />
                         </ul>
                     </form>
                 </div>
-                <div class="col">
+                <div class="col map">
                     <iframe
                         width="600"
                         height="450"
