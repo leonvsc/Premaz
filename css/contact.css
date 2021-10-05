@@ -72,3 +72,36 @@
 .flex {
     display: flex;
 }
+
+@media screen and (max-width: 1200px) {
+    .submitButton {
+        font-size: 1.4rem;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .map {
+        display: none;
+    }
+
+    .contact {
+        font-size: 1.1rem;
+    }
+
+    .contactInfo {
+        font-size: 1.1rem;
+    }
+
+    .contactDescription {
+        font-size: 1.4rem;
+    }
+
+    .contactForm li {
+        font-size: 1.1rem;
+    }
+
+    .submitButton {
+        width: 20%;
+    }
+}
