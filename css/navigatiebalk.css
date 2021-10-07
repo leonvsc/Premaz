@@ -11,7 +11,7 @@
     padding: 0;
 }
 .left {
-    margin-right: auto;
+    justify-content: left;
     width: 10rem;
 }
 
@@ -28,6 +28,7 @@
     color: white;
     font-weight: bold;
     line-height: 25px;
+    justify-content: center;
 }
 
 .center:hover {
@@ -36,7 +37,7 @@
     transition: 0.3s;
 }
 
-.right {
+/* .right {
     margin-left: auto;
     transition: 0.3s;
     width: 10rem;
@@ -51,13 +52,13 @@
     font-weight: bold;
     text-align: center;
     line-height: 15px;
-}
+} */
 
-.right:hover {
+/* .right:hover {
     background: #919191c5;
     box-shadow: 0px 0px 2px 2px #888888;
     transition: 0.2s;
-}
+} */
 
 .nav_link:link,
 .nav_link:visited {
