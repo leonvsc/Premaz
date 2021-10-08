@@ -1,16 +1,7 @@
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-}
-
 .contactForm li {
     display: flex;
     font-size: 1.5rem;
     padding-bottom: 0.5rem;
-}
-
-.contactForm {
-    margin-top: auto;
 }
 
 .icon {
@@ -18,25 +9,7 @@
     padding-top: 0.6rem;
 }
 
-.button {
-    transition: 0.3s;
-    margin-left: 8%;
-    display: flex;
-    justify-content: center;
-    max-width: 25%;
-    height: 25px;
-    background: #002ca56c;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    line-height: 25px;
-    margin-top: 1rem;
-}
-
 .submitButton {
-    transition: 0.3s;
     margin-left: 8%;
     background: #002ca56c;
     text-align: center;
@@ -67,10 +40,6 @@
     font-size: 1.4rem;
     font-weight: 500;
     margin-left: 1rem;
-}
-
-.flex {
-    display: flex;
 }
 
 @media screen and (max-width: 1200px) {
