@@ -49,8 +49,11 @@
             </nav>
         </header>
         <div class="container">
+            <!-- Een container om de volledige pagina in een flexbox container te zetten. -->
             <div class="row">
+                <!-- Op deze row staan de contactbeschrijving en de contact info zodat deze naast elkaar staan. -->
                 <div class="col-6 contactDescription">
+                    <!-- Een section voor het bericht boven het contactformulier om contact op te nemen. -->
                     <section>
                         Heeft u een vraag of u wilt een offerte opvragen? Vul
                         dan onderstaand formulier in en wij komen zo snel
@@ -58,6 +61,8 @@
                     </section>
                 </div>
                 <div class="col-2 contact">
+                    <!-- 2 sections met daarin de contact informatie van Premaz. De ene sections heeft de titels en de ander de gegevens.
+                        Deze hebben allebei 2 kollomen om te positioneren. -->
                     <section>
                         Bedrijfsnaam:
                         <br />
@@ -97,7 +102,10 @@
                 </div>
             </div>
             <div class="row">
+                <!-- In deze row staan het contactformulier en de google maps kaart om deze naast elkaar te zetten. -->
                 <div class="col contactForm">
+                    <!-- Een formulier om conact op te nemene. Dit zit in een form tag als unordered list met list items.
+                        Elk listitem heeft een label met een icon en een input balk die aan elkaar gelinkt zijn met een ID. -->
                     <form>
                         <ul>
                             <li>
@@ -124,9 +132,11 @@
                                         class="icon"
                                     />
                                 </label>
+                                <!-- Aan de tel input kan een pattern worden mee gegeven. Bijv. pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}".
+                                    De gebruiker moet dan dit format opgeven. Format: 123-45-678 -->
                                 <input
                                     id="telephoneNumber"
-                                    type="text"
+                                    type="tel"
                                     placeholder="Telefoonnummer*"
                                     class="col-10"
                                     required
@@ -184,12 +194,15 @@
                     </form>
                 </div>
                 <div class="col map">
+                    <!-- Een iframe voor Google maps waarin de hoogte en breedte wordt aangegeven van de iframe
+                        en de border die er standaard omheen zit wordt weggehaald.
+                        https://www.google.com/maps/embed/v1/place // API url
+                        ?q=place_id:ChIJIRoqlNehxkcRx3FkvbvvsEY // Place ID van avans op Google Maps
+                        &key=AIzaSyAZvbxIMPpEWPi9ZYZsADxftz_esZ6SUVY // API Key vanuit Google Cloud Platform -->
                     <iframe
                         width="600"
                         height="450"
                         style="border: 0"
-                        loading="lazy"
-                        allowfullscreen
                         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJIRoqlNehxkcRx3FkvbvvsEY&key=AIzaSyAZvbxIMPpEWPi9ZYZsADxftz_esZ6SUVY"
                     ></iframe>
                 </div>
