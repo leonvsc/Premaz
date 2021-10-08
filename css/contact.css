@@ -20,6 +20,7 @@
     padding: 0.8rem;
     font-weight: 400;
     font-size: 1.6rem;
+    cursor: pointer;
 }
 
 .contactDescription {
