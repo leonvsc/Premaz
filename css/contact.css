@@ -132,7 +132,7 @@
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
     .map {
         display: none;
     }
@@ -155,6 +155,55 @@
 
     .submitButton {
         width: 20%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contactDescription {
+        width: 100%;
+        order: 1;
+    }
+
+    .contactInfo {
+        width: 25%;
+    }
+
+    .contact {
+        width: 25%;
+        margin-left: 0rem;
+    }
+
+    .row {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .submitButton {
+        width: 85%;
+    }
+
+    ul {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 462px) {
+    .contactDescription {
+        font-size: 1.2rem;
+    }
+
+    .contact {
+        width: 40%;
+    }
+
+    .contactInfo {
+        width: 40%;
+    }
+
+    .submitButton {
+        width: 85%;
     }
 }
 
