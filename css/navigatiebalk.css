@@ -11,7 +11,7 @@
     padding: 0;
 }
 .left {
-    justify-content: left;
+    justify-content: flex-start;
     width: 10rem;
 }
 
