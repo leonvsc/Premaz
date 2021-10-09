@@ -42,7 +42,6 @@
 .section_description {
     font-size: 1.8rem;
     font-weight: 600;
-    /* text-transform: uppercase; */
     color: var(--color-primary);
     margin-bottom: 1rem;
 }
