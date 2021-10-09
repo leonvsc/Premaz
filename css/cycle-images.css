@@ -9,42 +9,40 @@
 .css3ad-third,
 .css3ad-fourth,
 .css3ad-fifth {
-    width: 336px;
-    height: 280px;
-    position: absolute;
-    overflow: hidden;
-    top: 0px;
-    cursor: pointer;
-    -webkit-transition: all 0s linear;
+    opacity: 0.25;
+    border-radius: 8px;
+    width: 85%;
+    height: auto;
+
     transition: all 0s linear;
 }
 
 .css3ad-first {
-    background: url("1.jpg") no-repeat;
+    background: url("img/Cycle images/achtergrond-afbeelding-1.1.jpg") no-repeat;
     animation: cycle 25s linear infinite;
     -webkit-animation: cycle 25s linear infinite;
 }
 
 .css3ad-second {
-    background: url("2.jpg") no-repeat;
+    background: url("img/Cycle images/achtergrond-afbeelding-1.1.jpg") no-repeat;
     animation: cycletwo 25s linear infinite;
     -webkit-animation: cycletwo 25s linear infinite;
 }
 
 .css3ad-third {
-    background: url("3.jpg") no-repeat;
+    background: url("img/Cycle images/achtergrond-afbeelding-1.1.jpg") no-repeat;
     animation: cyclethree 25s linear infinite;
     -webkit-animation: cyclethree 25s linear infinite;
 }
 
 .css3ad-fourth {
-    background: url("4.jpg") no-repeat;
+    background: url("img/Cycle images/achtergrond-afbeelding-1.1.jpg") no-repeat;
     animation: cyclefour 25s linear infinite;
     -webkit-animation: cyclefour 25s linear infinite;
 }
 
 .css3ad-fifth {
-    background: url("5.jpg") no-repeat;
+    background: url("img/Cycle images/achtergrond-afbeelding-1.1.jpg") no-repeat;
     animation: cyclefive 25s linear infinite;
     -webkit-animation: cyclefive 25s linear infinite;
 }

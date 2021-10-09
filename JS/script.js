@@ -5,10 +5,7 @@ function start() {
     const cycleImages = document.getElementById("cycleImages");
     const imageDir = "img/Cycle images/";
     const delayInSeconds = 1;
-    const images = [
-        "achtergrond-afbeelding-1.1.jpg",
-        "afbeelding-alinea-1.jpg",
-    ];
+    const images = ["img-1.jpg", "img-2.jpg"];
     let num = 0;
     const changeImage = function () {
         const len = images.length;
@@ -21,14 +18,3 @@ function start() {
 }
 window.onload = function () {
     start();
-};
-/* function hide() {
-    opacity = Number(window.getComputedStyle(cycleImages).getPropertyValue("opacity"));
-        if (opacity > 0) {
-            opacity = opacity - 0.1;
-        }
-        else {
-            clearInterval(intervalID);
-            cycleImages.style.opacity = opacity;
-        }
-} */
