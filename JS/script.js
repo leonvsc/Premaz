@@ -1,5 +1,4 @@
 let opacity = 0;
-let intervalID = 0;
 
 function start() {
     const cycleImages = document.getElementById("cycleImages");
@@ -14,7 +13,7 @@ function start() {
             num = 0;
         }
     };
-    setInterval(changeImage, delayInSeconds * 3500);
+    setInterval(changeImage, delayInSeconds * 10000);
 }
 window.onload = function () {
     start();

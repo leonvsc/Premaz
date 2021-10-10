@@ -23,10 +23,36 @@ body {
 }
 
 .header_background img {
-    opacity: 0.25;
+    opacity: 0.3;
+
     border-radius: 8px;
     width: 85%;
     height: auto;
+    animation: fadeinout 10s linear infinite forwards;
+}
+
+@keyframes fadeinout {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.05;
+    }
+    25% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    75% {
+        opacity: 0.15;
+    }
+    90% {
+        opacity: 0.05;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .header_center {
