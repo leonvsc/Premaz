@@ -9,26 +9,21 @@
         <link rel="stylesheet" href="css/alineas.css" />
         <link rel="stylesheet" href="css/footer.css" />
         <link rel="stylesheet" href="css/bootstrap-grid.css" />
-        <link rel="stylesheet" href="css/cycle-images.css" />
-        <script src="JS/script.js"></script>
 
         <title>Premaz</title>
     </head>
     <body>
         <header>
             <!--Navigatie menu en logo website-->
-            <nav>
-                <ul class="container nav_links">
-                    <li class="left">
-                        <a href="https://www.premaz.nl/">
-                            <img
-                                src="img/logo-premaz-website.png"
-                                alt="Premaz logo"
-                                class="nav_logo"
-                                id="logo"
-                            />
-                        </a>
-                    </li>
+            <nav class="navbar">
+                <a href="https://www.premaz.nl/">
+                    <img
+                        src="img/logo-premaz-website.png"
+                        alt="Premaz logo"
+                        class="nav_logo"
+                    />
+                </a>
+                <ul class="nav_links">
                     <li class="center">
                         <a class="nav_link" href="#section--1">
                             Meer informatie
@@ -46,6 +41,11 @@
                         </a>
                     </li>
                 </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
             <!-- Afbeelding met een pakkende tekst -->
             <div class="header_background">
@@ -88,11 +88,11 @@
                     class="afbeelding-alinea-1"
                 />
                 <div class="section_title" id="section">
-                    <div class="features_icon">
+                    <!-- <div class="features_icon">
                         <svg>
                             <use xlink:href="img/icons.svg#icon-monitor"></use>
                         </svg>
-                    </div>
+                    </div> -->
                     <h5 class="features_header">Wie zijn wij?</h5>
                     <p>
                         Premaz is opgericht door 3 jonge gedreven ondernemers
@@ -102,11 +102,11 @@
                 </div>
 
                 <div class="section_title" id="section">
-                    <div class="features_icon">
+                    <!-- <div class="features_icon">
                         <svg>
                             <use xlink:href="img/icons.svg#icon-monitor"></use>
                         </svg>
-                    </div>
+                    </div> -->
                     <h5 class="features_header">Waarom cloudmigratie?</h5>
                     <p>
                         Het opslaan van bestanden op de cloud is veel veiliger
@@ -120,7 +120,7 @@
                 <img
                     src="img/afbeelding-alinea-1.jpg"
                     alt="Afbeelding 1"
-                    class="afbeelding-alinea-1"
+                    class="flex-wrap-up afbeelding-alinea-1"
                 />
 
                 <img
@@ -129,11 +129,11 @@
                     class="afbeelding-alinea-1"
                 />
                 <div class="section_title" id="section">
-                    <div class="features_icon">
+                    <!-- <div class="features_icon">
                         <svg>
                             <use xlink:href="img/icons.svg#icon-monitor"></use>
                         </svg>
-                    </div>
+                    </div> -->
                     <h5 class="features_header">Waarom Premaz?</h5>
                     <p>
                         Premaz heeft veel ervaring met het migreren naar de
@@ -198,5 +198,6 @@
                 fictief bedrijf.
             </p>
         </footer>
+        <script src="JS/script.js"></script>
     </body>
 </html>

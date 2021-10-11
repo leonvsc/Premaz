@@ -1,13 +1,17 @@
 .afbeelding-alinea-1 {
-    width: 100%;
+    width: 30%;
+    height: auto;
     border-radius: 8px;
+    margin-left: 5%;
+}
+
+.flex-wrap-up {
+    flex-wrap: wrap-reverse !important;
 }
 
 .features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin: 0 12rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .features_header {
@@ -23,7 +27,6 @@
 
 .section {
     padding: 10rem 3rem;
-
     transition: transform 1s, opacity 1s;
 }
 
@@ -35,7 +38,8 @@
 .section_title {
     align-self: center;
     justify-self: center;
-    width: 70%;
+    padding-left: 5%;
+    width: 600px;
     font-size: 1.5rem;
 }
 

@@ -18,3 +18,13 @@ function start() {
 window.onload = function () {
     start();
 };
+
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav_links");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+}
