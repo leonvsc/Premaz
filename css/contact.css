@@ -1,7 +1,8 @@
+/* Selecteert de li elementen in de class contactForm */
 .contactForm li {
     display: flex;
     font-size: 1.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem; /* Padding zorgt ervoor dat er meer ruimte komt tussen de border en de content van het element */
 }
 
 .icon {
@@ -10,22 +11,22 @@
 }
 
 .submitButton {
-    margin-left: 8%;
+    margin-left: 8%; /* Margin zorgt ervoor dat er meer ruimte buiten de border komt van het element */
     background: #002ca56c;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 5px; /* Maakt de hoeken van de button rond */
     color: white;
     margin-top: 1rem;
     width: 25%;
     padding: 0.8rem;
     font-weight: 400;
     font-size: 1.6rem;
-    cursor: pointer;
+    cursor: pointer; /* Maakt van de cursor een handje zodat die klikbaar lijkt */
 }
 
 .contactDescription {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 600; /* Zorgt ervoor dat de tekst dikker wordt */
     text-align: center;
     padding-top: 4%;
 }
@@ -45,9 +46,12 @@
 
 .container {
     width: 100%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-right: var(
+        --bs-gutter-x,
+        0.75rem
+    ); /* Hier wordt er een variabele gezet met de naam --bs-gutter-x met een waarde van 0.75rem. Deze kan in verdere CSS weer gebruikt worden. */
     padding-left: var(--bs-gutter-x, 0.75rem);
-    margin-right: auto;
+    margin-right: auto; /* De margin wordt automatisch horizontaal gecentreerd in zijn eigen element. Deze berekening doet de browser. */
     margin-left: auto;
 }
 
@@ -56,13 +60,21 @@
     --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-top: calc(
+        var(--bs-gutter-y) * -1
+    ); /* De calc functie in CSS wordt gebruikt om waardes te berekenen. Hier wordt de var --bs-gutter-y * -1 gedaan om tot een waarde te komen. */
     margin-right: calc(var(--bs-gutter-x) * -0.5);
     margin-left: calc(var(--bs-gutter-x) * -0.5);
 }
 
+.map {
+    margin-top: 1rem;
+}
+
 .col {
-    flex: 1 0 0%;
+    flex: 1 0 0%; /* Flex is een verkorte benaming voor flex-grow, flex-schrink en flex-basis.
+    Flex-grow geeft aan hoeveel een element mag groeien. Flex-schrink geeft aan hoeveel het element mag verkleinen.
+    Flex-basis geeft de default size aan zonder dat de overgebleven ruimte wordt gebruikt. */
 }
 
 .col-1 {
@@ -124,6 +136,8 @@
     flex: 0 0 auto;
     width: 100%;
 }
+
+/* Een media query wordt gebruikt om bij een minimale of maximale grootte bepaalde css elementen aan te passen wanneer deze grootte is bereikt. */
 
 @media screen and (max-width: 1200px) {
     .submitButton {
