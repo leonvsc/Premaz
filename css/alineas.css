@@ -3,15 +3,14 @@
     height: auto;
     border-radius: 8px;
     margin-left: 5%;
-}
-
-.flex-wrap-up {
-    flex-wrap: wrap-reverse !important;
+    margin-top: 50px;
+    opacity: 0.5;
 }
 
 .features {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .features_header {
@@ -51,7 +50,7 @@
 }
 
 .section_header {
-    font-size: 4rem;
+    font-size: x-large;
     line-height: 1.3;
     font-weight: 500;
 }
@@ -60,4 +59,13 @@
     max-width: 80rem;
     margin: 0 auto 8rem auto;
     align-self: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .afbeelding-alinea-1 {
+        width: 90%;
+    }
+    .mobile-view {
+        display: none;
+    }
 }

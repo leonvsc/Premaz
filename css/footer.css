@@ -26,6 +26,7 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 5rem;
+    align-self: center;
 }
 
 .footer_copyright {
@@ -36,18 +37,4 @@
 
 .footer_copyright .footer_link {
     font-size: 1.4rem;
-}
-
-.gegevens {
-    list-style: none;
-    display: flex;
-    justify-content: left;
-}
-
-.floating_ing {
-    float: right;
-}
-
-.clearfix {
-    float: none;
 }

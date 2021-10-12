@@ -1,3 +1,4 @@
+// Opening the menu
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav_links");
 
@@ -8,6 +9,7 @@ function mobileMenu() {
     navLinks.classList.toggle("active");
 }
 
+// Closing the menu
 const navLink = document.querySelectorAll(".nav_link");
 
 navLink.forEach((n) => n.addEventListener("click", closeMenu));

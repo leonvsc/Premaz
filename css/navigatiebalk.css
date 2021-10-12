@@ -13,6 +13,7 @@
 .center {
     transition: 0.3s;
     display: block;
+    margin-left: 15px;
     width: 140px;
     height: 25px;
     background: #002ca56c;
@@ -62,6 +63,7 @@
     padding: 1rem 1.5rem;
 }
 
+/* Navbar for mobile */
 @media only screen and (max-width: 768px) {
     .nav_links {
         position: fixed;
