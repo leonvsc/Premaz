@@ -12,17 +12,17 @@ body {
     background-image: linear-gradient(#96a3a542, #76b5c442);
 }
 
-.header_title {
+.header-title {
     text-align: center;
 }
 
-.header_background {
+.header-background {
     position: relative;
     display: flex;
     justify-content: center;
 }
 
-.header_background img {
+.header-background img {
     opacity: 0.3;
     border-radius: 8px;
     width: 85%;
@@ -54,7 +54,7 @@ body {
     }
 }
 
-.header_center {
+.header-center {
     position: absolute;
     top: 35%;
     left: 50%;
@@ -62,7 +62,7 @@ body {
     text-align: center;
 }
 
-.arrow_down {
+.arrow-down {
     position: absolute;
     top: 130%;
     left: 50%;
@@ -80,27 +80,49 @@ body {
     line-height: 150%;
 }
 
-.arrow_down:hover {
+.arrow-down:hover {
     background: #7e7e7e93;
     box-shadow: 0px 0px 1px 1px #7e7e7e93;
     transition: 0.2s;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2.5vw;
     line-height: 1.5;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 1.3vw;
     font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {
-    h1 {
-        font-size: 10px;
+    .arrow-down {
+        position: absolute;
+        top: 140%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s;
+        display: block;
+        width: 50px;
+        height: 7px;
+        background: #91919193;
+        padding: 10px;
+        border-radius: 15px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        line-height: 90%;
     }
-    h4 {
-        font-size: 8px;
+    .read-more {
+        font-size: 10px !important;
+    }
+
+    .header-center h1 {
+        font-size: 2.9vw;
+    }
+
+    .header-center h4 {
+        display: none;
     }
 }

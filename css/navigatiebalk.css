@@ -1,18 +1,16 @@
-.nav_logo {
+.nav-logo {
     height: 8rem;
     width: auto;
 }
 
-.nav_links {
+.nav-links {
     display: flex;
     align-items: center;
     list-style: none;
-    justify-content: space-between;
 }
 
 .center {
     transition: 0.3s;
-    display: block;
     margin-left: 15px;
     width: 140px;
     height: 25px;
@@ -23,7 +21,6 @@
     color: white;
     font-weight: bold;
     line-height: 25px;
-    justify-content: center;
 }
 
 .center:hover {
@@ -32,8 +29,8 @@
     transition: 0.3s;
 }
 
-.nav_link:link,
-.nav_link:visited {
+.nav-link:link,
+.nav-link:visited {
     font-size: 1.7rem;
     font-weight: 400;
     color: inherit;
@@ -58,14 +55,14 @@
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 1.5rem;
 }
 
 /* Navbar for mobile */
 @media only screen and (max-width: 768px) {
-    .nav_links {
+    .nav-links {
         position: fixed;
         right: -150%;
         top: 8rem;
@@ -79,7 +76,7 @@
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     }
 
-    .nav_links.active {
+    .nav-links.active {
         right: 0;
         z-index: 3;
     }
