@@ -28,11 +28,12 @@
     font-size: 1.8rem;
     font-weight: 600; /* Zorgt ervoor dat de tekst dikker wordt */
     text-align: center;
-    padding-top: 4%;
+    padding-top: 7%;
 }
 
 .contact {
     margin-left: 6rem;
+    margin-top: 4rem;
     font-size: 1.4rem;
     font-weight: 500;
     color: #002ca56c;
@@ -42,6 +43,7 @@
     font-size: 1.4rem;
     font-weight: 500;
     margin-left: 1rem;
+    margin-top: 4rem;
 }
 
 .container {
@@ -180,11 +182,11 @@
     }
 
     .contactInfo {
-        width: 25%;
+        width: auto;
     }
 
     .contact {
-        width: 25%;
+        width: auto;
         margin-left: 0rem;
     }
 
@@ -215,14 +217,6 @@
 @media screen and (max-width: 462px) {
     .contactDescription {
         font-size: 1.2rem;
-    }
-
-    .contact {
-        width: 40%;
-    }
-
-    .contactInfo {
-        width: 40%;
     }
 
     .submitButton {
