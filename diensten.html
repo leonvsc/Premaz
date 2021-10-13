@@ -93,19 +93,23 @@
         <!--HTML voor de eerst connectiveit afbeelding en beschrijving-->
         <section class="diensten_container">
             <div class="connectiviteit_container">
-                <img
-                    src="img/Cloud-2.jpg"
-                    alt="Cloud Conectivity"
-                    class="diensten_Cloud_2-img"
-                />
+                <div class="front">
+                    <img
+                        src="img/Cloud-2.jpg"
+                        alt="Cloud Conectivity"
+                        class="diensten_Cloud_2-img"
+                    />
 
-                <div class="connectiviteit_description">
-                    <h4 class="connectiveit_header">Connectiviteit, overal.</h4>
-                    <p class="connectiveit_paragraph">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Unde alias sint quos? Accusantium a fugiat porro
-                        reiciendis saepe quibusdam debitis ducimus.
-                    </p>
+                    <div class="connectiviteit_description">
+                        <h4 class="connectiveit_header">
+                            Connectiviteit. Overal.
+                        </h4>
+                        <p class="connectiveit_paragraph">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Unde alias sint quos? Accusantium a fugiat
+                            porro reiciendis saepe quibusdam debitis ducimus.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -114,7 +118,7 @@
             <div class="veiligheid_container">
                 <div class="veiligheid_description">
                     <h4 class="connectiveit_header">
-                        Veiligheid, zonder zorgen.
+                        Veiligheid. Zonder zorgen.
                     </h4>
                     <p class="veiligheid_paragraph">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -140,7 +144,7 @@
 
                 <div class="connectiviteit_description">
                     <h4 class="connectiveit_header">
-                        De hele organisatie, op één plek.
+                        De hele organisatie. Op één plek.
                     </h4>
                     <p class="connectiveit_paragraph">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -173,54 +177,71 @@
                     <button
                         class="btn beheer_tab beheer_tab-1 beheer_tab-active"
                         data-tab="1"
+                        onclick="activateArea()"
                     >
                         <span>01</span>
                         Volledig beheer
                     </button>
-                    <button class="btn beheer_tab beheer_tab-2" data-tab="1">
+                    <button
+                        class="btn beheer_tab beheer_tab-2"
+                        data-tab="2"
+                        onclick="activateArea()"
+                    >
                         <span>01</span>
                         Bereikbaarheid
                     </button>
-                    <button class="btn beheer_tab beheer_tab-3" data-tab="1">
+                    <button
+                        class="btn beheer_tab beheer_tab-3"
+                        data-tab="3"
+                        onclick="activateArea()"
+                    >
                         <span>01</span>
                         Expertise
                     </button>
                 </div>
-                <div
-                    class="
-                        beheer_content beheer_content-1 beheer_content-active
-                    "
-                >
-                    <h4 class="beheer_header">Wij nemen alles van je over.</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
-                    </p>
-                </div>
-                <div class="beheer_content beheer_content-2">
-                    <h4 class="beheer_header">
-                        Is er iets mis? Wij zijn altijd te bereiken.
-                    </h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
-                    </p>
-                </div>
-                <div class="beheer_content beheer_content-3">
-                    <h4 class="beheer_header">Wij nemen alles van je over.</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
-                    </p>
+                <div class="beheer_content-container">
+                    <div
+                        class="
+                            beheer_content
+                            beheer_content-1
+                            beheer_content-active
+                        "
+                    >
+                        <h4 class="beheer_header">
+                            Wij nemen alles van je over.
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div class="beheer_content beheer_content-2">
+                        <h4 class="beheer_header">
+                            Is er iets mis? Wij zijn altijd te bereiken.
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div class="beheer_content beheer_content-3">
+                        <h4 class="beheer_header">
+                            Wij nemen alles van je over.
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

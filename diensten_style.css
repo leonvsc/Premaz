@@ -241,7 +241,9 @@ h4 {
 }
 
 /* CSS voor het in-en-out faden van de onderstaande secties */
+
 /*
+
 .fade-in-section {
     opacity: 0;
     transform: translateY(20vh);
@@ -255,13 +257,25 @@ h4 {
     transform: none;
     visibility: visible;
 }
+
 */
+
+/* CSS voor eerste afbeelding (Connectiviteit) */
 
 .diensten_container {
     display: grid;
 }
 
-/* CSS voor eerste afbeelding (Connectiviteit) */
+.front {
+    background-image: url(img/black.png);
+    grid-column: 1;
+    grid-row: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    transition: opacity 0.1s;
+}
 
 .connectiviteit_container {
     display: grid;
@@ -389,23 +403,24 @@ h4 {
     display: none;
     font-size: 1.7rem;
     padding: 2.5rem 7rem 6.5rem 7rem;
+    grid-template-rows: 1fr 1fr;
 }
 
 .beheer_content-active {
     display: grid;
-    grid-template-columns: 7rem 1fr;
     column-gap: 3rem;
     row-gap: 0.5rem;
 }
 
 .beheer_header {
     font-size: 2.25rem;
+    grid-row: 1;
     font-weight: 500;
     align-self: center;
 }
 
 .beheer_content p {
-    grid-column: 2;
+    grid-row: 2;
 }
 
 /*

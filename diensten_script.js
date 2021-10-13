@@ -1,45 +1,93 @@
 const tabsContainer = document.querySelector(".beheer_tab-container");
+const beheerContainer = document.querySelector(".beheer_content-container");
+const checkpoint = 300;
 
-//Script voor de diensten tabs
+// Script voor het in-faden van de diensten afbeeldingen met alinea's
+/*
+window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= checkpoint)    {
+        opacity = 1 - currentScroll / checkpoint;
+    } else {
+        opacity = 0;
+    }
+    document.querySelector(".")
+}
+*/
 
-const openModal = function (e) {
-    e.preventDefault();
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-};
+// Script voor het activeren van de buttons van 'beheer'
+
 tabsContainer.addEventListener("click", function (e) {
-    const clicked = e.target.closest(".beheer_tab");
+    // Haal alle buttons op
+    let allButtons = document.getElementsByClassName("beheer_tab");
+
+    // Looped door alle buttons heen en zet ze allemaal 'uit'
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove("beheer_tab-active");
+    }
+
+    let clicked = e.target.closest(".beheer_tab");
 
     if (!clicked) return;
 
-    console.log(typeof clicked);
-    console.log(clicked.classList);
+    // Zet meteen de button die je hebt aangeclicked weer 'aan'
+    clicked.classList.add("beheer_tab-active");
 
-    if (clicked.classList.contains("beheer_tab-active")) {
-        //Verwijder actieve classes
-        clicked.classList.remove("beheer_tab-active");
-    } else {
-        //Activeer tab
-        clicked.classList.add("beheer_tab-active");
+    let dataTab = clicked.getAttribute("data-tab");
+
+    let allContent = document.getElementsByClassName("beheer_content");
+    let content = document.getElementsByClassName("beheer_content-" + dataTab);
+
+    // Looped door alle content heen en zet ze allemaal 'uit'
+    for (let i = 0; i < allContent.length; i++) {
+        allContent[i].classList.remove("beheer_content-active");
     }
 
-    //Activeer content veld
-    document
-        .querySelector(`.beheer_content--${clicked.dataset.tab}`)
-        .classList.add("beheer_content-active");
+    content[0].classList.add("beheer_content-active");
 });
 
+// Contect area activeren
+
 /*
-document.getElementsByClassName("btn beheer_tab").addEventListener("click", function()) {
 
+function activateArea() {
+    let allAreas = document.getElementsByClassName("beheer_content");
+    let allButtons = document.getElementsByClassName("beheer_tab");
+
+    for (let i = 0; i < allAreas.length; i++) {
+        allAreas[i].classList.remove("beheer_content-active");
+    }
+
+    if (allButtons.classList.contains("beheer_tab-active")) {
+        allAreas.classList.add("beheer_content-active");
+    }
 }
 
-document.getElementById("myBtn").addEventListener("click", beheerTabs);
+/*
+    
+    if (document.classList.contains("beheer_tab-active")) {
+        contentArea.classList.add("beheer_content-active");
+    } else {
+        contentArea.classList.remove("beheer_content-active");
+    }
 
-function beheerTabs() {
-  document.getElementById("demo").innerHTML = "Hello World";
-}
 
+
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove("beheer_content-active");
+    }
+
+    let clickedContent = e.target.closest(".beheer_content");
+
+    if (!clickedContent) return;
+
+    // Zet meteen de button die je hebt aangeclicked weer 'aan'
+    clickedContent.classList.add("beheer_content-active");
+});
 */
 
-// Script voor het in-en-out fade van de diensten
+/*
+    if (element.classList.contains("beheer_tab-active") {
+        contentArea.classList.add("beheer_content-active");
+    }
+*/
