@@ -7,45 +7,44 @@
         <title>Contact - Premaz</title>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/contact.css" />
-        <!-- <link rel="stylesheet" href="css/bootstrap-grid.css" /> -->
+        <link rel="stylesheet" href="css/navigatiebalk.css" />
+        <link rel="stylesheet" href="css/footer.css" />
     </head>
 
     <body>
         <header>
-            <nav>
-                <ul class="nav_links">
-                    <li class="left">
-                        <a href="index.html">
-                            <img
-                                src="img/logo-premaz-website.png"
-                                alt="Premaz logo"
-                                class="nav_logo"
-                                id="logo"
-                            />
-                        </a>
-                    </li>
+            <!--Navigation menu and logo-->
+            <nav class="navbar">
+                <a href="https://www.premaz.nl/">
+                    <img
+                        src="img/logo-premaz-website.png"
+                        alt="Premaz logo"
+                        class="nav-logo"
+                    />
+                </a>
+                <ul class="nav-links">
                     <li class="center">
-                        <a class="nav_link" href="#section">Over ons</a>
-                    </li>
-                    <li class="center">
-                        <a class="nav_link" href="https://www.google.nl/">
+                        <a class="nav-link" href="#section--1">
                             Meer informatie
                         </a>
                     </li>
                     <li class="center">
-                        <a class="nav_link" href="https://www.google.nl/">
-                            Referenties
+                        <a class="nav-link" href="https://www.google.nl/">
+                            Onze diensten
                         </a>
                     </li>
+
                     <li class="center">
-                        <a class="nav_link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="right">
-                        <a class="nav_link" href="https://www.google.nl/">
-                            Login
+                        <a class="nav-link" href="https://www.google.nl/">
+                            Contact
                         </a>
                     </li>
                 </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </header>
         <div class="container">
@@ -200,5 +199,46 @@
                 </div>
             </div>
         </div>
+        <!-- Footer van de website -->
+        <footer class="footer">
+            <ul class="footer-nav">
+                <li class="footer-item">
+                    <a class="footer-link" href="#">Home</a>
+                </li>
+                <li class="footer-item">
+                    <a class="footer-link" href="#section--1">
+                        Meer informatie
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a class="footer-link" href="https://google.com">
+                        Onze diensten
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a class="footer-link" href="https://google.com">Contact</a>
+                </li>
+            </ul>
+            <a href="https://www.premaz.nl/">
+                <img
+                    src="img/logo-premaz-website.png"
+                    alt="Logo"
+                    class="footer-logo"
+                />
+            </a>
+            <p class="footer-copyright">
+                &copy; Copyright by
+                <a
+                    class="footer-link twitter-link"
+                    target="_blank"
+                    href="https://premaz.nl/"
+                >
+                    Premaz
+                </a>
+                . Dit is een website voor een schoolopdracht, Premaz is een
+                fictief bedrijf.
+            </p>
+        </footer>
+        <script src="js/navBar.js"></script>
     </body>
 </html>
