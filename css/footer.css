@@ -47,9 +47,11 @@
     .footer-link {
         font-size: 1.2rem;
     }
+
     .footer-item {
-        margin-right: 2rem;
+        text-align: center;
     }
+
     .footer-logo {
         margin-bottom: 1rem;
     }
@@ -61,5 +63,11 @@
     }
     .footer-copyright .footer-link {
         font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 245px) {
+    .footer-item {
+        display: none;
     }
 }

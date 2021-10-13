@@ -69,12 +69,13 @@
 
 .map {
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .col {
     flex: 1 0 0%; /* Flex is een verkorte benaming voor flex-grow, flex-schrink en flex-basis.
     Flex-grow geeft aan hoeveel een element mag groeien. Flex-schrink geeft aan hoeveel het element mag verkleinen.
-    Flex-basis geeft de default size aan zonder dat de overgebleven ruimte wordt gebruikt. */
+    Flex-basis geeft de default size van het element aan zonder dat de overgebleven ruimte wordt gebruikt. */
 }
 
 .col-1 {
@@ -200,6 +201,14 @@
     ul {
         padding-left: 0rem;
         padding-right: 0rem;
+    }
+
+    .container {
+        width: auto;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
