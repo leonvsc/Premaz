@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/navigatiebalk.css" />
+        <link rel="stylesheet" href="css/alineas.css" />
+        <link rel="stylesheet" href="css/footer.css" />
         <link rel="stylesheet" href="diensten_style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,52 +20,47 @@
     </head>
     <body>
         <header>
-            <!--Navigatie menu en logo website-->
-            <nav>
-                <ul class="nav_links">
-                    <li class="left">
-                        <a href="https://www.google.nl/">
-                            <img
-                                src="img/logo-premaz-website.png"
-                                alt="Premaz logo"
-                                class="nav_logo"
-                                id="logo"
-                            />
+            <!--Navigation menu and logo-->
+            <nav class="navbar">
+                <a href="https://www.premaz.nl/">
+                    <img
+                        src="img/logo-premaz-website.png"
+                        alt="Premaz logo"
+                        class="nav-logo"
+                    />
+                </a>
+                <ul class="nav-links">
+                    <li class="center">
+                        <a class="nav-link" href="#section--1">
+                            Meer informatie
                         </a>
                     </li>
                     <li class="center">
-                        <a class="nav_link" href="#section">Over ons</a>
-                    </li>
-                    <li class="center">
-                        <a class="nav_link" href="https://www.google.nl/">
-                            Onze Diensten
+                        <a class="nav-link" href="https://www.google.nl/">
+                            Onze diensten
                         </a>
                     </li>
+
                     <li class="center">
-                        <a class="nav_link" href="https://www.google.nl/">
-                            Referenties
-                        </a>
-                    </li>
-                    <li class="center">
-                        <a class="nav_link" href="https://www.google.nl/">
+                        <a class="nav-link" href="https://www.google.nl/">
                             Contact
                         </a>
                     </li>
-                    <li class="right">
-                        <a class="nav_link" href="https://www.google.nl/">
-                            Login
-                        </a>
-                    </li>
                 </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
-            <!--Achtergrond en tekst header-->
-            <div class="header_background">
+            <!-- Header image with the text -->
+            <div class="header-background">
                 <img
                     id="cycleImages"
-                    src="img/Cycle images/achtergrond-afbeelding-1.1.jpg"
+                    src="img/Cycle images/img-1.jpg"
                     alt="Achtergrond header"
                 />
-                <div class="header_center">
+                <div class="header-center">
                     <h1>
                         Migreren naar de cloud?
                         <br />
@@ -71,8 +70,10 @@
                         Bij Premaz ondersteunen wij u bij het migreren naar
                         Azure
                     </h4>
-                    <div class="arrow_down">
-                        <a class="nav_link" href="#section">Lees meer</a>
+                    <div class="arrow-down">
+                        <a class="nav-link read-more" href="#section--1">
+                            Lees meer
+                        </a>
                     </div>
                 </div>
             </div>
