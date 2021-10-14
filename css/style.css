@@ -31,6 +31,7 @@ body {
     background-repeat: no-repeat;
     /* animation: fadeinout 10s linear infinite forwards; */
     animation: changeImages 40s linear infinite forwards;
+    backface-visibility: hidden;
 }
 
 @keyframes changeImages {
