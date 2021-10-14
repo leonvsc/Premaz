@@ -14,7 +14,6 @@ window.addEventListener("scroll", () => {
     document.querySelector(".")
 }
 */
-
 // Script voor het activeren van de buttons van 'beheer'
 
 tabsContainer.addEventListener("click", function (e) {
