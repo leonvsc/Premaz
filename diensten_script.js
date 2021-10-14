@@ -1,19 +1,20 @@
 const tabsContainer = document.querySelector(".beheer_tab-container");
 const beheerContainer = document.querySelector(".beheer_content-container");
-const checkpoint = 300;
+const checkpoint = 900;
 
 // Script voor het in-faden van de diensten afbeeldingen met alinea's
-/*
+
 window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
-    if (currentScroll <= checkpoint)    {
-        opacity = 1 - currentScroll / checkpoint;
-    } else {
-        opacity = 0;
+    if (currentScroll <= checkpoint) {
+        var fade = document.querySelector(".front");
+        fade.classList.add("visible"); //visible - werkt
+        setTimeout(function () {
+            fade.classList.add("selectable"); //selectable
+        }, checkpoint);
     }
-    document.querySelector(".")
-}
-*/
+});
+
 // Script voor het activeren van de buttons van 'beheer'
 
 tabsContainer.addEventListener("click", function (e) {
