@@ -1,0 +1,251 @@
+/* Selecteert de li elementen in de class contactForm */
+.contactForm li {
+    display: flex;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem; /* Padding zorgt ervoor dat er meer ruimte komt tussen de border en de content van het element */
+}
+
+.icon {
+    max-width: 50%;
+    padding-top: 0.6rem;
+}
+
+.submitButton {
+    margin-left: 8%; /* Margin zorgt ervoor dat er meer ruimte buiten de border komt van het element */
+    background: #002ca56c;
+    text-align: center;
+    border-radius: 5px; /* Maakt de hoeken van de button rond */
+    color: white;
+    margin-top: 1rem;
+    width: 25%;
+    padding: 0.8rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    cursor: pointer; /* Maakt van de cursor een handje zodat die klikbaar lijkt */
+}
+
+.contactDescription {
+    font-size: 1.8rem;
+    font-weight: 600; /* Zorgt ervoor dat de tekst dikker wordt */
+    text-align: center;
+    padding-top: 7%;
+}
+
+.contact {
+    margin-left: 6rem;
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #002ca56c;
+}
+
+.contactInfo {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-left: 1rem;
+    margin-top: 4rem;
+}
+
+.container {
+    width: 100%;
+    padding-right: var(
+        --bs-gutter-x,
+        0.75rem
+    ); /* Hier wordt er een variabele gezet met de naam --bs-gutter-x met een waarde van 0.75rem. Deze kan in verdere CSS weer gebruikt worden. */
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto; /* De margin wordt automatisch horizontaal gecentreerd in zijn eigen element. Deze berekening doet de browser. */
+    margin-left: auto;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(
+        var(--bs-gutter-y) * -1
+    ); /* De calc functie in CSS wordt gebruikt om waardes te berekenen. Hier wordt de var --bs-gutter-y * -1 gedaan om tot een waarde te komen. */
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+
+.map {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.col {
+    flex: 1 0 0%; /* Flex is een verkorte benaming voor flex-grow, flex-schrink en flex-basis.
+    Flex-grow geeft aan hoeveel een element mag groeien. Flex-schrink geeft aan hoeveel het element mag verkleinen.
+    Flex-basis geeft de default size van het element aan zonder dat de overgebleven ruimte wordt gebruikt. */
+}
+
+.col-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+}
+
+.col-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+}
+
+.col-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.col-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+}
+
+.col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.col-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+}
+
+.col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+}
+
+.col-9 {
+    flex: 0 0 auto;
+    width: 75%;
+}
+
+.col-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+}
+
+.col-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/* Een media query wordt gebruikt om bij een minimale of maximale grootte bepaalde css elementen aan te passen wanneer deze grootte is bereikt. */
+
+@media screen and (max-width: 1200px) {
+    .submitButton {
+        font-size: 1.4rem;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .map {
+        display: none;
+    }
+
+    .contact {
+        font-size: 1.1rem;
+    }
+
+    .contactInfo {
+        font-size: 1.1rem;
+    }
+
+    .contactDescription {
+        font-size: 1.4rem;
+    }
+
+    .contactForm li {
+        font-size: 1.1rem;
+    }
+
+    .submitButton {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contactDescription {
+        width: 100%;
+        order: 1;
+    }
+
+    .contactInfo {
+        width: auto;
+    }
+
+    .contact {
+        width: auto;
+        margin-left: 0rem;
+    }
+
+    .row {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .submitButton {
+        width: 85%;
+    }
+
+    ul {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    .container {
+        width: auto;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 462px) {
+    .contactDescription {
+        font-size: 1.2rem;
+    }
+
+    .submitButton {
+        width: 85%;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
