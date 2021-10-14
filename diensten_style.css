@@ -183,27 +183,6 @@ h4 {
 
 /* Hier is de CSS voor de pagina 'diensten */
 
-/*
-.section_2_border {
-    width: 500px;
-    height: 100px;
-    position: fixed;
-    padding-top: 20px;
-    margin-top: 50px;
-    border-top: 5px solid;
-}
-
-.section_2_border::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 50%;
-    left: 25%;
-    border-top: 1px solid red;
-}
-*/
-
 /* Hier is de CSS voor de h2 en h3 */
 
 .section_2_border {
@@ -239,26 +218,6 @@ h4 {
     color: rgb(95, 95, 97);
     font-family: "Montserrat", sans-serif !important;
 }
-
-/* CSS voor het in-en-out faden van de onderstaande secties */
-
-/*
-
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20vh);
-    visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 1.2 ease-out;
-    will-change: opacity, visibility;
-}
-
-.fade-in-section {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-}
-
-*/
 
 /* CSS voor eerste afbeelding (Connectiviteit) */
 
@@ -429,39 +388,7 @@ h4 {
     grid-row: 2;
 }
 
-/*
-.containerDiensten1 {
-    position:relative;
-    width: 50%;
+/* Navbar for mobile */
+
+@media only screen and (max-width: 768px) {
 }
-
-.diensten_Cloud {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.overlayDiensten1   {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    width: 0;
-    height: 100%;
-    transition: .5s ease;
-}
-
-.containerDiensten1:hover .overlayDiensten1 {
-    width: 100%;
-  }
-
-.diensten_Cloud_2   {
-    position: absolute;
-    overflow: hidden;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    height: 100%;
-}
-
-*/
