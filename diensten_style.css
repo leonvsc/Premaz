@@ -221,9 +221,71 @@ h4 {
 
 /* CSS voor eerste afbeelding (Connectiviteit) */
 
+.diensten_features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: rgba(123, 147, 255, 0.116);
+    border-radius: 25px; */
+}
+
+.diensten_features-reverse {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    /* background-color: rgba(123, 147, 255, 0.116);
+    border-radius: 25px; */
+}
+
+.diensten_Cloud_2-img {
+    width: 35%;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 2%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    opacity: 0.6;
+}
+
+.diensten_section-title {
+    align-self: center;
+    justify-self: center;
+    padding-left: 5%;
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+.diensten_section-title_reverse {
+    align-self: center;
+    justify-self: center;
+    padding-left: 5%;
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+.diensten_features-header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .diensten_Cloud_2-img {
+        width: 90%;
+    }
+    .mobile-view {
+        display: none;
+    }
+    .diensten_section-title {
+        width: 500px;
+    }
+    .diensten_section-title_reverse {
+        width: 500px;
+    }
+}
+
+/*
 .front {
     display: grid;
-    /* background-image: url(img/black.png); */
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     margin: 0 12rem;
@@ -261,6 +323,7 @@ h4 {
     width: 70%;
     font-size: 1.5rem;
 }
+*/
 
 /* CSS voor tweede afbeelding (Veiligheid) */
 
@@ -388,7 +451,27 @@ h4 {
     grid-row: 2;
 }
 
-/* Navbar for mobile */
-
-@media only screen and (max-width: 768px) {
+.beheer_tab {
+    margin-right: 2.5rem;
+    transform: translateY(-50%);
 }
+
+@media only screen and (max-width: 600px) {
+    .btn {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.beheer_tab span {
+    margin-right: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.beheer_tab-1 {
+    background-color: rgb(146, 165, 217);
+}
+
+/* Door die span werken buttons niet meer omhoog */
+/* Navbar for mobile */
