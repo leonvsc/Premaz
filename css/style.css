@@ -22,35 +22,51 @@ body {
     justify-content: center;
 }
 
-.header-background img {
-    opacity: 0.3;
+.header-background #cycleImagesDiv {
+    opacity: 0.2;
     border-radius: 8px;
-    width: 85%;
-    height: auto;
-    animation: fadeinout 10s linear infinite forwards;
+    height: 29.75vw;
+    width: 85vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* animation: fadeinout 10s linear infinite forwards; */
+    animation: changeImages 40s linear infinite forwards;
+    backface-visibility: hidden;
 }
 
-@keyframes fadeinout {
+@keyframes changeImages {
     0% {
-        opacity: 0;
+        background-image: url("../img/cycle-images/img-1.jpg");
     }
-    10% {
-        opacity: 0.05;
+    15% {
+        background-image: url("../img/cycle-images/img-1.jpg");
     }
-    25% {
-        opacity: 0.15;
+    20% {
+        background-image: url("../img/cycle-images/img-2.jpg");
     }
-    50% {
-        opacity: 0.3;
+    35% {
+        background-image: url("../img/cycle-images/img-2.jpg");
+    }
+    40% {
+        background-image: url("../img/cycle-images/img-3.jpg");
+    }
+    55% {
+        background-image: url("../img/cycle-images/img-3.jpg");
+    }
+    60% {
+        background-image: url("../img/cycle-images/img-1.jpg");
     }
     75% {
-        opacity: 0.15;
+        background-image: url("../img/cycle-images/img-1.jpg");
     }
-    90% {
-        opacity: 0.05;
+    80% {
+        background-image: url("../img/cycle-images/img-2.jpg");
+    }
+    95% {
+        background-image: url("../img/cycle-images/img-2.jpg");
     }
     100% {
-        opacity: 0;
+        background-image: url("../img/cycle-images/img-1.jpg");
     }
 }
 
