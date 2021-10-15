@@ -21,6 +21,29 @@
     justify-content: center;
 }
 
+.afbeelding-alinea-2 {
+    width: 35%;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 2%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    opacity: 0.6;
+}
+
+.section-title-reverse {
+    align-self: center;
+    justify-self: center;
+    padding-left: 5%;
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+.features-header-reverse {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 .features-header {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -63,7 +86,15 @@
         width: 90%;
     }
 
+    .afbeelding-alinea-2 {
+        width: 90%;
+    }
+
     .section-title {
+        width: 500px;
+    }
+
+    .section-title-reverse {
         width: 500px;
     }
 }
