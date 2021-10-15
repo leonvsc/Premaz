@@ -12,8 +12,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* background-color: rgba(123, 147, 255, 0.116);
-    border-radius: 25px; */
+}
+
+.reverse-flex {
+    flex-wrap: wrap-reverse;
+    display: flex;
+    justify-content: center;
 }
 
 .features-header {
@@ -56,9 +60,9 @@
     .afbeelding-alinea {
         width: 90%;
     }
-    .mobile-view {
+    /* .mobile-view {
         display: none;
-    }
+    } */
     .section-title {
         width: 500px;
     }
