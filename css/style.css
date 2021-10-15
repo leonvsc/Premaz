@@ -40,9 +40,11 @@ body::after {
     width: 85vw;
     background-size: contain;
     background-repeat: no-repeat;
-    /* animation: fadeinout 10s linear infinite forwards; */
     animation: changeImages 40s linear infinite forwards;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
 }
 
 @keyframes changeImages {
