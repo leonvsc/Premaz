@@ -8,6 +8,7 @@
     opacity: 0.6;
 }
 
+/* Align the paragraphs on the page */
 .features {
     display: flex;
     flex-wrap: wrap;
@@ -56,13 +57,12 @@
     align-self: center;
 }
 
+/* Resize for phone usage */
 @media only screen and (max-width: 768px) {
     .afbeelding-alinea {
         width: 90%;
     }
-    /* .mobile-view {
-        display: none;
-    } */
+
     .section-title {
         width: 500px;
     }
