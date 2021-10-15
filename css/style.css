@@ -12,6 +12,7 @@ body {
     background-image: linear-gradient(#96a3a542, #76b5c442);
 }
 
+/* Preload images to prevent flickering */
 body::after {
     position: absolute;
     width: 0;
@@ -33,6 +34,7 @@ body::after {
     justify-content: center;
 }
 
+/* Cycle through images on top */
 .header-background #cycleImagesDiv {
     opacity: 0.2;
     border-radius: 8px;
@@ -47,6 +49,7 @@ body::after {
     -ms-backface-visibility: hidden;
 }
 
+/* Keyfromes for cycling through the images on top */
 @keyframes changeImages {
     0% {
         background-image: url("../img/cycle-images/img-1.jpg");
@@ -125,6 +128,7 @@ h4 {
     font-weight: 500;
 }
 
+/* Change the style for phone usage */
 @media only screen and (max-width: 768px) {
     .arrow-down {
         position: absolute;
