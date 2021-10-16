@@ -19,6 +19,7 @@
     flex-wrap: wrap-reverse;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .afbeelding-alinea-2 {
