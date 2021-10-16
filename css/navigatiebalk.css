@@ -9,6 +9,7 @@
     list-style: none;
 }
 
+/* Style of the navbar buttons */
 .center {
     transition: 0.3s;
     margin-left: 15px;
@@ -39,6 +40,7 @@
     transition: all 0.3s;
 }
 
+/* CSS for the hamburger menu */
 .bar {
     display: block;
     width: 25px;
@@ -91,6 +93,7 @@
         cursor: pointer;
     }
 
+    /* Make a x when the hamburger menu is open */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }

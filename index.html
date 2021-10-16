@@ -5,11 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/style.css" />
-
         <link rel="stylesheet" href="css/navigatiebalk.css" />
         <link rel="stylesheet" href="css/alineas.css" />
         <link rel="stylesheet" href="css/footer.css" />
         <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+        <!-- Preload images to prevent flickering -->
+        <link rel="preload" href="img/cycle-images/img-1.jpg" as="image" />
+        <link rel="preload" href="img/cycle-images/img-2.jpg" as="image" />
+        <link rel="preload" href="img/cycle-images/img-3.jpg" as="image" />
         <title>Premaz</title>
     </head>
     <body>
@@ -91,28 +94,33 @@
                         bedijven ondersteunen hebben hierbij.
                     </p>
                 </div>
+                <!-- Reverse the wrap to order text and images correctly -->
+                <div class="reverse-flex">
+                    <div class="section-title-reverse">
+                        <h5 class="features-header-reverse">
+                            Waarom cloudmigratie?
+                        </h5>
+                        <p>
+                            Het opslaan van bestanden op de cloud is veel
+                            veiliger dan het opslaan op een lokale server. De
+                            kans op data verlies is op de cloud nagenoeg 0, dit
+                            is anders bij lokale bestanden. Het omzeten van de
+                            bestanden naar de cloud kan een grote stap zijn waar
+                            wij u graag bij helpen.
+                        </p>
+                    </div>
 
-                <div class="section-title">
-                    <h5 class="features-header">Waarom cloudmigratie?</h5>
-                    <p>
-                        Het opslaan van bestanden op de cloud is veel veiliger
-                        dan het opslaan op een lokale server. De kans op data
-                        verlies is op de cloud nagenoeg 0, dit is anders bij
-                        lokale bestanden. Het omzeten van de bestanden naar de
-                        cloud kan een grote stap zijn waar wij u graag bij
-                        helpen.
-                    </p>
+                    <img
+                        src="img/afbeelding-alinea-2.jpg"
+                        alt="Afbeelding 2"
+                        class="afbeelding-alinea-2 mobile-view"
+                    />
                 </div>
-                <img
-                    src="img/afbeelding-alinea-2.jpg"
-                    alt="Afbeelding 2"
-                    class="afbeelding-alinea"
-                />
 
                 <img
                     src="img/afbeelding-alinea-3.jpg"
                     alt="Afbeelding 3"
-                    class="afbeelding-alinea mobile-view"
+                    class="afbeelding-alinea"
                 />
                 <div class="section-title" id="section">
                     <h5 class="features-header">Waarom Premaz?</h5>
@@ -128,7 +136,7 @@
                 </div>
             </div>
         </section>
-        <!-- Footer van de website -->
+        <!-- Footer from the website -->
         <footer class="footer">
             <ul class="footer-nav">
                 <li class="footer-item">
@@ -158,14 +166,30 @@
             <p class="footer-copyright">
                 &copy; Copyright by
                 <a
-                    class="footer-link twitter-link"
+                    class="footer-link"
                     target="_blank"
-                    href="https://premaz.nl/"
+                    href="https://www.premaz.nl/"
                 >
                     Premaz
                 </a>
                 . Dit is een website voor een schoolopdracht, Premaz is een
                 fictief bedrijf.
+                <br />
+                <a
+                    class="footer-link"
+                    target="_blank"
+                    href="pdf-files/2-model-av-variant-1-nl.pdf"
+                >
+                    Algemene voorwaarden
+                </a>
+                /
+                <a
+                    class="footer-link"
+                    target="_blank"
+                    href="pdf-files/privacyverklaring.pdf"
+                >
+                    Privacyverklaring
+                </a>
             </p>
         </footer>
         <script src="js/navBar.js"></script>

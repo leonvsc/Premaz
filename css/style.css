@@ -12,6 +12,18 @@ body {
     background-image: linear-gradient(#96a3a542, #76b5c442);
 }
 
+/* Preload images to prevent flickering */
+body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url("../img/cycle-images/img-1.jpg")
+        url("../img/cycle-images/img-2.jpg")
+        url("../img/cycle-images/img-3.jpg");
+}
+
 .header-title {
     text-align: center;
 }
@@ -22,6 +34,7 @@ body {
     justify-content: center;
 }
 
+/* Cycle through images on top */
 .header-background #cycleImagesDiv {
     opacity: 0.2;
     border-radius: 8px;
@@ -29,11 +42,14 @@ body {
     width: 85vw;
     background-size: contain;
     background-repeat: no-repeat;
-    /* animation: fadeinout 10s linear infinite forwards; */
     animation: changeImages 40s linear infinite forwards;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
 }
 
+/* Keyfromes for cycling through the images on top */
 @keyframes changeImages {
     0% {
         background-image: url("../img/cycle-images/img-1.jpg");
@@ -112,22 +128,12 @@ h4 {
     font-weight: 500;
 }
 
+/* Change the style for phone usage */
 @media only screen and (max-width: 768px) {
     .arrow-down {
-        position: absolute;
         top: 140%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: 0.2s;
-        display: block;
         width: 50px;
         height: 7px;
-        background: #91919193;
-        padding: 10px;
-        border-radius: 15px;
-        color: white;
-        font-weight: bold;
-        text-align: center;
         line-height: 90%;
     }
     .read-more {

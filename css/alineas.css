@@ -8,12 +8,41 @@
     opacity: 0.6;
 }
 
+/* Align the paragraphs on the page */
 .features {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* background-color: rgba(123, 147, 255, 0.116);
-    border-radius: 25px; */
+}
+
+.reverse-flex {
+    flex-wrap: wrap-reverse;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.afbeelding-alinea-2 {
+    width: 35%;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 2%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    opacity: 0.6;
+}
+
+.section-title-reverse {
+    align-self: center;
+    justify-self: center;
+    padding-left: 5%;
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+.features-header-reverse {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .features-header {
@@ -52,14 +81,21 @@
     align-self: center;
 }
 
+/* Resize for phone usage */
 @media only screen and (max-width: 768px) {
     .afbeelding-alinea {
         width: 90%;
     }
-    .mobile-view {
-        display: none;
+
+    .afbeelding-alinea-2 {
+        width: 90%;
     }
+
     .section-title {
+        width: 500px;
+    }
+
+    .section-title-reverse {
         width: 500px;
     }
 }

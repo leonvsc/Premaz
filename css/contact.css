@@ -22,6 +22,13 @@
     font-weight: 400;
     font-size: 1.6rem;
     cursor: pointer; /* Maakt van de cursor een handje zodat die klikbaar lijkt */
+    transition: 0.3s;
+}
+
+.submitButton:hover {
+    background: #002ca59f;
+    box-shadow: 0px 0px 2px 2px #888888;
+    transition: 0.3s;
 }
 
 .contactDescription {
@@ -44,6 +51,40 @@
     font-weight: 500;
     margin-left: 1rem;
     margin-top: 4rem;
+}
+
+.contact-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: rgb(116, 116, 116);
+    text-decoration: underline;
+}
+
+.arrow-down-contact {
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+    display: block;
+    width: 150px;
+    height: 15px;
+    background: #91919193;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150%;
+}
+
+.arrow-down-contact:hover {
+    background: #7e7e7e93;
+    box-shadow: 0px 0px 1px 1px #7e7e7e93;
+    transition: 0.2s;
 }
 
 .container {
@@ -192,6 +233,12 @@
 
     .row {
         justify-content: center;
+    }
+    .arrow-down-contact {
+        top: 140%;
+        width: 80px;
+        height: 7px;
+        line-height: 90%;
     }
 }
 
