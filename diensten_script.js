@@ -4,6 +4,7 @@ const checkpoint = 900;
 
 // Script voor het in-faden van de diensten afbeeldingen met alinea's
 
+/*
 window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
     if (currentScroll <= checkpoint) {
@@ -14,6 +15,7 @@ window.addEventListener("scroll", () => {
         }, checkpoint);
     }
 });
+*/
 
 // Script voor het activeren van de buttons van 'beheer'
 

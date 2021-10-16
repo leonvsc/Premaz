@@ -212,11 +212,31 @@ h4 {
 
 .section_2_header {
     font-size: 2rem;
-    line-height: 0.1;
     font-weight: 600;
     text-transform: uppercase;
     color: rgb(95, 95, 97);
     font-family: "Montserrat", sans-serif !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .section_2 {
+        padding: 1rem 1rem;
+        box-sizing: content-box;
+        display: block;
+        float: none;
+        line-height: 19px;
+        position: static;
+        height: 85px;
+    }
+    .section_2_description {
+        font-size: 1.5rem;
+    }
+    .section_2_header {
+        font-size: 1rem;
+    }
+    .section_1 {
+        padding: 1rem 3rem;
+    }
 }
 
 /* CSS voor eerste afbeelding (Connectiviteit) */
@@ -451,15 +471,14 @@ h4 {
     grid-row: 2;
 }
 
-.beheer_tab {
-    margin-right: 2.5rem;
-    transform: translateY(-50%);
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .btn {
         padding: 0;
         margin: 0;
+    }
+    .beheer_content {
+        grid-template-rows: none;
+        padding: 1rem 4rem 1rem 3rem;
     }
 }
 
