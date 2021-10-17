@@ -118,48 +118,6 @@
     }
 }
 
-/*
-.front {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin: 0 12rem;
-    position: relative;
-    transition: opacity 0.1s;
-}
-
-.front::before {
-    content: "";
-    position: absolute;
-    background: white;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    opacity: 1;
-    transition: 0.3s opacity ease-in;
-}
-
-.front.visible::before {
-    opacity: 0;
-}
-
-.front.visible.selectable::before {
-    z-index: -1;
-}
-
-.diensten_Cloud_2-img {
-    width: 50%;
-    justify-self: right;
-    border-radius: 25px;
-}
-
-.connectiviteit_description {
-    justify-self: left;
-    width: 70%;
-    font-size: 1.5rem;
-}
-*/
-
 /* CSS voor tweede afbeelding (Veiligheid) */
 
 .veiligheid_container {
@@ -297,7 +255,6 @@
         display: flex;
         font-size: 2rem;
         width: 20rem;
-        padding-block-end: ;
         margin-bottom: 1rem;
     }
     .beheer_tab-container {
