@@ -5,11 +5,13 @@
     padding-bottom: 0.5rem; /* Padding zorgt ervoor dat er meer ruimte komt tussen de border en de content van het element */
 }
 
+/* Styling van de icons voor de input tag */
 .icon {
     max-width: 50%;
     padding-top: 0.6rem;
 }
 
+/* Styling van de submit button */
 .submitButton {
     margin-left: 8%; /* Margin zorgt ervoor dat er meer ruimte buiten de border komt van het element */
     background: #002ca56c;
@@ -22,8 +24,17 @@
     font-weight: 400;
     font-size: 1.6rem;
     cursor: pointer; /* Maakt van de cursor een handje zodat die klikbaar lijkt */
+    transition: 0.3s;
 }
 
+/* Styling van de submit button als er gehovered wordt */
+.submitButton:hover {
+    background: #002ca59f;
+    box-shadow: 0px 0px 2px 2px #888888;
+    transition: 0.3s;
+}
+
+/* Styling van de contact description boven het formulier */
 .contactDescription {
     font-size: 1.8rem;
     font-weight: 600; /* Zorgt ervoor dat de tekst dikker wordt */
@@ -31,6 +42,7 @@
     padding-top: 7%;
 }
 
+/* Styling van het contact blokje met bedrijfsnaam, adres etc. */
 .contact {
     margin-left: 6rem;
     margin-top: 4rem;
@@ -39,6 +51,7 @@
     color: #002ca56c;
 }
 
+/* Styling van de contactinfo met Premaz, Straatnaam etc. */
 .contactInfo {
     font-size: 1.4rem;
     font-weight: 500;
@@ -46,6 +59,45 @@
     margin-top: 4rem;
 }
 
+/* Styling van emailadres en telefoonnummer */
+.contact-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+/* Styling van emailadres en telefoonnummer wanneer er gehovered wordt */
+.contact-link:hover {
+    color: rgb(116, 116, 116);
+    text-decoration: underline;
+}
+
+/* Stylng van de contactgegevens button in de header */
+.arrow-down-contact {
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+    display: block;
+    width: 150px;
+    height: 15px;
+    background: #91919193;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150%;
+}
+
+/* Stylng van de contactgegevens button in de header wanneer er gehovered wordt */
+.arrow-down-contact:hover {
+    background: #7e7e7e93;
+    box-shadow: 0px 0px 1px 1px #7e7e7e93;
+    transition: 0.2s;
+}
+
+/* De container van de body waar alle elementen in zitten */
 .container {
     width: 100%;
     padding-right: var(
@@ -57,6 +109,7 @@
     margin-left: auto;
 }
 
+/* De styling van de rows die op de pagina zichtbaar zijn */
 .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -69,11 +122,13 @@
     margin-left: calc(var(--bs-gutter-x) * -0.5);
 }
 
+/* Styling van de Google Maps kaart */
 .map {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
+/* Styling van de kolommen in de container */
 .col {
     flex: 1 0 0%; /* Flex is een verkorte benaming voor flex-grow, flex-schrink en flex-basis.
     Flex-grow geeft aan hoeveel een element mag groeien. Flex-schrink geeft aan hoeveel het element mag verkleinen.
@@ -192,6 +247,12 @@
 
     .row {
         justify-content: center;
+    }
+    .arrow-down-contact {
+        top: 140%;
+        width: 80px;
+        height: 7px;
+        line-height: 90%;
     }
 }
 

@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="css/contact.css" />
         <link rel="stylesheet" href="css/navigatiebalk.css" />
         <link rel="stylesheet" href="css/footer.css" />
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+        <!-- Favicon van de website -->
     </head>
 
     <body>
@@ -24,12 +26,12 @@
                 </a>
                 <ul class="nav-links">
                     <li class="center">
-                        <a class="nav-link" href="index.html#section-1">
+                        <a class="nav-link" href="index.html">
                             Meer informatie
                         </a>
                     </li>
                     <li class="center">
-                        <a class="nav-link" href="https://www.google.nl/">
+                        <a class="nav-link" href="diensten.html">
                             Onze diensten
                         </a>
                     </li>
@@ -57,18 +59,18 @@
                         Bij Premaz ondersteunen wij u bij het migreren naar
                         Azure
                     </h4>
-                    <div class="arrow-down">
+                    <div class="arrow-down-contact">
                         <a
                             class="nav-link read-more"
-                            href="index.html#section-1"
+                            href="contact.html#contactSection-1"
                         >
-                            Lees meer
+                            Contactgegevens
                         </a>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="container">
+        <div class="container" id="contactSection-1">
             <!-- Een container om de volledige pagina in een flexbox container te zetten. -->
             <div class="row">
                 <!-- Op deze row staan de contactbeschrijving en de contact info zodat deze naast elkaar staan. -->
@@ -111,9 +113,13 @@
                         <br />
                         Breda
                         <br />
-                        <a href="mailto:info@premaz.nl">info@premaz.nl</a>
+                        <a class="contact-link" href="mailto:info@premaz.nl">
+                            info@premaz.nl
+                        </a>
                         <br />
-                        <a href="tel:+31881010100">+31 88 10 10 100</a>
+                        <a class="contact-link" href="tel:+31881010100">
+                            +31 88 10 10 100
+                        </a>
                         <br />
                         1234567
                         <br />
@@ -228,12 +234,10 @@
                     <a class="footer-link" href="#">Home</a>
                 </li>
                 <li class="footer-item">
-                    <a class="footer-link" href="index.html#section-1">
-                        Meer informatie
-                    </a>
+                    <a class="footer-link" href="index.html">Meer informatie</a>
                 </li>
                 <li class="footer-item">
-                    <a class="footer-link" href="https://google.com">
+                    <a class="footer-link" href="diensten.html">
                         Onze diensten
                     </a>
                 </li>
@@ -259,6 +263,22 @@
                 </a>
                 . Dit is een website voor een schoolopdracht, Premaz is een
                 fictief bedrijf.
+                <br />
+                <a
+                    class="footer-link"
+                    target="_blank"
+                    href="pdf-files/Algemene voorwaarden Premaz.pdf"
+                >
+                    Algemene voorwaarden
+                </a>
+                /
+                <a
+                    class="footer-link"
+                    target="_blank"
+                    href="pdf-files/privacy_statement_16-10-2021.pdf"
+                >
+                    Privacyverklaring
+                </a>
             </p>
         </footer>
         <script src="js/navBar.js"></script>
