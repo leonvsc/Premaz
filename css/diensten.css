@@ -1,0 +1,506 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    color: #444;
+    line-height: 1.9;
+    background-image: linear-gradient(#f7feff42, #e2f8fd42);
+}
+
+.nav_logo {
+    height: 8rem;
+    width: auto;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+.left {
+    margin-right: auto;
+    width: 10rem;
+}
+
+.center {
+    transition: 0.3s;
+    margin-left: 4rem;
+    display: block;
+    width: 140px;
+    height: 25px;
+    background: #002ca56c;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.center:hover {
+    background: #002ca59f;
+    box-shadow: 0px 0px 2px 2px #888888;
+    transition: 0.3s;
+}
+
+.right {
+    margin-left: auto;
+    transition: 0.3s;
+    width: 10rem;
+    transition: 0.2s;
+    display: block;
+    width: 100px;
+    height: 15px;
+    background: #91919193;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 15px;
+}
+
+.right:hover {
+    background: #919191c5;
+    box-shadow: 0px 0px 2px 2px #888888;
+    transition: 0.2s;
+}
+
+.nav_link:link,
+.nav_link:visited {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s;
+}
+
+.header_title {
+    text-align: center;
+}
+
+.header_background {
+    position: relative;
+}
+
+.header_background img {
+    opacity: 0.25;
+    border-radius: 8px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    height: auto;
+}
+
+.header_center {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.arrow_down {
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+    display: block;
+    width: 100px;
+    height: 15px;
+    background: #91919193;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 150%;
+}
+
+.arrow_down:hover {
+    background: #7e7e7e93;
+    box-shadow: 0px 0px 1px 1px #7e7e7e93;
+    transition: 0.2s;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.5;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.section {
+    padding: 10rem 3rem;
+    transition: transform 1s, opacity 1s;
+}
+
+.section_title {
+    max-width: 80%;
+    margin: 0 auto 8rem auto;
+    display: flex;
+    align-items: center;
+}
+
+.section_title img {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.section_description {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: left;
+    list-style: none;
+}
+
+.section_header {
+    font-size: 4rem;
+    line-height: 1.3;
+    font-weight: 500;
+    text-align: left;
+}
+
+.afbeelding-alinea-1 {
+    height: 30rem;
+    border-radius: 8px;
+}
+
+/* Hier is de CSS voor de pagina 'diensten */
+
+/* Hier is de CSS voor de h2 en h3 */
+
+.section_2_border {
+    padding: 1rem 3rem;
+}
+
+.section_2 {
+    background-color: rgba(225, 231, 236, 0.959);
+    padding: 1rem 3rem;
+    border-top: 1px solid rgb(73, 112, 219, 1);
+    border-bottom: 1px solid rgb(73, 112, 219, 1);
+}
+
+.section_2_title {
+    max-width: 72rem;
+    margin: 0 auto 8rem auto;
+}
+
+.section_2_description {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(73, 112, 219, 1);
+    margin-bottom: 1rem;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.section_2_header {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(95, 95, 97);
+    font-family: "Montserrat", sans-serif !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .section_2 {
+        padding: 1rem 1rem;
+        box-sizing: content-box;
+        display: block;
+        float: none;
+        line-height: 19px;
+        position: static;
+        height: 85px;
+    }
+    .section_2_description {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .section_2_header {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .section_1 {
+        padding: 1rem 3rem;
+    }
+}
+
+/* CSS voor eerste afbeelding (Connectiviteit) */
+
+.diensten_features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.diensten_features-reverse {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.diensten_Cloud_2-img {
+    width: 35%;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 2%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    opacity: 0.6;
+}
+
+.diensten_section-title {
+    align-self: center;
+    justify-self: center;
+    padding-left: 5%;
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+.diensten_section-title_reverse {
+    align-self: center;
+    justify-self: center;
+    padding-left: 5%;
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+.diensten_features-header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .diensten_Cloud_2-img {
+        width: 90%;
+    }
+    .mobile-view {
+        display: none;
+    }
+    .diensten_section-title {
+        width: 500px;
+    }
+    .diensten_section-title_reverse {
+        width: 500px;
+    }
+}
+
+/*
+.front {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 0 12rem;
+    position: relative;
+    transition: opacity 0.1s;
+}
+
+.front::before {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    opacity: 1;
+    transition: 0.3s opacity ease-in;
+}
+
+.front.visible::before {
+    opacity: 0;
+}
+
+.front.visible.selectable::before {
+    z-index: -1;
+}
+
+.diensten_Cloud_2-img {
+    width: 50%;
+    justify-self: right;
+    border-radius: 25px;
+}
+
+.connectiviteit_description {
+    justify-self: left;
+    width: 70%;
+    font-size: 1.5rem;
+}
+*/
+
+/* CSS voor tweede afbeelding (Veiligheid) */
+
+.veiligheid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 0 12rem;
+}
+
+.veiligheid_description {
+    align-self: right;
+    justify-self: right;
+    width: 70%;
+    font-size: 1.5rem;
+}
+
+.diensten_Cloud-safety-img {
+    width: 50%;
+    justify-self: left;
+    border-radius: 25px;
+}
+
+/* CSS voor derde afbeelding (Connectiviteit) */
+
+.organisatie_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 0 12rem;
+}
+
+.diensten_organisation-img {
+    width: 50%;
+    justify-self: right;
+    border-radius: 25px;
+}
+
+/* CSS voor de beheer tabs */
+
+.beheer {
+    max-width: 100rem;
+    margin: 2rem auto 0 auto;
+    background-color: rgba(225, 231, 236, 0.959);
+    border-radius: 25px;
+}
+
+.beheer_tab-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    opacity: 1;
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    padding: 1.25rem 4.5rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.beheer_tab {
+    margin-right: 2.5rem;
+    transform: translateY(-50%);
+}
+
+.beheer_tab span {
+    margin-right: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.beheer_tab-1 {
+    background-color: rgb(146, 165, 217);
+}
+
+.beheer_tab-1:hover {
+    background-color: rgb(73, 112, 219);
+}
+
+.beheer_tab-2 {
+    background-color: rgb(146, 165, 217);
+}
+
+.beheer_tab-2:hover {
+    background-color: rgb(73, 112, 219);
+}
+
+.beheer_tab-3 {
+    background-color: rgb(146, 165, 217);
+}
+
+.beheer_tab-3:hover {
+    background-color: rgb(73, 112, 219);
+}
+
+.beheer_tab-active {
+    transform: translateY(-66%);
+}
+
+.beheer_content {
+    display: none;
+    font-size: 1.7rem;
+    padding: 2.5rem 7rem 6.5rem 7rem;
+    grid-template-rows: 1fr 1fr;
+}
+
+.beheer_content-active {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 0.5rem;
+}
+
+.beheer_header {
+    font-size: 2.25rem;
+    grid-row: 1;
+    font-weight: 500;
+    align-self: center;
+    color: rgb(73, 112, 219, 1);
+    font-weight: bold;
+}
+
+.beheer_content p {
+    grid-row: 2;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn {
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        display: flex;
+        font-size: 2rem;
+        width: 20rem;
+        padding-block-end: ;
+        margin-bottom: 1rem;
+    }
+    .beheer_tab-container {
+        flex-wrap: wrap;
+    }
+    .beheer_content {
+        grid-template-rows: none;
+        padding: 1rem 4rem 1rem 3rem;
+    }
+}
+
+.beheer_tab span {
+    margin-right: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.beheer_tab-1 {
+    background-color: rgb(146, 165, 217);
+}
+
+/* Door die span werken buttons niet meer omhoog */
+/* Navbar for mobile */
