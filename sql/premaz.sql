@@ -96,8 +96,8 @@ ADD CONSTRAINT AC_CustomerFK
 FOREIGN KEY (CT_CustomerNumber) REFERENCES Customers(CustomerNumber);
 
 ALTER TABLE Accounts
-ADD CONSTRAINT AC_ShoppingcartFK
-FOREIGN KEY (SC_ShoppingcartID) REFERENCES ShoppingCarts(ShoppingCartID);
+ADD CONSTRAINT AC_ShoppingCartFK
+FOREIGN KEY (SC_ShoppingCartID) REFERENCES ShoppingCarts(ShoppingCartID);
 
 ALTER TABLE Accounts
 ADD CONSTRAINT AC_OrderFK
