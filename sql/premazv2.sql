@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS `premaz`;
 
 USE `premaz`;
 
-CREATE TABLE `Customer` (
+CREATE TABLE `Customers` (
 	`CustomerNumber` VARCHAR(8) NOT NULL,
     `AC_Email` VARCHAR(50) NOT NULL,
     `BA_BillingAddressID` INT,
@@ -11,15 +11,15 @@ CREATE TABLE `Customer` (
     `FirstName` VARCHAR(50) NOT NULL,
     `LastName` VARCHAR(50) NOT NULL,
     `PhoneNumber` INT NOT NULL,
-    CONSTRAINT `CustomerPK`
+    CONSTRAINT `CustomersPK`
     	PRIMARY KEY (`CustomerNumber`)
 );
 
-CREATE TABLE `Account` (
+CREATE TABLE `Accounts` (
     `Email` VARCHAR(50) NOT NULL,
     `Password` VARCHAR(128) NOT NULL,
     `Role` VARCHAR(20) NOT NULL,
-    CONSTRAINT `AccountPK`
+    CONSTRAINT `AccountsPK`
         PRIMARY KEY (`Email`)
 );
 
@@ -45,32 +45,32 @@ CREATE TABLE `BillingAddress` (
         PRIMARY KEY (`BillingAddressID`)
 );
 
-CREATE TABLE `Product` (
+CREATE TABLE `Products` (
     `SKU` VARCHAR(20) NOT NULL,
     `Price` FLOAT NOT NULL,
     `Stock` INT NOT NULL,
     `Category` VARCHAR(30) NOT NULL,
-    CONSTRAINT `ProductPK`
+    CONSTRAINT `ProductsPK`
     	PRIMARY KEY (`SKU`)
 );
 
-CREATE TABLE `ShoppingCart` (
+CREATE TABLE `ShoppingCarts` (
     `ShoppingCartID` INT NOT NULL,
     `TotalPrice` FLOAT NOT NULL,
-    CONSTRAINT `ShoppingCartPK`
+    CONSTRAINT `ShoppingCartsPK`
     	PRIMARY KEY (`ShoppingCartID`)
 );
 
-CREATE TABLE `CartItem` (
+CREATE TABLE `CartItems` (
     `CartItemID` INT NOT NULL,
     `SC_ShoppingCartID` INT NOT NULL,
     `PD_SKU` VARCHAR(20) NOT NULL,
     `Quantity` INT NOT NULL,
-    CONSTRAINT `CartItemPK`
+    CONSTRAINT `CartItemsPK`
         PRIMARY KEY (`CartItemID`)
 );
 
-CREATE TABLE `Order` (
+CREATE TABLE `Orders` (
     `OrderNumber` VARCHAR(8) NOT NULL,
     `SA_ShippingAddressID` INT NOT NULL,
     `CM_CustomerNumber` VARCHAR(8) NOT NULL,
