@@ -78,25 +78,81 @@ CREATE TABLE `Orders` (
     `SC_ShoppingCartID` INT NOT NULL,
     `Track&Trace` VARCHAR(20),
     `OrderStatus` VARCHAR(20) NOT NULL,
-    CONSTRAINT `OrderPK`
+    CONSTRAINT `OrdersPK`
         PRIMARY KEY (`OrderNumber`)
 );
 
-CREATE TABLE `Payment` (
+CREATE TABLE `Payments` (
     `PaymentID` VARCHAR(8) NOT NULL,
     `Price` FLOAT NOT NULL,
     `Currency` VARCHAR(3) NOT NULL,
     `Method` VARCHAR(20) NOT NULL,
     `PaymentStatus` VARCHAR(20) NOT NULL,
-    CONSTRAINT `PaymentPK`
+    CONSTRAINT `PaymentsPK`
     	PRIMARY KEY (`PaymentID`)
 );
 
-CREATE TABLE `Invoice` (
+CREATE TABLE `Invoices` (
     `InvoiceNumber` VARCHAR(8) NOT NULL,
     `BA_BillingAddressID` INT NOT NULL,
     `PM_PaymentID` VARCHAR(8) NOT NULL,
     `VATNumber` VARCHAR(20),
-    CONSTRAINT `InvoicePK`
+    CONSTRAINT `InvoicesPK`
         PRIMARY KEY(`InvoiceNumber`)
 );
+
+-- CustomerFK
+
+ALTER TABLE Customers
+ADD CONSTRAINT CM_AccountFK
+FOREIGN KEY (AC_Email) REFERENCES Accounts(Email);
+
+ALTER TABLE Customers
+ADD CONSTRAINT CM_BillingAddressFK
+FOREIGN KEY (BA_BillingAddressID) REFERENCES BillingAddress(BillingAddressID);
+
+ALTER TABLE Customers
+ADD CONSTRAINT CM_ShippingAddressFK
+FOREIGN KEY (SA_ShippingAddressID) REFERENCES ShippingAddress(ShippingAddressID);
+
+ALTER TABLE Customers
+ADD CONSTRAINT CM_ShoppingCartFK
+FOREIGN KEY (SC_ShoppingCartID) REFERENCES ShoppingCarts(ShoppingCartID);
+
+-- CartItemFK
+
+ALTER TABLE CartItems
+ADD CONSTRAINT CI_ShoppingCartFK
+FOREIGN KEY (SC_ShoppingCartID) REFERENCES ShoppingCarts(ShoppingCartID);
+
+ALTER TABLE CartItems
+ADD CONSTRAINT CI_ProductFK
+FOREIGN KEY (PD_SKU) REFERENCES Products(SKU);
+
+-- OrderFK
+
+ALTER TABLE Orders
+ADD CONSTRAINT OD_ShippingAddressFK
+FOREIGN KEY (SA_ShippingAddressID) REFERENCES ShippingAddress(ShippingAddressID);
+
+ALTER TABLE Orders
+ADD CONSTRAINT OD_CustomerFK
+FOREIGN KEY (CM_CustomerNumber) REFERENCES Customers(CustomerNumber);
+
+ALTER TABLE Orders
+ADD CONSTRAINT OD_PaymentFK
+FOREIGN KEY (PM_PaymentID) REFERENCES Payments(PaymentID);
+
+ALTER TABLE Orders
+ADD CONSTRAINT OD_ShoppingcartFK
+FOREIGN KEY (SC_ShoppingCartID) REFERENCES ShoppingCarts(ShoppingCartID);
+
+-- InvoiceFK
+
+ALTER TABLE Invoices
+ADD CONSTRAINT IV_BillingAddressFK
+FOREIGN KEY (BA_BillingAddressID) REFERENCES BillingAddress(BillingAddressID);
+
+ALTER TABLE Invoices
+ADD CONSTRAINT IV_PaymentFK
+FOREIGN KEY (PM_PaymentID) REFERENCES Payments(PaymentID);
