@@ -1,10 +1,10 @@
 USE `premaz`;
 
 -- Deels vernieuwd
-INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`) VALUES (0000001, 'niels-warnaar@live.nl', 0001, 0001, 000000001, 'Niels', 'Warnaar', 0612457892);
-INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`) VALUES (0000002, 'johandevries@ziggo.nl', 0002, 0002, 000000002, 'Johan', 'de Vries', 0645783210);
-INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`) VALUES (0000003, 'rietveldsandra@kpnmail.nl', 0003, 0003, 000000003, 'Sandra', 'Rietveld', 0689741326);
-INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`) VALUES (0000004, 'merelvdam@gmail.com', 0004, 0004, 000000004, 'Merel', 'van Dam', 0614852369);
+INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES (0000001, 'niels-warnaar@live.nl', 0001, 0001, 000000001, 'Niels', 'Warnaar', 0612457892);
+INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES (0000002, 'johandevries@ziggo.nl', 0002, 0002, 000000002, 'Johan', 'de Vries', 0645783210);
+INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES (0000003, 'rietveldsandra@kpnmail.nl', 0003, 0003, 000000003, 'Sandra', 'Rietveld', 0689741326);
+INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES (0000004, 'merelvdam@gmail.com', 0004, 0004, 000000004, 'Merel', 'van Dam', 0614852369);
 
 -- Vernieuwd
 INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('niels-warnaar@live.nl', 'Password1', 'Admin');
