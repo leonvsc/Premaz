@@ -111,10 +111,10 @@ INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('MON-LCD-MI
 INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('KEY-MEC-HIG-002', 149.99, 14, 'Keyboard')
 
 -- Nieuw toegevoegd
-INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (CartItemID, ShoppingCartID, SKU, Quantity)
-INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (CartItemID, ShoppingCartID, SKU, Quantity)
-INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (CartItemID, ShoppingCartID, SKU, Quantity)
-INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (CartItemID, ShoppingCartID, SKU, Quantity)
+INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (0001, 000000001, 'USB-128-LOW-001', 2)
+INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (0002, 000000001, 'MON-LCD-MID-001', 1)
+INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (0003, 000000001, 'KEY-MEC-MID-002', 4)
+INSERT INTO `CartItems` (`CartItemID`, `SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (0001, 000000002, 'KEY-MEM-LOW-001', 1)
 
 -- Vernieuwd
 INSERT INTO `ShoppingCarts` (`ShoppingCartID`, `TotalPrice`) VALUES (000000001, 145,50)
