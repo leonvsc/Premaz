@@ -1,3 +1,5 @@
+USE `premaz`;
+
 -- Deels vernieuwd
 INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`) VALUES (0000001, 'niels-warnaar@live.nl', 0001, 0001, 000000001, 'Niels', 'Warnaar', 0612457892)
 INSERT INTO 'Customers' (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`) VALUES (0000002, 'johandevries@ziggo.nl', 0002, 0002, 000000002, 'Johan', 'de Vries', 0645783210)
