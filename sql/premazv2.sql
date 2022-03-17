@@ -78,6 +78,7 @@ CREATE TABLE `Orders` (
     `SC_ShoppingCartID` INT NOT NULL,
     `Track&Trace` VARCHAR(20),
     `OrderStatus` VARCHAR(20) NOT NULL,
+    `OrderDate` DATE NOT NULL,
     CONSTRAINT `OrdersPK`
         PRIMARY KEY (`OrderNumber`)
 );
@@ -88,6 +89,7 @@ CREATE TABLE `Payments` (
     `Currency` VARCHAR(3) NOT NULL,
     `Method` VARCHAR(20) NOT NULL,
     `PaymentStatus` VARCHAR(20) NOT NULL,
+    `PaymentDate` DATE NOT NULL,
     CONSTRAINT `PaymentsPK`
     	PRIMARY KEY (`PaymentID`)
 );
@@ -97,6 +99,7 @@ CREATE TABLE `Invoices` (
     `BA_BillingAddressID` INT NOT NULL,
     `PM_PaymentID` VARCHAR(8) NOT NULL,
     `VATNumber` VARCHAR(20),
+    `InvoiceDate` DATE NOT NULL,
     CONSTRAINT `InvoicesPK`
         PRIMARY KEY(`InvoiceNumber`)
 );
