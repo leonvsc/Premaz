@@ -89,7 +89,7 @@ CREATE TABLE `Payments` (
     `Currency` VARCHAR(3) NOT NULL,
     `Method` VARCHAR(20) NOT NULL,
     `PaymentStatus` VARCHAR(20) NOT NULL,
-    `PaymentDate` DATE NOT NULL,
+    `PaymentDate` DATE,
     CONSTRAINT `PaymentsPK`
     	PRIMARY KEY (`PaymentID`)
 );
@@ -99,7 +99,7 @@ CREATE TABLE `Invoices` (
     `BA_BillingAddressID` INT NOT NULL,
     `PM_PaymentID` VARCHAR(8) NOT NULL,
     `VATNumber` VARCHAR(20),
-    `InvoiceDate` DATE NOT NULL,
+    `InvoiceDate` DATE,
     CONSTRAINT `InvoicesPK`
         PRIMARY KEY(`InvoiceNumber`)
 );
