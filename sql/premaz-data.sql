@@ -18,7 +18,7 @@ INSERT INTO  `ShippingAddress` (`ShippingAddressID`, `Street`, `HouseNumber`, `P
 
 -- Nieuw toegevoegd
 INSERT INTO `BillingAddress` (`BillingAddressID`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES (0001, 'Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', `Nederland`)
-INSERT INTO `BillingAddress` (`BillingAddressID`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES (0002, 'Pompmolenlaan', '10e', '3447GK', 'Woerden', `Nederland`)
+INSERT INTO `BillingAddress` (`BillingAddressID`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES (0002, 'Dwergroosweide', '34', '3448JJ', 'Woerden', `Nederland`)
 INSERT INTO `BillingAddress` (`BillingAddressID`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES (0003, 'Klaprooswiede', '20a', '3448JJ', 'Woerden', `Nederland`)
 INSERT INTO `BillingAddress` (`BillingAddressID`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES (0004, 'Amsterdamsestraatweg', '116', '3513AL', 'Utrecht', `Nederland`)
 
