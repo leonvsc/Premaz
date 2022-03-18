@@ -24,7 +24,7 @@ CREATE TABLE `Accounts` (
 );
 
 CREATE TABLE `ShippingAddress` (
-    `ShippingAddressID` INT NOT NULL,
+    `ShippingAddressID` INT NOT NULL AUTO_INCREMENT,
     `Street` VARCHAR(50) NOT NULL,
     `HouseNumber` VARCHAR(6) NOT NULL,
     `PostalCode` VARCHAR(6) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `ShippingAddress` (
 );
 
 CREATE TABLE `BillingAddress` (
-    `BillingAddressID` INT NOT NULL,
+    `BillingAddressID` INT NOT NULL AUTO_INCREMENT,
     `Street` VARCHAR(50) NOT NULL,
     `HouseNumber` VARCHAR(6) NOT NULL,
     `PostalCode` VARCHAR(6) NOT NULL,
@@ -55,14 +55,14 @@ CREATE TABLE `Products` (
 );
 
 CREATE TABLE `ShoppingCarts` (
-    `ShoppingCartID` INT NOT NULL,
+    `ShoppingCartID` INT NOT NULL AUTO_INCREMENT,
     `TotalPrice` FLOAT NOT NULL,
     CONSTRAINT `ShoppingCartsPK`
     	PRIMARY KEY (`ShoppingCartID`)
 );
 
 CREATE TABLE `CartItems` (
-    `CartItemID` INT NOT NULL,
+    `CartItemID` INT NOT NULL AUTO_INCREMENT,
     `SC_ShoppingCartID` INT NOT NULL,
     `PD_SKU` VARCHAR(20) NOT NULL,
     `Quantity` INT NOT NULL,
