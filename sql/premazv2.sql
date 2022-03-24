@@ -76,7 +76,7 @@ CREATE TABLE `Orders` (
     `CM_CustomerNumber` VARCHAR(8) NOT NULL,
     `PM_PaymentID` VARCHAR(8) NOT NULL,
     `SC_ShoppingCartID` INT NOT NULL,
-    `Track&Trace` VARCHAR(20),
+    `TrackAndTrace` VARCHAR(20),
     `OrderStatus` VARCHAR(20) NOT NULL,
     `OrderDate` DATE NOT NULL,
     CONSTRAINT `OrdersPK`
