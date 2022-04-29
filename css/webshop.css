@@ -14,12 +14,12 @@ nav {
 .menu {
     font-family: "Poppins", sans-serif;
 }
-  
+
 .menu > li {
     display: inline;
     padding-right: 100px;
 }
-  
+
 .menu > li:last-of-type {
     padding-right: 0;
 }
@@ -27,7 +27,7 @@ nav {
 .dropdown {
     position: relative;
 }
-  
+
 .dropdown:hover .submenu {
     display: flex;
     flex-direction: column;
@@ -38,15 +38,15 @@ nav {
     border-radius: 5px;
     padding-top: 60px;
 }
-  
+
 .submenu {
     display: none;
     z-index: 100;
 }
-  
+
 .dropdown a > span {
     z-index: 200;
-    position: relative; 
+    position: relative;
 }
 
 .submenu li {
@@ -145,7 +145,7 @@ nav {
 
 .dropdown a > span {
     z-index: 200;
-    position: relative; 
+    position: relative;
 }
 
 .shoppingcart-item:link,
@@ -166,7 +166,6 @@ nav {
 
 .shoppingcart-item {
     font-weight: bold;
-    
 }
 
 .tegels {

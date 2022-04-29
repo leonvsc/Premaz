@@ -1,0 +1,36 @@
+:root {
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
+.nav-logo {
+    height: 4rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+.nav-logo-div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.test-navbar {
+    display: flex;
+}
+
+.searchbar {
+    padding: 6px;
+    border: 5px;
+    border-color: black;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-left: 16px;
+    font-size: 17px;
+    border-radius: 10px;
+    width: 500px;
+    height: 20px;
+}
+
+.searchbar-div {
+    display: flex;
+    justify-content: center;
+}
