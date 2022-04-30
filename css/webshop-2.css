@@ -1,5 +1,7 @@
 :root {
     background-color: rgba(0, 0, 0, 0.548);
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .nav-logo {
@@ -11,10 +13,12 @@
 .nav-logo-div {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .test-navbar {
     display: flex;
+    height: 60px;
 }
 
 .searchbar {
@@ -33,4 +37,25 @@
 .searchbar-div {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.login-and-shoppingcart {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.account-icon {
+    height: 2rem;
+    width: auto;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+.shoppingcart {
+    height: 2rem;
+    width: auto;
+    vertical-align: middle;
 }
