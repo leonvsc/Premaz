@@ -10,32 +10,27 @@
 
 <body>
     <h1 style="text-align: center">Login - Premaz Webshop</h1>
-    <form action="" method="post">
-        <table class="">
+    <form action="../includes/login.inc.php" method="post">
+        <table>
             <tr>
                 <th>Email</th>
-                <td><input type="text" name="username" class="" required></td>
+                <td><input type="text" name="username" required></td>
             </tr>
 
             <tr>
                 <th>Password</th>
-                <td><input type="password" name="password" class="" required></td>
+                <td><input type="password" name="password" required></td>
             </tr>
 
             <tr>
                 <td>
-                    <input type="submit" value="Login" class="">
-                    <a href="register.php" value="register" class="">Register</a>
-                    <a href="forgotPassword.php" value="password" class="">Forgot Password</a>
+                    <input type="submit" name="submit" value="Login">
+                    <a href="signup.php" value="signup">Signup</a>
+                    <a href="forgotPassword.php" value="password">Forgot Password</a>
                 </td>
             </tr>
         </table>
     </form>
-
-    <?php
-    echo $_POST['username'];
-    echo $_POST['password'];
-    ?>
 </body>
 
 </html>

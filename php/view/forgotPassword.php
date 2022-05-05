@@ -11,23 +11,23 @@
 <body>
     <h1 style="text-align: center">Forgot Password - Premaz Webshop</h1>
     <form action="" method="post">
-        <table class="">
+        <table>
             <tr>
                 <p style="text-align: center">Type in your email-address and fill in a new password</p>
             </tr>
             <tr>
                 <th>Email</th>
-                <td><input type="text" name="email" class="" required></td>
+                <td><input type="text" name="email" required></td>
             </tr>
 
             <tr>
                 <th>New password</th>
-                <td><input type="password" name="password" class="" required></td>
+                <td><input type="password" name="password" required></td>
             </tr>
 
             <tr>
                 <td>
-                    <input type="submit" value="Reset Password" class="">
+                    <input type="submit" value="Reset Password">
                     <a href="login.php" class="">Go back to Login</a>
                 </td>
             </tr>
