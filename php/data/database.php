@@ -24,7 +24,3 @@ class database
         }
     }
 }
-
-$db = new database();
-
-$db->connect();
