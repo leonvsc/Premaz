@@ -1,16 +1,22 @@
 <?php
 require "../data/userData.php";
-$data = new userData();
 
 class userController
 {
-    public function checkLogin()
+    private $data;
+
+    public function __construct()
     {
-        echo "Login Check!";
+        $this->data = new userData();
     }
 
-    public function CheckLoginCon($email, $password)
+
+    public function CheckLogin($email, $password)
     {
-        return $this->data->getUserData($email, $password);
+        if ($this->data->getUserData($email, $password)) {
+            header("Location: ../view/index.php");
+        } else {
+            echo "Login failed"; //TODO: redirect to error page
+        }
     }
 }
