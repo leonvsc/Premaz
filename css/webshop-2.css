@@ -15,7 +15,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 50px;
 }
 
 .test-navbar {
@@ -30,8 +29,8 @@
     background-color: rgb(137, 255, 255);
     overflow-x: hidden;
     overflow-y: hidden;
-    margin-right: -50px;
-    margin-left: -50px;
+    margin-right: 0%;
+    margin-left: 0%;
     position: sticky;
 }
 
@@ -59,7 +58,6 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    margin-right: 50px;
 }
 
 .account-icon {
