@@ -19,4 +19,15 @@ class userController
             echo "Login failed"; //TODO: redirect to error page
         }
     }
+
+    public function SignUp($accountModel, $customerModel)
+    {
+        //Insert
+
+        if ($this->data->signUpInsert($accountModel, $customerModel)) {
+            echo "sign up successful";
+        } else {
+            echo "sign up failed";
+        }
+    }
 }

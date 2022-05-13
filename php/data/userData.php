@@ -20,4 +20,8 @@ class userData
             return true;
         }
     }
+
+    public function signUpInsert()
+    {
+    }
 }

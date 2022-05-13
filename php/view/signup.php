@@ -24,7 +24,12 @@
 
             <tr>
                 <th>Email</th>
-                <td><input type="text" id="email" name="username" required></td>
+                <td><input type="text" id="email" name="email" required></td>
+            </tr>
+
+            <tr>
+                <th>Phonenumber</th>
+                <td><input type="text" id="phonenumber" name="phonenumber" required></td>
             </tr>
 
             <tr>
@@ -41,7 +46,7 @@
 
             <tr>
                 <td>
-                    <input type="submit" value="Signup" id="signup">
+                    <input type="submit" value="Signup" id="signup" name="submit">
                     <a href="login.php" class="">Go back to Login</a>
                 </td>
             </tr>
