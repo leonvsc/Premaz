@@ -6,7 +6,7 @@ $controller = new userController();
 
 if (isset($_POST["submit"])) {
     $accountModel = new accountModel($_POST["email"], $_POST["password"], "User");
-    $customerModel = new customerModel(uniqid(), $accountModel, (object)[], (object)[], $_POST["firstName"], $_POST["lastName"], $_POST["phoneNumber"]);
+    $customerModel = new customerModel(uniqid(), $accountModel, (object)[], (object)[], $_POST["firstname"], $_POST["lastname"], $_POST["phonenumber"]);
 
     if ($_POST["password"] == $_POST["repeat_password"]) {
         $controller->SignUp($accountModel, $customerModel);
