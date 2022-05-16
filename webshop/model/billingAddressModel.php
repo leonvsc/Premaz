@@ -24,3 +24,5 @@ class billingAddressModel
         return $this->billingAddressID;
     }
 }
+
+// TODO: Maak de get functies.

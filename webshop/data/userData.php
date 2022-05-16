@@ -34,6 +34,7 @@ class userData
         $postalCode = '';
         $city = '';
         $country = '';
+        // TODO: refereer naar de get functies in de model en zet ze in de SQL statements.
 
         // SQL
         $accountInsert = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');";
@@ -41,6 +42,7 @@ class userData
         $shippingInsert = "INSERT INTO  `ShippingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');";
         $billingInsert = "INSERT INTO `BillingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ( 'Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');";
 
+        //TODO: multiquery. Maybe een while loop die door een array looped om de queries uit te voeren.
         $result = mysqli_query($this->db->connect(), $accountInsert);
     }
 }

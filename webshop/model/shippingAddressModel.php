@@ -1,5 +1,6 @@
 <?php
-class shippingAddressModel {
+class shippingAddressModel
+{
     private $shippingAddressID;
     private $street;
     private $houseNumber;
@@ -17,3 +18,5 @@ class shippingAddressModel {
         $this->country = $country;
     }
 }
+
+// TODO: maak de get functies.
