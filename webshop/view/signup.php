@@ -42,6 +42,31 @@
                 <td><input type="password" id="repeat-password" name="repeat-password" required></td>
             </tr>
 
+            <tr>
+                <th>Street</th>
+                <td><input type="text" id="street" name="street" required></td>
+            </tr>
+
+            <tr>
+                <th>House number</th>
+                <td><input type="text" id="house-number" name="house-number" required></td>
+            </tr>
+
+            <tr>
+                <th>Postal code</th>
+                <td><input type="text" id="postal-code" name="postal-code" required></td>
+            </tr>
+
+            <tr>
+                <th>City</th>
+                <td><input type="text" id="city" name="city" required></td>
+            </tr>
+
+            <tr>
+                <th>Country</th>
+                <td><input type="text" id="country" name="country" required></td>
+            </tr>
+
             <p id="error"></p>
 
             <tr>
