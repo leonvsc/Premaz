@@ -16,7 +16,7 @@ class userController
         if ($this->data->getUserData($email, $password)) {
             header("Location: ../view/index.php");
         } else {
-            echo "Login failed"; //TODO: redirect to error page
+            echo "Login failed"; //TODO: redirect to error page Issue #37
         }
     }
 
@@ -27,7 +27,7 @@ class userController
         if ($this->data->signUpInsert($accountModel, $customerModel)) {
             echo "sign up successful";
         } else {
-            echo "sign up failed";
+            echo "sign up failed"; //TODO: redirect to error page Issue #37
         }
     }
 }
