@@ -6,6 +6,19 @@ require_once '../model/billingAddressModel.php';
 require_once '../model/shippingAddressModel.php';
 $controller = new userController();
 
+function generateCustomerNumber($prefix)
+{
+    $number = rand(000000, 999999);
+
+    if ($number == 6) {
+        return $prefix . $number;
+    } else {
+        $number;
+    }
+}
+
+echo generateCustomerNumber('CM');
+
 if (isset($_POST["submit"])) {
     $accountModel = new accountModel($_POST["email"], $_POST["password"], "User");
     $billingAddressModel = new billingAddressModel(uniqid(), $_POST["street"], $_POST["house-number"], $_POST["postal-code"], $_POST["city"], $_POST["country"]);
