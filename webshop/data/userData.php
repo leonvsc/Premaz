@@ -34,7 +34,6 @@ class userData
         $sql = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');";
         $sql .= "INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});";
 
-        //TODO: multiquery. Maybe een while loop die door een array looped om de queries uit te voeren.
         $result = mysqli_multi_query($this->db->connect(), $sql);
 
         if ($result) {
