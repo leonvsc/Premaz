@@ -22,12 +22,6 @@ class userController
 
     public function SignUp($accountModel, $customerModel)
     {
-        //Insert
-
-        if ($this->data->signUpInsert($accountModel, $customerModel)) {
-            echo "sign up successful";
-        } else {
-            echo "sign up failed"; //TODO: redirect to error page Issue #37
-        }
+        $this->data->signUpInsert($accountModel, $customerModel);
     }
 }

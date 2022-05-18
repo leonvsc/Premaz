@@ -9,7 +9,7 @@ function generateUniqueNumber($prefix)
     $number = rand(10000, 99999);
     $num_length = strlen((int)$number);
 
-    if ($num_length == 6) {
+    if ($num_length == 5) {
         return $prefix . $number;
     }
 }
