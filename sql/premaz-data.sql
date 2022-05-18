@@ -6,16 +6,6 @@ INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('johandevries@ziggo
 INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('rietveldsandra@kpnmail.nl', 'Password3', 'User');
 INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('merelvdam@gmail.com', 'Password4', 'Employee');
 
-INSERT INTO  `ShippingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');
-INSERT INTO  `ShippingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Pompmolenlaan', '10e', '3447GK', 'Woerden', 'Nederland');
-INSERT INTO  `ShippingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Klaprooswiede', '20a', '3448JJ', 'Woerden', 'Nederland');
-INSERT INTO  `ShippingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Amsterdamsestraatweg', '116', '3513AL', 'Utrecht', 'Nederland');
-
-INSERT INTO `BillingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ( 'Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');
-INSERT INTO `BillingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Dwergroosweide', '34', '3448JJ', 'Woerden', 'Nederland');
-INSERT INTO `BillingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Klaprooswiede', '20a', '3448JJ', 'Woerden', 'Nederland');
-INSERT INTO `BillingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Amsterdamsestraatweg', '116', '3513AL', 'Utrecht', 'Nederland');
-
 INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('KEY-MEM-LOW-001', 24.99, 32, 'Keyboard');
 INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('MOU-ERG-HIG-001', 64.99, 20, 'Mouse');
 INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('KEY-MEC-MID-001', 80.00, 28, 'Keyboard');
@@ -36,15 +26,25 @@ INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('MOU-OFI-LO
 INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('MON-LCD-MID-001', 219.99, 43, 'Monitor');
 INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES ('KEY-MEC-HIG-002', 149.99, 14, 'Keyboard');
 
-INSERT INTO `ShoppingCarts` (`TotalPrice`) VALUES (145.50);
-INSERT INTO `ShoppingCarts` (`TotalPrice`) VALUES (24.99);
-INSERT INTO `ShoppingCarts` (`TotalPrice`) VALUES (64.99);
-INSERT INTO `ShoppingCarts` (`TotalPrice`) VALUES (190.00);
+INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`,  `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00001', 'niels-warnaar@live.nl', 'Niels', 'Warnaar', 0612457892);
+INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`,  `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00002', 'johandevries@ziggo.nl', 'Johan', 'de Vries', 0645783210);
+INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`,  `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00003', 'rietveldsandra@kpnmail.nl', 'Sandra', 'Rietveld', 0689741326);
+INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`,  `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00004', 'merelvdam@gmail.com', 'Merel', 'van Dam', 0614852369);
 
-INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00001', 'niels-warnaar@live.nl', 1, 1, 1, 'Niels', 'Warnaar', 0612457892);
-INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00002', 'johandevries@ziggo.nl', 2, 2, 2, 'Johan', 'de Vries', 0645783210);
-INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00003', 'rietveldsandra@kpnmail.nl', 3, 3, 3, 'Sandra', 'Rietveld', 0689741326);
-INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('CM00004', 'merelvdam@gmail.com', 4, 4, 4, 'Merel', 'van Dam', 0614852369);
+INSERT INTO  `ShippingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00001', 'Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');
+INSERT INTO  `ShippingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00002', 'Pompmolenlaan', '10e', '3447GK', 'Woerden', 'Nederland');
+INSERT INTO  `ShippingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00003', 'Klaprooswiede', '20a', '3448JJ', 'Woerden', 'Nederland');
+INSERT INTO  `ShippingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00004', 'Amsterdamsestraatweg', '116', '3513AL', 'Utrecht', 'Nederland');
+
+INSERT INTO `BillingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00001', 'Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');
+INSERT INTO `BillingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00002', 'Dwergroosweide', '34', '3448JJ', 'Woerden', 'Nederland');
+INSERT INTO `BillingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00003', 'Klaprooswiede', '20a', '3448JJ', 'Woerden', 'Nederland');
+INSERT INTO `BillingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('CM00004', 'Amsterdamsestraatweg', '116', '3513AL', 'Utrecht', 'Nederland');
+
+INSERT INTO `ShoppingCarts` (`CM_CustomerNumber`, `TotalPrice`) VALUES ('CM00001', 145.50);
+INSERT INTO `ShoppingCarts` (`CM_CustomerNumber`, `TotalPrice`) VALUES ('CM00002', 24.99);
+INSERT INTO `ShoppingCarts` (`CM_CustomerNumber`, `TotalPrice`) VALUES ('CM00003', 64.99);
+INSERT INTO `ShoppingCarts` (`CM_CustomerNumber`, `TotalPrice`) VALUES ('CM00004', 190.00);
 
 INSERT INTO `Payments` (`PaymentID`, `Price`, `Currency`, `Method`,`PaymentStatus`, `PaymentDate`) VALUES ('PM000001', 145.50, 'EUR', "iDeal", 'Betaald', '2021-11-10');
 INSERT INTO `Payments` (`PaymentID`, `Price`, `Currency`, `Method`,`PaymentStatus`, `PaymentDate`) VALUES ('PM000002', 24.99, 'EUR', 'PayPal', 'Betaald', '2021-01-10');
