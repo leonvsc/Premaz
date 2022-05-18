@@ -5,9 +5,6 @@ USE `premaz`;
 CREATE TABLE `Customers` (
 	`CustomerNumber` VARCHAR(8) NOT NULL,
     `AC_Email` VARCHAR(50) NOT NULL,
-    `BA_BillingAddressID` INT,
-    `SA_ShippingAddressID` INT,
-    `SC_ShoppingCartID` INT,
     `FirstName` VARCHAR(50) NOT NULL,
     `LastName` VARCHAR(50) NOT NULL,
     `PhoneNumber` INT NOT NULL,
@@ -25,6 +22,7 @@ CREATE TABLE `Accounts` (
 
 CREATE TABLE `ShippingAddress` (
     `ShippingAddressID` INT NOT NULL AUTO_INCREMENT,
+    `CM_CustomerNumber` VARCHAR(8) NOT NULL,
     `Street` VARCHAR(50) NOT NULL,
     `HouseNumber` VARCHAR(6) NOT NULL,
     `PostalCode` VARCHAR(6) NOT NULL,
@@ -36,6 +34,7 @@ CREATE TABLE `ShippingAddress` (
 
 CREATE TABLE `BillingAddress` (
     `BillingAddressID` INT NOT NULL AUTO_INCREMENT,
+    `CM_CustomerNumber` VARCHAR(8) NOT NULL,
     `Street` VARCHAR(50) NOT NULL,
     `HouseNumber` VARCHAR(6) NOT NULL,
     `PostalCode` VARCHAR(6) NOT NULL,
@@ -56,6 +55,7 @@ CREATE TABLE `Products` (
 
 CREATE TABLE `ShoppingCarts` (
     `ShoppingCartID` INT NOT NULL AUTO_INCREMENT,
+    `CM_CustomerNumber` VARCHAR(8) NOT NULL,
     `TotalPrice` FLOAT NOT NULL,
     CONSTRAINT `ShoppingCartsPK`
     	PRIMARY KEY (`ShoppingCartID`)
@@ -110,18 +110,6 @@ ALTER TABLE Customers
 ADD CONSTRAINT CM_AccountFK
 FOREIGN KEY (AC_Email) REFERENCES Accounts(Email);
 
-ALTER TABLE Customers
-ADD CONSTRAINT CM_BillingAddressFK
-FOREIGN KEY (BA_BillingAddressID) REFERENCES BillingAddress(BillingAddressID);
-
-ALTER TABLE Customers
-ADD CONSTRAINT CM_ShippingAddressFK
-FOREIGN KEY (SA_ShippingAddressID) REFERENCES ShippingAddress(ShippingAddressID);
-
-ALTER TABLE Customers
-ADD CONSTRAINT CM_ShoppingCartFK
-FOREIGN KEY (SC_ShoppingCartID) REFERENCES ShoppingCarts(ShoppingCartID);
-
 -- CartItemFK
 
 ALTER TABLE CartItems
@@ -159,3 +147,18 @@ FOREIGN KEY (BA_BillingAddressID) REFERENCES BillingAddress(BillingAddressID);
 ALTER TABLE Invoices
 ADD CONSTRAINT IV_PaymentFK
 FOREIGN KEY (PM_PaymentID) REFERENCES Payments(PaymentID);
+
+-- ShippingAddressFK
+ALTER TABLE ShippingAddress
+ADD CONSTRAINT SA_CustomerFK
+FOREIGN KEY (CM_CustomerNumber) REFERENCES Customers(CustomerNumber);
+
+-- BillingAddressFK
+ALTER TABLE BillingAddress
+ADD CONSTRAINT BA_CustomerFK
+FOREIGN KEY (CM_CustomerNumber) REFERENCES Customers(CustomerNumber);
+
+-- ShoppingCartFK
+ALTER TABLE ShoppingCarts
+ADD CONSTRAINT SC_CustomerFK
+FOREIGN KEY (CM_CustomerNumber) REFERENCES Customers(CustomerNumber);
