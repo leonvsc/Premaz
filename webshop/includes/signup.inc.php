@@ -6,26 +6,21 @@ require_once '../model/billingAddressModel.php';
 require_once '../model/shippingAddressModel.php';
 $controller = new userController();
 
-function generateCustomerNumber($prefix)
+function generateUniqueNumber($prefix)
 {
-    $number = rand(000000, 999999);
+    $number = rand(100000, 999999);
+    $num_length = strlen((int)$number);
 
-    if ($number == 6) {
+    if ($num_length == 6) {
         return $prefix . $number;
-    } else {
-        $number;
     }
 }
-
-echo generateCustomerNumber('CM');
 
 if (isset($_POST["submit"])) {
     $accountModel = new accountModel($_POST["email"], $_POST["password"], "User");
     $billingAddressModel = new billingAddressModel(uniqid(), $_POST["street"], $_POST["house-number"], $_POST["postal-code"], $_POST["city"], $_POST["country"]);
     $shippingAddressModel = new shippingAddressModel(uniqid(), $_POST["street"], $_POST["house-number"], $_POST["postal-code"], $_POST["city"], $_POST["country"]);
-    $customerModel = new customerModel(rand(000000, 999999), $accountModel, $billingAddressModel, $shippingAddressModel, $_POST["firstname"], $_POST["lastname"], $_POST["phonenumber"]);
-
-    // TODO: Random customer number met een prefix van CM er bijvoorbeeld voor.
+    $customerModel = new customerModel(generateUniqueNumber("CM"), $accountModel, $billingAddressModel, $shippingAddressModel, $_POST["firstname"], $_POST["lastname"], $_POST["phonenumber"]);
 
     if ($_POST["password"] == $_POST["repeat-password"]) {
         $controller->SignUp($accountModel, $customerModel);
