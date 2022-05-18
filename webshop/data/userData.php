@@ -29,18 +29,10 @@ class userData
         $firstName = $customerModel->getFirstName();
         $lastName = $customerModel->getLastName();
         $phoneNumber = $customerModel->getPhoneNumber();
-        $street = '';
-        $houseNumber = '';
-        $postalCode = '';
-        $city = '';
-        $country = '';
-        // TODO: refereer naar de get functies in de model en zet ze in de SQL statements.
 
         // SQL
         $accountInsert = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');";
-        $customerInsert = "INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `BA_BillingAddressID`, `SA_ShippingAddressID`, `SC_ShoppingCartID`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', NULL, NULL, NULL, '{$firstName}', '{$lastName}', {$phoneNumber});";
-        $shippingInsert = "INSERT INTO  `ShippingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');";
-        $billingInsert = "INSERT INTO `BillingAddress` (`Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ( 'Jacob Barneveldstraat', '69', '3461GA', 'Linschoten', 'Nederland');";
+        $customerInsert = "INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});";
 
         //TODO: multiquery. Maybe een while loop die door een array looped om de queries uit te voeren.
         $result = mysqli_query($this->db->connect(), $accountInsert);

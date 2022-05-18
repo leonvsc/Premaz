@@ -2,8 +2,6 @@
 require_once '../controller/userController.php';
 require_once '../model/accountModel.php';
 require_once '../model/customerModel.php';
-require_once '../model/billingAddressModel.php';
-require_once '../model/shippingAddressModel.php';
 $controller = new userController();
 
 function generateUniqueNumber($prefix)
@@ -18,9 +16,7 @@ function generateUniqueNumber($prefix)
 
 if (isset($_POST["submit"])) {
     $accountModel = new accountModel($_POST["email"], $_POST["password"], "User");
-    $billingAddressModel = new billingAddressModel(uniqid(), $_POST["street"], $_POST["house-number"], $_POST["postal-code"], $_POST["city"], $_POST["country"]);
-    $shippingAddressModel = new shippingAddressModel(uniqid(), $_POST["street"], $_POST["house-number"], $_POST["postal-code"], $_POST["city"], $_POST["country"]);
-    $customerModel = new customerModel(generateUniqueNumber("CM"), $accountModel, $billingAddressModel, $shippingAddressModel, $_POST["firstname"], $_POST["lastname"], $_POST["phonenumber"]);
+    $customerModel = new customerModel(generateUniqueNumber("CM"), $accountModel, $_POST["firstname"], $_POST["lastname"], $_POST["phonenumber"]);
 
     if ($_POST["password"] == $_POST["repeat-password"]) {
         $controller->SignUp($accountModel, $customerModel);

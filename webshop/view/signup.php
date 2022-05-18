@@ -42,7 +42,7 @@
                 <td><input type="password" id="repeat-password" name="repeat-password" required></td>
             </tr>
 
-            <tr>
+            <!-- <tr>
                 <th>Street</th>
                 <td><input type="text" id="street" name="street" required></td>
             </tr>
@@ -65,7 +65,7 @@
             <tr>
                 <th>Country</th>
                 <td><input type="text" id="country" name="country" required></td>
-            </tr>
+            </tr> -->
 
             <p id="error"></p>
 
