@@ -6,7 +6,7 @@ $controller = new userController();
 
 function generateUniqueNumber($prefix)
 {
-    $number = rand(100000, 999999);
+    $number = rand(10000, 99999);
     $num_length = strlen((int)$number);
 
     if ($num_length == 6) {
