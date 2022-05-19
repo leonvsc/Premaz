@@ -215,13 +215,24 @@
     height: 100%;
 }
 
-.test-tussenstuk {
-    margin-top: 25px;
-}
-
 .test-tussenstuk-deel {
     margin-left: var(--margin-left);
     margin-right: var(--margin-right);
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.tegel-2 {
+    margin-left: 20px;
+    width: 50%;
+    height: 200px;
+    background-color: #7eb4e2;
+}
+
+.small-tiles-2 {
+    display: flex;
+    width: 40%;
+    flex-wrap: nowrap;
+    flex: 1;
+    justify-content: flex-end;
 }
