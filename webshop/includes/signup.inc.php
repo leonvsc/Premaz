@@ -21,6 +21,6 @@ if (isset($_POST["submit"])) {
     if ($_POST["password"] == $_POST["repeat-password"]) {
         $controller->SignUp($accountModel, $customerModel);
     } else {
-        echo "Sign up failed: passwords are not the same"; //TODO: Maak een mooiere error. Error pagina Issue #37
+        echo "Sign up failed: passwords are not the same"; //TODO: Maak een mooiere error. Error-pagina Issue #37
     }
 }
