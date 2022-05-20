@@ -1,4 +1,8 @@
 <?php
+require_once "../../vendor/autoload.php";
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
+$dotenv->load();
 
 class database
 {
@@ -9,10 +13,10 @@ class database
 
     public function connect()
     {
-        $this->servername = "sqladmin.premaz.nl";
-        $this->username = "premaz";
-        $this->password = "FnN2K*HZu8@96Ey9iC!e@Dn52nz@WF";
-        $this->dbname = "premaz";
+        $this->servername = $_ENV["servername"];
+        $this->username = $_ENV["username"];
+        $this->password = $_ENV["password"];
+        $this->dbname = $_ENV["dbname"];
 
 
         $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
