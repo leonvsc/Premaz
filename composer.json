@@ -1,0 +1,8 @@
+{
+    "name": "leon/premaz",
+    "description": "Premaz Webshop",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
