@@ -13,16 +13,18 @@ class userData
     public function getUserData($email, $password)
     {
         $sql = "SELECT Email FROM `Accounts` WHERE Email ='{$email}' AND password ='{$password}' LIMIT 1;";
+        $stmt = $this->db->connect()->prepare($sql);
 
-        $result = mysqli_query($this->db->connect(), $sql);
+        $result = $stmt->execute();
 
-        while (mysqli_fetch_array($result)) {
+        while ($stmt->fetch($result)) {
             return true;
         }
     }
 
     public function signUpInsert($accountModel, $customerModel)
     {
+
         $email = $accountModel->getEmail();
         $password = $accountModel->getPassword();
         $customerNumber = $customerModel->getCustomerNumber();
@@ -30,11 +32,11 @@ class userData
         $lastName = $customerModel->getLastName();
         $phoneNumber = $customerModel->getPhoneNumber();
 
-        // SQL
-        $sql = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');";
-        $sql .= "INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});";
+        $sql = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');
+        INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});";
+        $stmt = $this->db->connect()->prepare($sql);
 
-        $result = mysqli_multi_query($this->db->connect(), $sql);
+        $result = $stmt->execute();
 
         if ($result) {
             echo "Sign Up succesful";
