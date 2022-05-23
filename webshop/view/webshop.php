@@ -51,7 +51,7 @@
                     <input type="text" placeholder="Search..." class="searchbar" />
                 </div>
                 <div class="login-and-shoppingcart">
-                    <a href="#">
+                    <a href="login.php">
                         <img src="img/icons8-account-24.png" alt="Login account" class="account-icon" />
                     </a>
                     <a href="#">
