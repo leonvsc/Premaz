@@ -14,6 +14,8 @@ class userController
     public function CheckLogin($email, $password)
     {
         if ($this->data->getUserData($email, $password)) {
+            session_start();
+            $_SESSION["email"] = $email;
             header("Location: ../view/index.php");
         } else {
             echo "Login failed"; //TODO: redirect to error page Issue #37
