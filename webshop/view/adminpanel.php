@@ -9,8 +9,8 @@ if (!isset($_SESSION["email"])) {
 
 <h1>Welkom op het admin panel</h1>
 
-<li><a href="#">Bestellingen</a></li>
-<li><a href="#">Facturen</a></li>
-<li><a href="#">Klanten</a></li>
+<li><a href="adminOrder.php">Bestellingen</a></li>
+<li><a href="adminInvoice.php">Facturen</a></li>
+<li><a href="adminCustomers.php">Klanten</a></li>
 
 <li><a href="../includes/logout.inc.php">LOGOUT</a></li>
