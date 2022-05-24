@@ -22,4 +22,9 @@ class accountModel
     {
         return $this->password;
     }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
 }

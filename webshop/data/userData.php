@@ -1,5 +1,6 @@
 <?php
 require_once "database.php";
+require_once "../model/accountModel.php";
 
 class userData
 {
@@ -12,13 +13,18 @@ class userData
 
     public function getUserData($email, $password)
     {
-        $sql = "SELECT Email FROM `Accounts` WHERE Email ='{$email}' AND password ='{$password}' LIMIT 1;";
+        $sql = "SELECT Email, Role FROM `Accounts` WHERE Email ='{$email}' AND password ='{$password}' LIMIT 1;";
         $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
 
-        $result = $stmt->execute();
+        $accountArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // $role = $accountArray[0]["Role"];
 
-        while ($stmt->fetch($result)) {
-            return true;
+        if ($accountArray[0]["Role"] == NULL) {
+            return false;
+        } else {
+            $account = new accountModel($email, $password, $accountArray[0]["Role"]);
+            return $account;
         }
     }
 

@@ -13,12 +13,18 @@ class userController
 
     public function CheckLogin($email, $password)
     {
-        if ($this->data->getUserData($email, $password)) {
+        $account = $this->data->getUserData($email, $password);
+        if ($account == false) {
+            echo "Login failed";
+        } elseif ($account->getEmail() == $email && $account->getPassword() == $password && $account->getRole() == "User") {
             session_start();
-            $_SESSION["email"] = $email;
+            $_SESSION["email"] = $account->getEmail();
             header("Location: ../view/index.php");
-        } else {
-            echo "Login failed"; //TODO: redirect to error page Issue #37
+        } elseif ($account->getEmail() == $email && $account->getPassword() == $password && $account->getRole() == "Admin") {
+            session_start();
+            $_SESSION["email"] = $account->getEmail();
+            $_SESSION["role"] = $account->getRole();
+            header("Location: ../view/adminpanel.php");
         }
     }
 
