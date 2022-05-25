@@ -7,16 +7,16 @@ class productData
 
     public function __construct()
     {
-        $this->db = new databae();
+        $this->db = new database();
     }
 
     public function getProductData($productName, $productPrice)
     {
         $sql = "SELECT Price FROM `Products` LIMIT 1;";
 
-        $result = mysqli_query($this->db->connect(), $sql);
+        $result = $stmt->execute();
 
-        while (mysqli_fetch_array($result)) {
+        while ($stmt->fetch($result)) {
             return true;
         }
     }
