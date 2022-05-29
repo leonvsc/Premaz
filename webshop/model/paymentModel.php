@@ -17,4 +17,34 @@ class paymentModel
         $this->paymentStatus = $paymentStatus;
         $this->paymentDate = $paymentDate;
     }
+
+    public function getPaymentID()
+    {
+        return $this->paymentID;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    public function getPaymentStatus()
+    {
+        return $this->paymentStatus;
+    }
+
+    public function getPaymentDate()
+    {
+        return $this->paymentDate;
+    }
 }
