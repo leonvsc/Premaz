@@ -1,19 +1,29 @@
 <?php
 require_once "database.php";
 require_once "../model/orderModel.php";
+require_once "crudData.php";
+require_once "shoppingCartData.php";
+require_once "paymentData.php";
+require_once "customerData.php";
+require_once "shippingAddressData.php";
 
-class orderData
+class orderData implements ICrudData
 {
     private $db;
+
 
     public function __construct()
     {
         $this->db = new database();
+        $this->shoppingCart = new shoppingCartData();
+        $this->customer = new customerData();
+        $this->payment = new paymentData();
+        $this->shippingAddress = new shippingAddressData();
     }
 
-    public function getAllOrders()
+    public function getAll()
     {
-        $sql = "SELECT Orders.OrderNumber, Orders.OrderStatus, Orders.OrderDate, Customers.CustomerNumber, Customers.FirstName, Customers.LastName FROM  Orders INNER JOIN Customers ON Orders.CM_CustomerNumber=Customers.CustomerNumber;";
+        $sql = "SELECT * FROM Orders;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute();
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -21,33 +31,63 @@ class orderData
         return $this->ObjectToModel($orderArray);
     }
 
-    public function ObjectToModel($result)
+    public function getAllByCustomerNumber($customerNumber)
+    {
+        $sql = "SELECT * FROM  Orders INNER JOIN Customers ON Orders.CM_CustomerNumber=Customers.CustomerNumber; ";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+        $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->ObjectToModel($orderArray);
+    }
+
+    public function getById($id)
+    {
+        $sql = "SELECT * FROM Orders WHERE OrderNumber = :id;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->ObjectToModel($orderArray);
+    }
+
+    public function create($data)
+    {
+        $sql = "INSERT INTO Orders (OrderNumber, CustomerNumber, OrderDate, OrderStatus) VALUES (:OrderNumber, :CustomerNumber, :OrderDate, :OrderStatus);";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['OrderNumber' => $data->OrderNumber, 'CustomerNumber' => $data->CustomerNumber, 'OrderDate' => $data->OrderDate, 'OrderStatus' => $data->OrderStatus]);
+    }
+    public function update($id, $data)
+    {
+        $sql = "UPDATE Orders SET OrderNumber = :OrderNumber, CustomerNumber = :CustomerNumber, OrderDate = :OrderDate, OrderStatus = :OrderStatus WHERE OrderNumber = :id;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['OrderNumber' => $data->OrderNumber, 'CustomerNumber' => $data->CustomerNumber, 'OrderDate' => $data->OrderDate, 'OrderStatus' => $data->OrderStatus, 'id' => $id]);
+    }
+    public function delete($id)
+    {
+        $sql = "DELETE FROM Orders WHERE OrderNumber = :id;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['id' => $id]);
+    }
+
+    public function objectToModel($result)
     {
         if (!empty($result)) {
-            $orders = [];
-            while ($row = $result) {
+            $orders = [];;
+            for ($i = 0; $i < count($result); $i++) {
                 $orderModel = new orderModel(
-                    $row['orderNumber'],
-                    $row[null],
-                    $row['CustomerNumber'],
-                    $row[null],
-                    $row[null],
-                    $row[null],
-                    $row['orderStatus'],
-                    $row['orderDate']
+                    $result[$i]['OrderNumber'],
+                    $this->shippingAddress->getById($result[$i]['SA_ShippingAddressID']),
+                    $this->customer->getById($result[$i]['CM_CustomerNumber'])[0],
+                    $this->payment->getById($result[$i]['PM_PaymentID'])[0],
+                    $this->shoppingCart->getById($result[$i]['SC_ShoppingCartID'])[0],
+                    $result[$i]['TrackAndTrace'],
+                    $result[$i]['OrderStatus'],
+                    $result[$i]['OrderDate']
                 );
-
-                $orderModel->setOrderNumber($row['orderNumber']);
-                $orderModel->setShippingAddress($row[null]);
-                $orderModel->setCustomer($row['CustomerNumber']);
-                $orderModel->setPayment($row[null]);
-                $orderModel->setShoppingCart($row[null]);
-                $orderModel->setTrackAndTrace($row[null]);
-                $orderModel->setOrderStatus($row['orderStatus']);
-                $orderModel->setOrderDate($row['orderDate']);
-
                 $orders[] = $orderModel;
             }
+
             return $orders;
         }
     }

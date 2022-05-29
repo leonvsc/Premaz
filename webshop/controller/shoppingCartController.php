@@ -1,14 +1,13 @@
 <?php
-require "../data/loginData.php";
-require "crudController.php";
+require_once "../data/shoppingCartData.php";
 
-class userController implements ICrudController
+class shoppingCartController implements ICrudController
 {
     private $data;
 
     public function __construct()
     {
-        $this->data = new loginData();
+        $this->data = new shoppingCartData();
     }
 
     public function create($data)

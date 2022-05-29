@@ -2,7 +2,7 @@
 class shippingAddressModel
 {
     private $shippingAddressID;
-    private customerModel $customer;
+    public customerModel $customer;
     private $street;
     private $houseNumber;
     private $postalCode;

@@ -1,8 +1,9 @@
 <?php
 require_once "database.php";
 require_once "../model/accountModel.php";
+require_once "crudData.php";
 
-class userData
+class loginData
 {
     private $db;
 

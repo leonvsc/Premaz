@@ -1,8 +1,8 @@
 <?php
-require_once '../controller/userController.php';
+require_once '../controller/loginController.php';
 require_once '../model/accountModel.php';
 require_once '../model/customerModel.php';
-$controller = new userController();
+$controller = new loginController();
 
 function generateUniqueNumber($prefix)
 {

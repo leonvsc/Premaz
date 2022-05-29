@@ -1,7 +1,8 @@
 <?php
 require "../data/orderData.php";
+require "crudController.php";
 
-class orderController
+class orderController implements ICrudController
 {
     private $data;
 
@@ -10,8 +11,23 @@ class orderController
         $this->data = new orderData();
     }
 
-    public function getOrders()
+    public function create($data)
     {
-        var_dump($this->data->getAllOrders());
+    }
+    public function readAll()
+    {
+        $this->data->getAll();
+    }
+
+    public function read($id)
+    {
+    }
+
+    public function update($id, $data)
+    {
+    }
+
+    public function delete($id)
+    {
     }
 }
