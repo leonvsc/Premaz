@@ -1,5 +1,5 @@
 <?php
-require_once 'billingAdressModel.php';
+require_once 'billingAddressModel.php';
 require_once 'paymentModel.php';
 
 class invoiceModel

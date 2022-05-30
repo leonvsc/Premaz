@@ -18,9 +18,9 @@ class paymentData implements ICrudData
         $sql = "SELECT * FROM Payments WHERE PaymentID = :PaymentID;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['PaymentID' => $id]);
-        $shippingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $paymentArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($shippingArray);
+        return $this->objectToModel($paymentArray);
     }
     public function create($data)
     {
@@ -33,29 +33,18 @@ class paymentData implements ICrudData
     }
     public function objectToModel($object)
     {
-        if (count($object) > 1) {
-            $paymentArray = [];
+        $paymentArray = [];
 
-            foreach ($object as $payment) {
-                $paymentArray[] = new paymentModel(
-                    $payment['PaymentID'],
-                    $payment['Price'],
-                    $payment['Currency'],
-                    $payment['Method'],
-                    $payment['PaymentStatus'],
-                    $payment['PaymentDate']
-                );
-            }
-            return $paymentArray;
+        foreach ($object as $payment) {
+            $paymentArray[] = new paymentModel(
+                $payment['PaymentID'],
+                $payment['Price'],
+                $payment['Currency'],
+                $payment['Method'],
+                $payment['PaymentStatus'],
+                $payment['PaymentDate']
+            );
         }
-
-        return new paymentModel(
-            $object['PaymentID'],
-            $object['Price'],
-            $object['Currency'],
-            $object['Method'],
-            $object['PaymentStatus'],
-            $object['PaymentDate']
-        );
+        return $paymentArray;
     }
 }

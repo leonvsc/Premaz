@@ -1,6 +1,7 @@
 <?php
 
 require_once "../data/invoiceData.php";
+require_once "crudController.php";
 
 class invoiceController implements ICrudController
 {
@@ -17,10 +18,12 @@ class invoiceController implements ICrudController
 
     public function readAll()
     {
+        return $this->data->getAll();
     }
 
     public function read($id)
     {
+        return $this->data->getById($id);
     }
 
     public function update($id, $data)
