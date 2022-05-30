@@ -28,7 +28,7 @@ class orderData implements ICrudData
         $stmt->execute();
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->ObjectToModel($orderArray);
+        return $this->objectToModel($orderArray);
     }
 
     public function getAllByCustomerNumber($customerNumber)
@@ -38,7 +38,7 @@ class orderData implements ICrudData
         $stmt->execute();
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->ObjectToModel($orderArray);
+        return $this->objectToModel($orderArray);
     }
 
     public function getById($id)
