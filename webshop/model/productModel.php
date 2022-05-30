@@ -14,4 +14,24 @@ class productModel
         $this->stock = $stock;
         $this->category = $category;
     }
+
+    public function getSKU()
+    {
+        return $this->SKU;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }
