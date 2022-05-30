@@ -1,6 +1,7 @@
 <?php
 
-require_once "customerData";
+require_once "customerData.php";
+require_once "../model/billingAddressModel.php";
 
 class billingAddressData implements ICrudData
 {
@@ -25,10 +26,20 @@ class billingAddressData implements ICrudData
 
     public function getById($id)
     {
-        $sql = "SELECT * FROM BillingAddress WHERE id = :BillingAddressID;";
+        $sql = "SELECT * FROM BillingAddress WHERE BillingAddressID = :BillingAddressID;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['BillingAddressID' => $id]);
-        $billingArray = $stmt->fetch(PDO::FETCH_ASSOC);
+        $billingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->objectToModel($billingArray);
+    }
+
+    public function getByCustomerNumber($customerNumber)
+    {
+        $sql = "SELECT * FROM BillingAddress WHERE CM_CustomerNumber = :CustomerNumber;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['CustomerNumber' => $customerNumber]);
+        $billingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $this->objectToModel($billingArray);
     }
@@ -58,17 +69,19 @@ class billingAddressData implements ICrudData
 
     public function objectToModel($object)
     {
-        $customer = $this->customerData->getById($object['CM_CustomerNumber'])[0];
-
-        $model = new billingAddressModel($object['id'], $customer, $object['Street'], $object['HouseNumber'], $object['PostalCode'], $object['City'], $object['Country']);
-        $model->id = $object['id'];
-        $model->customer = $customer;
-        $model->Street = $object['Street'];
-        $model->HouseNumber = $object['HouseNumber'];
-        $model->PostalCode = $object['PostalCode'];
-        $model->City = $object['City'];
-        $model->Country = $object['Country'];
-
-        return $model;
+        $baArray = [];
+        foreach ($object as $address) {
+            //billingAddressID, customer, street, housenumber, postalcode, city, country
+            $baArray[] = new billingAddressModel(
+                $address['BillingAddressID'],
+                $this->customerData->getById($address['CM_CustomerNumber'])[0],
+                $address['Street'],
+                $address['HouseNumber'],
+                $address['PostalCode'],
+                $address['City'],
+                $address['Country']
+            );
+        }
+        return $baArray;
     }
 }

@@ -17,5 +17,7 @@ $orderdetails = $controller->read($ordernumber);
 echo $orderdetails[0]->getOrderNumber();
 
 echo $orderdetails[0]->getCustomer()->getAccount()->getEmail();
+
+// TODO: Maak een mooie detail pagina met juiste info
 ?>
 <li><a href="adminOrder.php">Go back</a></li>

@@ -22,6 +22,11 @@ class shippingAddressController implements ICrudController
     {
     }
 
+    public function readCustomerNumber($customerNumber)
+    {
+        return $this->data->getByCustomerNumber($customerNumber);
+    }
+
     public function update($id, $data)
     {
     }

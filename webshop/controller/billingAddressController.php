@@ -20,6 +20,12 @@ class billingAddressController implements ICrudController
 
     public function read($id)
     {
+        return $this->data->getById($id);
+    }
+
+    public function readCustomerNumber($customerNumber)
+    {
+        return $this->data->getByCustomerNumber($customerNumber);
     }
 
     public function update($id, $data)

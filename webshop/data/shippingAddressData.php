@@ -1,5 +1,6 @@
 <?php
 require_once "customerData.php";
+require_once "../model/shippingAddressModel.php";
 
 class shippingAddressData implements ICrudData
 {
@@ -32,6 +33,16 @@ class shippingAddressData implements ICrudData
         return $this->objectToModel($shippingArray);
     }
 
+    public function getByCustomerNumber($customerNumber)
+    {
+        $sql = "SELECT * FROM ShippingAddress WHERE CM_CustomerNumber = :CustomerNumber;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['CustomerNumber' => $customerNumber]);
+        $shippingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->objectToModel($shippingArray);
+    }
+
     public function create($data)
     {
         $customer = $this->customerData->getById($data['CM_CustomerNumber']);
@@ -57,6 +68,19 @@ class shippingAddressData implements ICrudData
 
     public function objectToModel($object)
     {
-        return new shippingAddressModel($object['ShippingAddressID'], $this->customerData->getById($object['CM_CustomerNumber'])[0], $object['Street'], $object['HouseNumber'], $object['PostalCode'], $object['City'], $object['Country']);
+        $saArray = [];
+        foreach ($object as $address) {
+            //billingAddressID, customer, street, housenumber, postalcode, city, country
+            $saArray[] = new shippingAddressModel(
+                $address['ShippingAddressID'],
+                $this->customerData->getById($address['CM_CustomerNumber'])[0],
+                $address['Street'],
+                $address['HouseNumber'],
+                $address['PostalCode'],
+                $address['City'],
+                $address['Country']
+            );
+        }
+        return $saArray;
     }
 }
