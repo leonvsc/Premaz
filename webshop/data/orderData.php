@@ -1,6 +1,6 @@
 <?php
 require_once "database.php";
-require_once "../model/orderModel.php";
+require_once "../model/orderOverviewModel.php";
 require_once "crudData.php";
 require_once "shoppingCartData.php";
 require_once "paymentData.php";
@@ -48,7 +48,7 @@ class orderData implements ICrudData
         $stmt->execute(['id' => $id]);
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->ObjectToModel($orderArray);
+        return $this->objectToModel($orderArray);
     }
 
     public function create($data)
@@ -70,25 +70,19 @@ class orderData implements ICrudData
         $stmt->execute(['id' => $id]);
     }
 
-    public function objectToModel($result)
+    public function objectToModel($object)
     {
-        if (!empty($result)) {
-            $orders = [];;
-            for ($i = 0; $i < count($result); $i++) {
-                $orderModel = new orderModel(
-                    $result[$i]['OrderNumber'],
-                    $this->shippingAddress->getById($result[$i]['SA_ShippingAddressID']),
-                    $this->customer->getById($result[$i]['CM_CustomerNumber'])[0],
-                    $this->payment->getById($result[$i]['PM_PaymentID'])[0],
-                    $this->shoppingCart->getById($result[$i]['SC_ShoppingCartID'])[0],
-                    $result[$i]['TrackAndTrace'],
-                    $result[$i]['OrderStatus'],
-                    $result[$i]['OrderDate']
-                );
-                $orders[] = $orderModel;
-            }
+        $orderArray = [];
 
-            return $orders;
+        foreach ($object as $order) {
+            $orderArray[] = new orderOverviewModel(
+                $order['OrderNumber'],
+                $this->customer->getById($order['CM_CustomerNumber'])[0],
+                $order['TrackAndTrace'],
+                $order['OrderStatus'],
+                $order['OrderDate']
+            );
         }
+        return $orderArray;
     }
 }

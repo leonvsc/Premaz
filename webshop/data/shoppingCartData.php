@@ -36,10 +36,22 @@ class shoppingCartData implements ICrudData
     }
     public function objectToModel($object)
     {
-        var_dump($object);
-        // foreach ($object as $shoppingCart) {
-        //     $shoppingCartArray[] = new shoppingCartModel($shoppingCart['ShoppingCartID'], $this->customerData->getById($object['CustomerNumber'])[0], $shoppingCart['TotalPrice']);
-        // }
-        // return $shoppingCartArray;
+        if (count($object) > 1) {
+            $scArray = [];
+            foreach ($object as $sc) {
+                $scArray[] = new shoppingCartModel(
+                    $sc['ShoppingCartID'],
+                    $this->customerData->getById($sc['CM_CustomerNumber'])[0],
+                    $sc['TotalPrice']
+                );
+            }
+            return $scArray;
+        }
+
+        return new shoppingCartModel(
+            $object['ShoppingCartID'],
+            $this->customerData->getById($object['CM_CustomerNumber'])[0],
+            $object['TotalPrice']
+        );
     }
 }

@@ -25,7 +25,7 @@ class accountData implements ICrudData
         $sql = "SELECT * FROM Accounts WHERE Email = :Email";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['Email' => $id]);
-        $account = $stmt->fetch(PDO::FETCH_ASSOC);
+        $account = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $this->objectToModel($account);
     }

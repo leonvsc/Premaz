@@ -57,17 +57,6 @@ class shippingAddressData implements ICrudData
 
     public function objectToModel($object)
     {
-        $customer = $this->customerData->getById($object['CM_CustomerNumber'])[0];
-
-        $model = new shippingAddressModel($object['ShippingAddressID'], $customer, $object['Street'], $object['HouseNumber'], $object['PostalCode'], $object['City'], $object['Country']);
-        $model->id = $object['ShippingAddressID'];
-        $model->customer = $customer;
-        $model->Street = $object['Street'];
-        $model->HouseNumber = $object['HouseNumber'];
-        $model->PostalCode = $object['PostalCode'];
-        $model->City = $object['City'];
-        $model->Country = $object['Country'];
-
-        return $model;
+        return new shippingAddressModel($object['ShippingAddressID'], $this->customerData->getById($object['CM_CustomerNumber'])[0], $object['Street'], $object['HouseNumber'], $object['PostalCode'], $object['City'], $object['Country']);
     }
 }

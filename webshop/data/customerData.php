@@ -30,10 +30,9 @@ class customerData implements ICrudData
         $sql = "SELECT * FROM Customers WHERE CustomerNumber = :CustomerNumber;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['CustomerNumber' => $id]);
-        $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $customerArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        //return var_dump($orderArray);
-        // return $this->objectToModel($orderArray);
+        return $this->objectToModel($customerArray);
     }
 
     public function create($data)
@@ -62,6 +61,7 @@ class customerData implements ICrudData
 
     public function objectToModel($object)
     {
+
         $customerArray = [];
         foreach ($object as $customer) {
             //customernumber, account, firstname, lastname, phonenumber

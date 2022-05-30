@@ -16,11 +16,12 @@ class orderController implements ICrudController
     }
     public function readAll()
     {
-        $this->data->getAll();
+        return $this->data->getAll();
     }
 
     public function read($id)
     {
+        return $this->data->getById($id);
     }
 
     public function update($id, $data)
