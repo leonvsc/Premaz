@@ -1,14 +1,13 @@
 <?php
-require "../data/loginData.php";
-require "crudController.php";
+require_once "../data/shippingAddressData.php";
 
-class userController implements ICrudController
+class shippingAddressController implements ICrudController
 {
     private $data;
 
     public function __construct()
     {
-        $this->data = new loginData();
+        $this->data = new shippingAddressData();
     }
 
     public function create($data)
@@ -21,6 +20,11 @@ class userController implements ICrudController
 
     public function read($id)
     {
+    }
+
+    public function readCustomerNumber($customerNumber)
+    {
+        return $this->data->getByCustomerNumber($customerNumber);
     }
 
     public function update($id, $data)

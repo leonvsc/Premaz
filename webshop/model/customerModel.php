@@ -42,4 +42,29 @@ class customerModel
     {
         return $this->phoneNumber;
     }
+
+    public function setCustomerNumber($customerNumber)
+    {
+        $this->customerNumber = $customerNumber;
+    }
+
+    public function setAccount(accountModel $account)
+    {
+        $this->account = $account;
+    }
+
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phoneNumber = $phoneNumber;
+    }
 }

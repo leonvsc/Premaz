@@ -1,7 +1,9 @@
 <?php
 require_once "database.php";
+require_once "../model/accountModel.php";
+require_once "crudData.php";
 
-class userData
+class loginData
 {
     private $db;
 
@@ -12,19 +14,21 @@ class userData
 
     public function getUserData($email, $password)
     {
-        $sql = "SELECT Email FROM `Accounts` WHERE Email ='{$email}' AND password ='{$password}' LIMIT 1;";
+        $sql = "SELECT Email, Role FROM `Accounts` WHERE Email ='{$email}' AND password ='{$password}' LIMIT 1;";
         $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+        $accountArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $result = $stmt->execute();
-
-        while ($stmt->fetch($result)) {
-            return true;
+        if (empty($accountArray)) {
+            return false;
+        } else {
+            $account = new accountModel($email, $password, $accountArray[0]["Role"]);
+            return $account;
         }
     }
 
     public function signUpInsert($accountModel, $customerModel)
     {
-
         $email = $accountModel->getEmail();
         $password = $accountModel->getPassword();
         $customerNumber = $customerModel->getCustomerNumber();
