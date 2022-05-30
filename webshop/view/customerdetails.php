@@ -27,6 +27,7 @@ echo $baDetails[0]->getStreet();
 echo $saDetails[0]->getCity();
 
 // TODO: Maak een mooie detail pagina met juiste info
+// Bij klanten die geen adres gelinkt hebben komt er een foutmelding.
 
 ?>
 <li><a href="adminCustomers.php">Go back</a></li>
