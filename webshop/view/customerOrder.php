@@ -25,16 +25,19 @@ $orders = $controller->readByCustomerNumber($customerNumber);
 ?>
 
 <h1>Bestellingen</h1>
+<?php
+if (empty($orders)) {
+    echo "Geen bestellingen beschikbaar";
+} else { ?>
+    <thead>
+        <tr>
+            <td>Order Number</td>
+            <td>Order Status</td>
+            <td>Order Date</td>
+        </tr>
+    </thead>
 
-<thead>
-    <tr>
-        <td>Order Number</td>
-        <td>Order Status</td>
-        <td>Order Date</td>
-    </tr>
-</thead>
-
-<tbody>
+    <tbody>
     <?php
     foreach ($orders as $order) {
         $orderNumber = $order->getOrderNumber();
@@ -49,5 +52,6 @@ $orders = $controller->readByCustomerNumber($customerNumber);
         echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>View details</a>";
         echo "</tr>";
     }
+}
     ?>
-</tbody>
+    </tbody>
