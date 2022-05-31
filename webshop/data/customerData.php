@@ -35,6 +35,16 @@ class customerData implements ICrudData
         return $this->objectToModel($customerArray);
     }
 
+    public function getByEmail($email)
+    {
+        $sql = "SELECT * FROM Customers WHERE AC_Email = :Email;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['Email' => $email]);
+        $customerArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->objectToModel($customerArray);
+    }
+
     public function create($data)
     {
         //

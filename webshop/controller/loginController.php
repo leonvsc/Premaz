@@ -20,6 +20,7 @@ class loginController
         } elseif ($account->getEmail() == $email && $account->getPassword() == $password && $account->getRole() == "User") {
             session_start();
             $_SESSION["email"] = $account->getEmail();
+            $_SESSION["role"] = $account->getRole();
             header("Location: ../view/index.php");
         } elseif ($account->getEmail() == $email && $account->getPassword() == $password && $account->getRole() == "Admin") {
             session_start();

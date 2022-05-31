@@ -5,9 +5,9 @@ if (isset($_SESSION["email"])) {
     $email = $_SESSION["email"];
     echo "<li><a href='account.php'>$email</a></li>";
     echo "<li><a href='../includes/logout.inc.php'>LOGOUT</a></li>";
-
 } else {
 
     echo "<li><a href='signup.php'>SIGN UP</a></li>";
     echo "<li><a href='login.php'>Login</a></li>";
 }
+// TODO: Afschermen zodat alleen de juiste gebruiker hierbij kan.
