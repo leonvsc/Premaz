@@ -33,9 +33,9 @@ class orderData implements ICrudData
 
     public function getAllByCustomerNumber($customerNumber)
     {
-        $sql = "SELECT * FROM  Orders INNER JOIN Customers ON Orders.CM_CustomerNumber=Customers.CustomerNumber; ";
+        $sql = "SELECT * FROM Orders where CM_CustomerNumber = :customernumber;";
         $stmt = $this->db->connect()->prepare($sql);
-        $stmt->execute();
+        $stmt->execute(['customernumber' => $customerNumber]);
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $this->objectToModel($orderArray);

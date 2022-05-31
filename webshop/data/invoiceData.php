@@ -35,6 +35,17 @@ class invoiceData implements ICrudData
 
         return $this->objectToModel($invoiceArray);
     }
+
+    public function getByBillingAddressID($billingAddressID)
+    {
+        $sql = "SELECT * FROM Invoices WHERE BA_BillingAddressID = :billingAddressID;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['billingAddressID' => $billingAddressID]);
+        $invoiceArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->objectToModel($invoiceArray);
+    }
+
     public function create($data)
     {
     }

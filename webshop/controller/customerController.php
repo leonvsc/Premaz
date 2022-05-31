@@ -25,6 +25,11 @@ class customerController implements ICrudController
         return $this->data->getById($id);
     }
 
+    public function readByEmail($email)
+    {
+        return $this->data->getByEmail($email);
+    }
+
     public function update($id, $data)
     {
     }

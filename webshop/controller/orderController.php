@@ -24,6 +24,11 @@ class orderController implements ICrudController
         return $this->data->getById($id);
     }
 
+    public function readByCustomerNumber($customerNumber)
+    {
+        return $this->data->getAllByCustomerNumber($customerNumber);
+    }
+
     public function update($id, $data)
     {
     }
