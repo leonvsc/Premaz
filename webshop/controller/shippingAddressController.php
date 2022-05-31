@@ -1,5 +1,6 @@
 <?php
 require_once "../data/shippingAddressData.php";
+require_once "crudController.php";
 
 class shippingAddressController implements ICrudController
 {

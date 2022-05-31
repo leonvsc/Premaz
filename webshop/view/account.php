@@ -15,5 +15,6 @@ if (isset($_SESSION["email"])) {
 
 <li><a href="customerOrder.php">Bestellingen</a></li>
 <li><a href="customerInvoice.php">Facturen</a></li>
+<li><a href="customerAddress.php">Mijn adressen</a></li>
 
 <li><a href="index.php">Go back to homepage</a></li>
