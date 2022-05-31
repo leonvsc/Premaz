@@ -26,6 +26,11 @@ class invoiceController implements ICrudController
         return $this->data->getById($id);
     }
 
+    public function readByBillingAddressID($billingAddressID)
+    {
+        return $this->data->getByBillingAddressID($billingAddressID);
+    }
+
     public function update($id, $data)
     {
     }
