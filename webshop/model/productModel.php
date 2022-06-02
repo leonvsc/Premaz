@@ -1,5 +1,6 @@
 <?php
 
+// Een klasse met een model voor product. Hier bevinden alle methodes met getters en setters.
 class productModel
 {
     private $SKU;

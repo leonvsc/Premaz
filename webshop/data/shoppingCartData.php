@@ -2,6 +2,7 @@
 require_once "customerData.php";
 require_once "../model/shoppingCartModel.php";
 
+// Klasse voor alle SQL van shoppingCart. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class shoppingCartData implements ICrudData
 {
     private $db;
@@ -13,9 +14,12 @@ class shoppingCartData implements ICrudData
         $this->customerData = new customerData();
     }
 
+    // Methode om alle data binnen te halen van de tabel shoppingCart.
     public function getAll()
     {
     }
+
+    // Methode om alle data binnen te halen van de tabel shoppingCart gefiltert op de primary key (ShoppingCartID).
     public function getById($id)
     {
         $sql = "SELECT * FROM ShoppingCarts WHERE ShoppingCartID = :ShoppingCartID;";
@@ -25,15 +29,23 @@ class shoppingCartData implements ICrudData
 
         return $this->arrayToModelArray($shoppingCartArray);
     }
+
+    // Methode om een nieuwe regel aan data te creeren in de tabel shoppingCart.
     public function create($data)
     {
     }
+
+    // Methode om een regel aan data te updaten in de tabel shoppingCart.
     public function update($id, $data)
     {
     }
+
+    // Methode om een regel aan data te deleten in de tabel shoppingCart.
     public function delete($id)
     {
     }
+
+    // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
         if (count($object) > 1) {

@@ -3,6 +3,7 @@
 require_once 'productModel.php';
 require_once 'shoppingCartModel.php';
 
+// Een klasse met een model voor cartItem. Hier bevinden alle methodes met getters en setters.
 class CartItemModel
 {
     private $cartItemId;

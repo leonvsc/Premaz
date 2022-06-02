@@ -1,4 +1,6 @@
 <?php
+
+// Een klasse met een model voor payment. Hier bevinden alle methodes met getters en setters.
 class paymentModel
 {
     private $paymentID;

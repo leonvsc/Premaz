@@ -2,6 +2,7 @@
 
 require_once  "customerModel.php";
 
+// Een klasse met een model voor orderOverview. Hier bevinden alle methodes met getters en setters.
 class orderOverviewModel
 {
     private $orderNumber;

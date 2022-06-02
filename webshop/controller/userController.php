@@ -2,6 +2,7 @@
 require "../data/loginData.php";
 require "crudController.php";
 
+// Een klasse voor de controller van login. Hier wordt gebruikt gemaakt van de interface ICrudController om deze klasse verplichte functies te geven.
 class userController implements ICrudController
 {
     private $data;
@@ -11,22 +12,27 @@ class userController implements ICrudController
         $this->data = new loginData();
     }
 
+    // Een methode om de create functie in de data file op te roepen.
     public function create($data)
     {
     }
 
+    // Een methode om de getAll functie in de data file op te roepen.
     public function readAll()
     {
     }
 
+    // Een methode om de getById functie in de data file op te roepen.
     public function read($id)
     {
     }
 
+    // Een methode om de update functie in de data file op te roepen.
     public function update($id, $data)
     {
     }
 
+    // Een methode om de delete functie in de data file op te roepen.
     public function delete($id)
     {
     }

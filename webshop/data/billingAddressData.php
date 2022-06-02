@@ -3,6 +3,7 @@
 require_once "customerData.php";
 require_once "../model/billingAddressModel.php";
 
+// Klasse voor alle SQL van billingAddresses. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class billingAddressData implements ICrudData
 {
     private $db;
@@ -14,6 +15,7 @@ class billingAddressData implements ICrudData
         $this->customerData = new customerData();
     }
 
+    // Methode om alle data binnen te halen van de tabel billingAddress.
     public function getAll()
     {
         $sql = "SELECT * FROM BillingAddress;";
@@ -24,6 +26,7 @@ class billingAddressData implements ICrudData
         return $this->arrayToModelArray($billingArray);
     }
 
+    // Methode om alle data binnen te halen van de tabel billingAddress gefiltert op de primary key (BillingAddressID).
     public function getById($id)
     {
         $sql = "SELECT * FROM BillingAddress WHERE BillingAddressID = :BillingAddressID;";
@@ -34,6 +37,7 @@ class billingAddressData implements ICrudData
         return $this->arrayToModelArray($billingArray);
     }
 
+    // Methode om alle data binnen te halen van de tabel billingAddress gefiltert op customerNumber.
     public function getByCustomerNumber($customerNumber)
     {
         $sql = "SELECT * FROM BillingAddress WHERE CM_CustomerNumber = :CustomerNumber;";
@@ -44,6 +48,7 @@ class billingAddressData implements ICrudData
         return $this->arrayToModelArray($billingArray);
     }
 
+    // Methode om een nieuwe regel aan data te creeren in de tabel billingAddress.
     public function create($data)
     {
         $customer = $this->customerData->getById($data['CM_CustomerNumber']);
@@ -53,6 +58,8 @@ class billingAddressData implements ICrudData
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['BillingAddressID' => $data->id, 'CM_CustomerNumber' => $customerId, 'Street' => $data->Street, 'HouseNumber' => $data->state, 'PostalCode' => $data->zip, 'City' => $data->country, 'Country' => $data->phone]);
     }
+
+    // Methode om een regel aan data te updaten in de tabel billingAddress.
     public function update($id, $data)
     {
         $sql = "UPDATE BillingAddress SET Street = :Street, HouseNumber = :HouseNumber, PostalCode = :PostalCode, City = :City, Country = :Country WHERE id = :BillingAddressID;";
@@ -60,6 +67,7 @@ class billingAddressData implements ICrudData
         $stmt->execute(['BillingAddressID' => $id, 'Street' => $data->Street, 'HouseNumber' => $data->HouseNumber, 'PostalCode' => $data->PostalCode, 'City' => $data->City, 'Country' => $data->Country]);
     }
 
+    // Methode om een regel aan data te deleten in de tabel billingAddress.
     public function delete($id)
     {
         $sql = "DELETE FROM BillingAddress WHERE id = :BillingAddressID;";
@@ -67,6 +75,7 @@ class billingAddressData implements ICrudData
         $stmt->execute(['BillingAddressID' => $id]);
     }
 
+    // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
         $baArray = [];

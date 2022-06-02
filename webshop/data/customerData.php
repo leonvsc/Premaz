@@ -4,6 +4,7 @@ require_once 'crudData.php';
 require_once '../model/customerModel.php';
 require_once 'accountData.php';
 
+// Klasse voor alle SQL van customer. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class customerData implements ICrudData
 {
     private $db;
@@ -15,6 +16,7 @@ class customerData implements ICrudData
         $this->accountData = new accountData();
     }
 
+    // Methode om alle data binnen te halen van de tabel customer.
     public function getAll()
     {
         $sql = "SELECT * FROM Customers;";
@@ -25,6 +27,7 @@ class customerData implements ICrudData
         return $this->arrayToModelArray($orderArray);
     }
 
+    // Methode om alle data binnen te halen van de tabel customer gefiltert op de primary key (CustomerNumber).
     public function getById($id)
     {
         $sql = "SELECT * FROM Customers WHERE CustomerNumber = :CustomerNumber;";
@@ -35,6 +38,7 @@ class customerData implements ICrudData
         return $this->arrayToModelArray($customerArray);
     }
 
+    // Methode om alle data binnen te halen van de tabel customer gefiltert op Email.
     public function getByEmail($email)
     {
         $sql = "SELECT * FROM Customers WHERE AC_Email = :Email;";
@@ -45,11 +49,13 @@ class customerData implements ICrudData
         return $this->arrayToModelArray($customerArray);
     }
 
+    // Methode om een nieuwe regel aan data te creeren in de tabel customer.
     public function create($data)
     {
         //
     }
 
+    // Methode om een regel aan data te updaten in de tabel customer.
     public function update($id, $data) //TODO: Double check variables
     {
         $sql = "UPDATE Customers SET FirstName = :firstName, LastName = :lastName, PhoneNumber = :phonenumber WHERE CustomerNumber = :id;";
@@ -62,6 +68,7 @@ class customerData implements ICrudData
         ]);
     }
 
+    // Methode om een regel aan data te deleten in de tabel customer.
     public function delete($id)
     {
         $sql = "DELETE FROM Customers WHERE CustomerNumber = :id;";
@@ -69,6 +76,7 @@ class customerData implements ICrudData
         $stmt->execute(['id' => $id]);
     }
 
+    // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
 

@@ -4,6 +4,7 @@ require_once 'paymentModel.php';
 require_once 'customerModel.php';
 require_once 'shoppingCartModel.php';
 
+// Een klasse met een model voor order. Hier bevinden alle methodes met getters en setters.
 class orderModel
 {
     private $orderNumber;

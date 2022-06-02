@@ -1,5 +1,6 @@
 <?php
 
+// Een klasse met een model voor account. Hier bevinden alle methodes met getters en setters.
 class accountModel
 {
     private $email;

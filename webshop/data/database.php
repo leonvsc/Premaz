@@ -1,9 +1,11 @@
 <?php
 require_once "../../vendor/autoload.php";
 
+// Aanmaken van een variabele om de Dotenv package te gebruiken.
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
 $dotenv->load();
 
+// Een klasse voor alle database gerelateerde methodes.
 class database
 {
     private $servername;
@@ -11,6 +13,7 @@ class database
     private $password;
     private $dbname;
 
+    // Een methode om connectie te maken met de database.
     public function connect()
     {
         $this->servername = $_ENV["servername"];

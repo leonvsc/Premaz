@@ -1,4 +1,6 @@
 <?php
+
+// Een klasse met een model voor shippingAddress. Hier bevinden alle methodes met getters en setters.
 class shippingAddressModel
 {
     private $shippingAddressID;

@@ -3,6 +3,7 @@ require_once "shoppingCartData.php";
 require_once "productData.php";
 require_once "../model/cartItemModel.php";
 
+// Klasse voor alle SQL van cartItems. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class cartItemData implements ICrudData
 {
     private $db;
@@ -16,6 +17,7 @@ class cartItemData implements ICrudData
         $this->productData = new productData();
     }
 
+    // Methode om alle data binnen te halen van de tabel cartItem.
     public function getAll()
     {
         $sql = "SELECT * FROM CartItems;";
@@ -26,6 +28,7 @@ class cartItemData implements ICrudData
         return $this->arrayToModelArray($cartItemArray);
     }
 
+    // Methode om alle data binnen te halen van de tabel billingAddress gefiltert op de primary key (CartItemID).
     public function getById($id)
     {
         $sql = "SELECT * FROM CartItems WHERE CartItemID = :id;";
@@ -36,18 +39,25 @@ class cartItemData implements ICrudData
         return $this->arrayToModelArray($cartItemArray);
     }
 
+    // Methode om een nieuwe regel aan data te creeren in de tabel cartItem.
     public function create($data)
     {
         $sql = "INSERT INTO CartItems (SC_ShoppingCartID, PD_SKU, Quantity) VALUES (:SC_ShoppingCartID, :PD_SKU, :Quantity);";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['SC_ShoppingCartID' => $data->getShoppingCart()->getShoppingCartID(), 'PD_SKU' => $data->getProduct()->getSKU(), 'Quantity' => $data->getQuantity()]);
     }
+
+    // Methode om een regel aan data te updaten in de tabel cartItem.
     public function update($id, $data)
     {
     }
+
+    // Methode om een regel aan data te deleten in de tabel cartItem.
     public function delete($id)
     {
     }
+
+    // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
     }

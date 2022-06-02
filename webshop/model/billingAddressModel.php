@@ -1,5 +1,6 @@
 <?php
 
+// Een klasse met een model voor billingAddress. Hier bevinden alle methodes met getters en setters.
 class billingAddressModel
 {
     private $billingAddressID;

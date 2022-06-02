@@ -2,6 +2,7 @@
 require_once 'billingAddressModel.php';
 require_once 'paymentModel.php';
 
+// Een klasse met een model voor invoice. Hier bevinden alle methodes met getters en setters.
 class invoiceModel
 {
     private $invoiceNumber;

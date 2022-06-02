@@ -1,5 +1,6 @@
 <?php
 
+// Een interface om alle controller klasses verplicht dezelfde functies te geven.
 interface ICrudController
 {
     public function create($data);

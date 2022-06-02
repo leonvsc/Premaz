@@ -1,8 +1,8 @@
 <?php
 require_once "database.php";
 require_once "../model/accountModel.php";
-require_once "crudData.php";
 
+// Een klasse voor alle login en signup data.
 class loginData
 {
     private $db;
@@ -12,6 +12,7 @@ class loginData
         $this->db = new database();
     }
 
+    // Een methode om gebruikersnaam en wachtwoord uit de database op te halen.
     public function getUserData($email, $password)
     {
         $sql = "SELECT Email, Role FROM `Accounts` WHERE Email ='{$email}' AND password ='{$password}' LIMIT 1;";
@@ -27,6 +28,7 @@ class loginData
         }
     }
 
+    // Een methode om de gegevens van een model in de database op te slaan.
     public function signUpInsert($accountModel, $customerModel)
     {
         $email = $accountModel->getEmail();

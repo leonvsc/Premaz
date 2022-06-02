@@ -1,5 +1,6 @@
 <?php
 
+// Een interface om alle data klasses verplicht dezelfde functies te geven.
 interface ICrudData
 {
     public function getAll();

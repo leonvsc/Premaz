@@ -1,6 +1,7 @@
 <?php
 require_once 'accountModel.php';
 
+// Een klasse met een model voor customer. Hier bevinden alle methodes getters en setters.
 class customerModel
 {
     private $customerNumber;
