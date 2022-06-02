@@ -7,12 +7,13 @@ class productModel
     private $stock;
     private $category;
 
-    public function __construct($SKU, $price, $stock, $category)
+    public function __construct($SKU, $price, $stock, $category, $product)
     {
         $this->SKU = $SKU;
         $this->price = $price;
         $this->stock = $stock;
         $this->category = $category;
+        $this->product = $product;
     }
 
     public function getSKU()
@@ -33,5 +34,10 @@ class productModel
     public function getCategory()
     {
         return $this->category;
+    }
+
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

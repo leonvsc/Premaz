@@ -7,6 +7,13 @@
     <title>Product</title>
 </head>
 <body>
-    <h1 style="text-align: center">Login - Premaz Webshop</h1>
+    <h1 style="text-align: center">Producten - Premaz Webshop</h1>
+    <?php 
+    require_once "../data/productData.php";
+
+    $data = new productData;
+    
+    var_dump($data->getProductData('KEY-MEM-LOW-001'));
+    ?>
 </body>
 </html>

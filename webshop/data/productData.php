@@ -10,23 +10,28 @@ class productData
         $this->db = new database();
     }
 
-    public function getProductData($productName, $productPrice)
+    public function getProductData($SKU)
     {
-        $sql = "SELECT Price FROM `Products` WHERE Product =`{$productName}` and Price =`{$productPrice}` LIMIT 1;";
+        $sql = "SELECT Price, Product, Category, Stock, SKU FROM `Products` WHERE SKU = :SKU LIMIT 1;";
         $stmt = $this->db->connect()->prepare($sql);
 
-        $result = $stmt->execute();
-
-        while ($stmt->fetch($result)) {
-            return true;
-        }
+        $stmt->execute(['SKU' => $SKU]);
+        $productsArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function productInsert($productmodel)
-    {
-        $SKU = $productmodel->getSKU();
-        $price = $productmodel->getPrice();
-        $stock = $productmodel->getStock();
-        $category = $productmodel->getCategory();
+    // public function productInsert($productmodel)
+    // {
+    //     $SKU = $productmodel->getSKU();
+    //     $price = $productmodel->getPrice();
+    //     $stock = $productmodel->getStock();
+    //     $category = $productmodel->getCategory();
+    // }
+    
+    public function getData($sku){
+        $sql = "SELECT * FROM Products where SKU = :sku;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['sku' => $sku]);
+        $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 }
