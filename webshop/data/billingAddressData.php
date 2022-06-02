@@ -21,7 +21,7 @@ class billingAddressData implements ICrudData
         $stmt->execute();
         $billingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($billingArray);
+        return $this->arrayToModelArray($billingArray);
     }
 
     public function getById($id)
@@ -31,7 +31,7 @@ class billingAddressData implements ICrudData
         $stmt->execute(['BillingAddressID' => $id]);
         $billingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($billingArray);
+        return $this->arrayToModelArray($billingArray);
     }
 
     public function getByCustomerNumber($customerNumber)
@@ -41,7 +41,7 @@ class billingAddressData implements ICrudData
         $stmt->execute(['CustomerNumber' => $customerNumber]);
         $billingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($billingArray);
+        return $this->arrayToModelArray($billingArray);
     }
 
     public function create($data)
@@ -67,7 +67,7 @@ class billingAddressData implements ICrudData
         $stmt->execute(['BillingAddressID' => $id]);
     }
 
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
         $baArray = [];
         foreach ($object as $address) {

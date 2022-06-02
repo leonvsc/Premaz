@@ -27,7 +27,7 @@ class accountData implements ICrudData
         $stmt->execute(['Email' => $id]);
         $account = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($account);
+        return $this->arrayToModelArray($account);
     }
 
     public function create($data)
@@ -51,7 +51,7 @@ class accountData implements ICrudData
         $stmt->execute(['Email' => $id]);
     }
 
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
         $accountArray = [];
 

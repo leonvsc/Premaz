@@ -22,7 +22,7 @@ class customerData implements ICrudData
         $stmt->execute();
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($orderArray);
+        return $this->arrayToModelArray($orderArray);
     }
 
     public function getById($id)
@@ -32,7 +32,7 @@ class customerData implements ICrudData
         $stmt->execute(['CustomerNumber' => $id]);
         $customerArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($customerArray);
+        return $this->arrayToModelArray($customerArray);
     }
 
     public function getByEmail($email)
@@ -42,7 +42,7 @@ class customerData implements ICrudData
         $stmt->execute(['Email' => $email]);
         $customerArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($customerArray);
+        return $this->arrayToModelArray($customerArray);
     }
 
     public function create($data)
@@ -69,7 +69,7 @@ class customerData implements ICrudData
         $stmt->execute(['id' => $id]);
     }
 
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
 
         $customerArray = [];

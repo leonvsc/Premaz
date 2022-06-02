@@ -20,7 +20,7 @@ class paymentData implements ICrudData
         $stmt->execute(['PaymentID' => $id]);
         $paymentArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($paymentArray);
+        return $this->arrayToModelArray($paymentArray);
     }
     public function create($data)
     {
@@ -31,7 +31,7 @@ class paymentData implements ICrudData
     public function delete($id)
     {
     }
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
         $paymentArray = [];
 

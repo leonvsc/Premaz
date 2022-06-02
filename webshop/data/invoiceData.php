@@ -24,7 +24,7 @@ class invoiceData implements ICrudData
         $stmt->execute();
         $invoiceArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($invoiceArray);
+        return $this->arrayToModelArray($invoiceArray);
     }
     public function getById($id)
     {
@@ -33,7 +33,7 @@ class invoiceData implements ICrudData
         $stmt->execute(['id' => $id]);
         $invoiceArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($invoiceArray);
+        return $this->arrayToModelArray($invoiceArray);
     }
 
     public function getByBillingAddressID($billingAddressID)
@@ -43,7 +43,7 @@ class invoiceData implements ICrudData
         $stmt->execute(['billingAddressID' => $billingAddressID]);
         $invoiceArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($invoiceArray);
+        return $this->arrayToModelArray($invoiceArray);
     }
 
     public function create($data)
@@ -55,7 +55,7 @@ class invoiceData implements ICrudData
     public function delete($id)
     {
     }
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
         $invoiceArray = [];
         foreach ($object as $invoice) {

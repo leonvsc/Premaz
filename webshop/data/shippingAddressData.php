@@ -20,7 +20,7 @@ class shippingAddressData implements ICrudData
         $stmt->execute();
         $shippingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($shippingArray);
+        return $this->arrayToModelArray($shippingArray);
     }
 
     public function getById($id)
@@ -30,7 +30,7 @@ class shippingAddressData implements ICrudData
         $stmt->execute(['ShippingAddressID' => $id]);
         $shippingArray = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($shippingArray);
+        return $this->arrayToModelArray($shippingArray);
     }
 
     public function getByCustomerNumber($customerNumber)
@@ -40,7 +40,7 @@ class shippingAddressData implements ICrudData
         $stmt->execute(['CustomerNumber' => $customerNumber]);
         $shippingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($shippingArray);
+        return $this->arrayToModelArray($shippingArray);
     }
 
     public function create($data)
@@ -66,7 +66,7 @@ class shippingAddressData implements ICrudData
         $stmt->execute(['ShippingAddressID' => $id]);
     }
 
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
         $saArray = [];
         foreach ($object as $address) {

@@ -23,7 +23,7 @@ class cartItemData implements ICrudData
         $stmt->execute();
         $cartItemArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($cartItemArray);
+        return $this->arrayToModelArray($cartItemArray);
     }
 
     public function getById($id)
@@ -33,7 +33,7 @@ class cartItemData implements ICrudData
         $stmt->execute(['id' => $id]);
         $cartItemArray = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($cartItemArray);
+        return $this->arrayToModelArray($cartItemArray);
     }
 
     public function create($data)
@@ -48,7 +48,7 @@ class cartItemData implements ICrudData
     public function delete($id)
     {
     }
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
     }
 }

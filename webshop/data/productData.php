@@ -24,7 +24,7 @@ class productData implements ICrudData
     public function delete($id)
     {
     }
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
     }
 }

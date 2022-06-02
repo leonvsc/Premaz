@@ -23,7 +23,7 @@ class shoppingCartData implements ICrudData
         $stmt->execute(['ShoppingCartID' => $id]);
         $shoppingCartArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->objectToModel($shoppingCartArray);
+        return $this->arrayToModelArray($shoppingCartArray);
     }
     public function create($data)
     {
@@ -34,7 +34,7 @@ class shoppingCartData implements ICrudData
     public function delete($id)
     {
     }
-    public function objectToModel($object)
+    public function arrayToModelArray($object)
     {
         if (count($object) > 1) {
             $scArray = [];
