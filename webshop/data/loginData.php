@@ -68,4 +68,20 @@ class loginData
             echo $e->getMessage();
         }
     }
+
+    public function checkDuplicateEmailDB($email)
+    {
+        $sql = "SELECT Email FROM `Accounts` WHERE Email ='{$email}' LIMIT 1;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->fetchColumn();
+
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
