@@ -2,6 +2,7 @@
 require_once 'database.php';
 require_once 'crudData.php';
 require_once '../model/accountModel.php';
+require_once "exceptions.php";
 
 // Klasse voor alle SQL van accounts. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class accountData implements ICrudData

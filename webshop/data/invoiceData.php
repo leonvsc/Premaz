@@ -3,6 +3,7 @@
 require_once "billingAddressData.php";
 require_once "paymentData.php";
 require_once "../model/invoiceModel.php";
+require_once "exceptions.php";
 
 // Klasse voor alle SQL van invoice. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class invoiceData implements ICrudData

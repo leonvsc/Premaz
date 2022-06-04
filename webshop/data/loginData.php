@@ -1,6 +1,7 @@
 <?php
 require_once "database.php";
 require_once "../model/accountModel.php";
+require_once "exceptions.php";
 
 // Een klasse voor alle login en signup data.
 class loginData
@@ -56,11 +57,15 @@ class loginData
 
         $result = $stmt->execute();
 
-        if ($result) {
-            echo "Sign Up succesful. After 5 seconds you will be redirected to the login page."; //TODO: Maak een mooiere error. Error-pagina Issue #37
-            header("Refresh:5; url=../view/login.php");
-        } else {
-            echo "Sign Up failed"; //TODO: Maak een mooiere error. Error-pagina Issue #37
+        try {
+            if ($result) {
+                echo "<div class='alert alert-success'>SUCCESS: Account has been created. After 5 seconds you will be redirected to the login page.</div>";
+                header("Refresh:5; url=../view/login.php");
+            } else {
+                throw new signUpException("Sign Up failed!");
+            }
+        } catch (signUpException $e) {
+            echo $e->getMessage();
         }
     }
 }
