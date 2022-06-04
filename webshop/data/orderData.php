@@ -6,6 +6,7 @@ require_once "shoppingCartData.php";
 require_once "paymentData.php";
 require_once "customerData.php";
 require_once "shippingAddressData.php";
+require_once "exceptions.php";
 
 // Klasse voor alle SQL van order. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class orderData implements ICrudData

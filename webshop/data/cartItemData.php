@@ -2,6 +2,7 @@
 require_once "shoppingCartData.php";
 require_once "productData.php";
 require_once "../model/cartItemModel.php";
+require_once "exceptions.php";
 
 // Klasse voor alle SQL van cartItems. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class cartItemData implements ICrudData

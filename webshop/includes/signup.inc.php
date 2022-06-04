@@ -23,9 +23,13 @@ if (isset($_POST["submit"])) {
     $billingAddressModel = new billingAddressModel(NULL, $customerModel, $_POST["street"], $_POST["house-number"], $_POST["postal-code"], $_POST["city"], $_POST["country"]);
     $shippingAddressModel = new shippingAddressModel(NULL, $customerModel, $_POST["street"], $_POST["house-number"], $_POST["postal-code"], $_POST["city"], $_POST["country"]);
 
-    if ($_POST["password"] == $_POST["repeat-password"]) {
-        $controller->SignUp($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel);
-    } else {
-        echo "Sign up failed: passwords are not the same"; //TODO: Maak een mooiere error. Error-pagina Issue #37
+    try {
+        if ($_POST["password"] == $_POST["repeat-password"]) {
+            $controller->SignUp($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel);
+        } else {
+            throw new signUpException("Passwords are not the same.");
+        }
+    } catch (signUpException $e) {
+        echo $e->getMessage();
     }
 }

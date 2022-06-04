@@ -1,5 +1,6 @@
 <?php
 require_once "../model/paymentModel.php";
+require_once "exceptions.php";
 
 // Klasse voor alle SQL van payment. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class paymentData implements ICrudData

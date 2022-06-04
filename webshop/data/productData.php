@@ -1,5 +1,7 @@
 <?php
 
+require_once "exceptions.php";
+
 // Klasse voor alle SQL van product. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class productData implements ICrudData
 {
