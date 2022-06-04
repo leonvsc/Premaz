@@ -42,7 +42,7 @@
                 <td><input type="password" id="repeat-password" name="repeat-password" required></td>
             </tr>
 
-            <!-- <tr>
+            <tr>
                 <th>Street</th>
                 <td><input type="text" id="street" name="street" required></td>
             </tr>
@@ -64,8 +64,15 @@
 
             <tr>
                 <th>Country</th>
-                <td><input type="text" id="country" name="country" required></td>
-            </tr> -->
+                <td>
+                    <select name="country" id="country" required>
+                        <option value="Nederland">Nederland</option>
+                        <option value="Belgie">Belgie</option>
+                        <option value="Duitsland">Duitsland</option>
+                        <option value="Luxemburg">Luxemburg</option>
+                    </select>
+                </td>
+            </tr>
 
             <p id="error"></p>
 

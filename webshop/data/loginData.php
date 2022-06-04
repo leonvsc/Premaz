@@ -29,7 +29,7 @@ class loginData
     }
 
     // Een methode om de gegevens van een model in de database op te slaan.
-    public function signUpInsert($accountModel, $customerModel)
+    public function signUpInsert($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel)
     {
         $email = $accountModel->getEmail();
         $password = $accountModel->getPassword();
@@ -37,17 +37,30 @@ class loginData
         $firstName = $customerModel->getFirstName();
         $lastName = $customerModel->getLastName();
         $phoneNumber = $customerModel->getPhoneNumber();
+        $baStreet = $billingAddressModel->getStreet();
+        $baHouseNumber = $billingAddressModel->getHouseNumber();
+        $baPostalCode = $billingAddressModel->getPostalCode();
+        $baCity = $billingAddressModel->getCity();
+        $baCountry = $billingAddressModel->getCountry();
+        $saStreet = $shippingAddressModel->getStreet();
+        $saHouseNumber = $shippingAddressModel->getHouseNumber();
+        $saPostalCode = $shippingAddressModel->getPostalCode();
+        $saCity = $shippingAddressModel->getCity();
+        $saCountry = $shippingAddressModel->getCountry();
 
         $sql = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');
-        INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});";
+        INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});
+        INSERT INTO `BillingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('{$customerNumber}', '{$baStreet}', '{$baHouseNumber}', '{$baPostalCode}', '{$baCity}', '{$baCountry}');
+        INSERT INTO `ShippingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('{$customerNumber}', '{$saStreet}', '{$saHouseNumber}', '{$saPostalCode}', '{$saCity}', '{$saCountry}');";
         $stmt = $this->db->connect()->prepare($sql);
 
         $result = $stmt->execute();
 
         if ($result) {
-            echo "Sign Up succesful";
+            echo "Sign Up succesful. After 5 seconds you will be redirected to the login page."; //TODO: Maak een mooiere error. Error-pagina Issue #37
+            header("Refresh:5; url=../view/login.php");
         } else {
-            echo "Sign Up failed";
+            echo "Sign Up failed"; //TODO: Maak een mooiere error. Error-pagina Issue #37
         }
     }
 }
