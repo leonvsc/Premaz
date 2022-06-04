@@ -40,8 +40,8 @@ class loginController
     }
 
     // Een methode om de signUpInsert functie in de data file op te roepen.
-    public function SignUp($accountModel, $customerModel)
+    public function SignUp($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel)
     {
-        $this->data->signUpInsert($accountModel, $customerModel);
+        $this->data->signUpInsert($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel);
     }
 }
