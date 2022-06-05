@@ -71,7 +71,7 @@ class loginController
                 throw new inputException("email");
             } elseif ($this->checkPasswordValid($password) == false) { // Als password niet aan de eisen voldoet.
                 throw new inputException("password. Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number");
-            } elseif ($this->checkDuplicateEmail($email) == true) {
+            } elseif ($this->checkDuplicateEmail($email) == true) { // Als emailadres al is geregistreerd.
                 throw new regularException("Your email has already been registered.");
             } else {
                 $this->data->signUpInsert($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel);
@@ -83,6 +83,7 @@ class loginController
         }
     }
 
+    // Een methode om te kijken of een wachtwoord aan de volgende eisen voldoet: 8 karakters, 1 kleine letter en 1 hoofdletter.
     public function checkPasswordValid($password)
     {
         $regPassword = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/';
@@ -94,6 +95,7 @@ class loginController
         }
     }
 
+    // Een methode om te kijken of er een geldig emailadres is ingevuld.
     public function checkEmailValid($email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -103,6 +105,7 @@ class loginController
         }
     }
 
+    // Een methode om de checkDuplicateEmailDB aan te roepen in de data file.
     public function checkDuplicateEmail($email)
     {
         return $this->data->checkDuplicateEmailDB($email);
