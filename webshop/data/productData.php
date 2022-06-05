@@ -1,25 +1,41 @@
 <?php
 
 require_once "exceptions.php";
+require_once 'database.php';
+require_once 'crudData.php';
 
 // Klasse voor alle SQL van product. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class productData implements ICrudData
 {
     private $db;
+    private $productData;
 
     public function __construct()
     {
         $this->db = new database();
+        $this->productData = new productData();
     }
 
     // Methode om alle data binnen te halen van de tabel product.
     public function getAll()
     {
+        $sql = "SELECT * FROM Products;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+        $productArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($productArray);
     }
 
     // Methode om alle data binnen te halen van de tabel product gefiltert op de primary key (SKU).
     public function getById($id)
     {
+        $sql = "SELECT Price, Product, Category, Stock, SKU FROM `Products` WHERE SKU = :SKU LIMIT 1;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['SKU' => $id]);
+        $productArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($productArray);
     }
 
     // Methode om een nieuwe regel aan data te creeren in de tabel product.
@@ -40,5 +56,17 @@ class productData implements ICrudData
     // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
+        $productArray = [];
+        foreach ($object as $product) {
+            $productArray[] = new productModel(
+                $product['Product'],
+                $this->productData->getById($product['SKU'])[0],
+                $product['Price'],
+                $product['Category'],
+                $product['PhoneNumber']
+            );
+        }
+
+        return $productArray;
     }
 }
