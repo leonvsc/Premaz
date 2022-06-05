@@ -32,17 +32,24 @@ class loginData
     // Een methode om de gegevens van een model in de database op te slaan.
     public function signUpInsert($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel)
     {
+        // Account
         $email = $accountModel->getEmail();
         $password = $accountModel->getPassword();
+
+        // Customer
         $customerNumber = $customerModel->getCustomerNumber();
         $firstName = $customerModel->getFirstName();
         $lastName = $customerModel->getLastName();
         $phoneNumber = $customerModel->getPhoneNumber();
+
+        // BillingAddress
         $baStreet = $billingAddressModel->getStreet();
         $baHouseNumber = $billingAddressModel->getHouseNumber();
         $baPostalCode = $billingAddressModel->getPostalCode();
         $baCity = $billingAddressModel->getCity();
         $baCountry = $billingAddressModel->getCountry();
+
+        // ShippingAddress
         $saStreet = $shippingAddressModel->getStreet();
         $saHouseNumber = $shippingAddressModel->getHouseNumber();
         $saPostalCode = $shippingAddressModel->getPostalCode();
@@ -66,6 +73,23 @@ class loginData
             }
         } catch (signUpException $e) {
             echo $e->getMessage();
+        }
+    }
+
+    // Een methode om te kijken of het ingevoerde emailadres al in de database staat.
+    public function checkDuplicateEmailDB($email)
+    {
+        $sql = "SELECT Email FROM `Accounts` WHERE Email ='{$email}' LIMIT 1;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->fetchColumn();
+
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
