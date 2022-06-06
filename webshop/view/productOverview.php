@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,34 +15,42 @@
 </head>
 <body>
 <h1 style="text-align: center">Products - Premaz Webshop</h1>
+<ul>
     <?php
     require_once "../data/productData.php";
+    // Maak een nieuwe instantie aan van klasse productData
     $data = new productData;
+    // Haal alle data van de producten op uit de database
     $allProducts = $data->getAll();
-
+    // Loop door alle producten heen en zet deze onder elkaar
     for ($i = 0; $i < count($allProducts); ++$i)
     {
-        echo '<br />',
+        echo '<li>',
         '<a class="col products-list" href="product.php?SKU=',$allProducts[$i]->getSKU(),'">',
         'Prijs van het product: €', 
         $allProducts[$i]->getPrice(),
-        '<br />',
+        '</li>',
+        '<li>',
         'SKU van het product: ', 
         $allProducts[$i]->getSKU(),
-        '<br />',
+        '</li>',
+        '<li>',
         'Category van het product: ', 
         $allProducts[$i]->getCategory(),
-        '<br />', 
+        '</li>',
+        '<li>', 
         'Voorraad van het product: ',
          $allProducts[$i]->getStock(),
          '</a>', 
-        '<br />',
+        '</li>',
         '<form action="../includes/shoppingCart.inc.php" method="post">
         <input type="submit" name="submit" value="Voeg toe aan winkelwagen" />
         </form>',
-        '<hr>';
+        '<a href="shoppingCart.php">Klik hier</a>',
+        '<hr>';   
     }
     ?>
+</ul>
 
 </body>
 </html>

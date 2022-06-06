@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +17,20 @@
     require_once "../data/shoppingCartData.php";
     require_once "../data/productData.php";
 
-    $data = new productData;
-    $productInfo = $data->getById($SKU);
+    echo $_SESSION['$SKUproduct'];
 
-    $data = new shoppingCartData;
-    $shoppingCartInfo = $data->getById($id);
+    $data = new productData;
+    $productInfo = $data->getById($_SESSION['$SKUproduct']);
+
+    // $data = new shoppingCartData;
+    // $shoppingCartInfo = $data->getById($id);
 
     $price = $productInfo[0]->getPrice();
     $category = $productInfo[0]->getCategory();
     $stock = $productInfo[0]->getStock();
     ?>
+    <h5>Het product kost : <?php echo $price ?></h5>
+    <h5>De categorie is: <?php echo $category ?></h5>
+    <h5>De voorraad is: <?php echo $stock ?></h5>
 </body>
 </html>

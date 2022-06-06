@@ -1,4 +1,5 @@
 <?php
+require_once "customerModel.php";
 
 // Een klasse met een model voor shoppingCart. Hier bevinden alle methodes met getters en setters.
 class shoppingCartModel
