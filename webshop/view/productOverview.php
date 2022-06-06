@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/productOverview.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <title>Productenoverzicht</title>
 </head>
 <body>
 <h1 style="text-align: center">Products - Premaz Webshop</h1>
@@ -16,7 +18,7 @@
     for ($i = 0; $i < count($allProducts); ++$i)
     {
         echo '<br />',
-        '<a href="product.php/?SKU=',$allProducts[$i]->getSKU(),'">',
+        '<a class="col products-list" href="product.php?SKU=',$allProducts[$i]->getSKU(),'">',
         'Prijs van het product: €', 
         $allProducts[$i]->getPrice(),
         '<br />',
@@ -30,6 +32,9 @@
          $allProducts[$i]->getStock(),
          '</a>', 
         '<br />',
+        '<form action="../includes/shoppingCart.inc.php" method="post">
+        <input type="submit" name="submit" value="Voeg toe aan winkelwagen" />
+        </form>',
         '<hr>';
     }
     ?>

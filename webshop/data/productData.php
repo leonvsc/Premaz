@@ -1,5 +1,4 @@
 <?php
-
 require_once "exceptions.php";
 require_once 'database.php';
 require_once 'crudData.php';

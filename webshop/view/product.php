@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1 style="text-align: center">Products - Premaz Webshop</h1>
+    <h1 style="text-align: center">Product - Premaz Webshop</h1>
     <?php
     require_once "../data/productData.php";
     
@@ -42,6 +42,12 @@
     <h5>De SKU is: <?php echo $SKU ?></h5>
     <h5>De catagorie is: <?php echo $category ?></h5>
     <h5>De voorraad is: <?php echo $stock ?></h5>
+    <br />
+
+
+    <form action="../includes/shoppingCart.inc.php" method="post">
+    <input type="submit" name="submit" value="Voeg toe aan winkelwagen" />
+    </form>
 </body>
 
 </html>
