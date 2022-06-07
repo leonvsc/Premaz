@@ -55,8 +55,7 @@ CREATE TABLE `Products` (
 
 CREATE TABLE `ShoppingCarts` (
     `ShoppingCartID` INT NOT NULL AUTO_INCREMENT,
-    `CM_CustomerNumber` VARCHAR(8) NOT NULL,
-    `TotalPrice` FLOAT NOT NULL,
+    `AC_Email` VARCHAR(50) NOT NULL,
     CONSTRAINT `ShoppingCartsPK`
     	PRIMARY KEY (`ShoppingCartID`)
 );
@@ -79,6 +78,7 @@ CREATE TABLE `Orders` (
     `TrackAndTrace` VARCHAR(20),
     `OrderStatus` VARCHAR(20) NOT NULL,
     `OrderDate` DATE NOT NULL,
+    `TotalPrice` FLOAT NOT NULL,
     CONSTRAINT `OrdersPK`
         PRIMARY KEY (`OrderNumber`)
 );
@@ -161,4 +161,4 @@ FOREIGN KEY (CM_CustomerNumber) REFERENCES Customers(CustomerNumber);
 -- ShoppingCartFK
 ALTER TABLE ShoppingCarts
 ADD CONSTRAINT SC_CustomerFK
-FOREIGN KEY (CM_CustomerNumber) REFERENCES Customers(CustomerNumber);
+FOREIGN KEY (AC_Email) REFERENCES Accounts(Email);

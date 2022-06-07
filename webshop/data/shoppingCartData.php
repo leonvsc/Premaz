@@ -1,5 +1,5 @@
 <?php
-require_once "customerData.php";
+require_once "accountData.php";
 require_once "../model/shoppingCartModel.php";
 require_once "exceptions.php";
 require_once "crudData.php";
@@ -8,12 +8,12 @@ require_once "crudData.php";
 class shoppingCartData implements ICrudData
 {
     private $db;
-    private $customerData;
+    private $accountData;
 
     public function __construct()
     {
         $this->db = new database();
-        $this->customerData = new customerData();
+        $this->accountData = new accountData();
     }
 
     // Methode om alle data binnen te halen van de tabel shoppingCart.
@@ -35,27 +35,25 @@ class shoppingCartData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel shoppingCart.
     public function create($data)
     {
-        $sql = "INSERT INTO `ShoppingCarts` (`CM_CustomerNumber`, `TotalPrice`) VALUES (:customerNumber :totalPrice});
-        INSERT INTO `CartItems` (`SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (:shoppingCartID, :SKU}, :quantity);";
+        $sql = "INSERT INTO `ShoppingCarts` (`CM_CustomerNumber`) VALUES (:customerNumber );
+        INSERT INTO `CartItems` (`SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (:shoppingCartID, :SKU, :quantity);";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute([
             'customerNumber' => $data['customerNuber'],
-            'totalPrice' => $data['totalPrice'],
             'shoppingCartID' => $data['shoppingCartID'],
             'SKU' => $data['SKU'],
-            'quantity' => $data['quantity']]);
+            'quantity' => $data['quantity']
+        ]);
     }
 
     // Methode om een regel aan data te updaten in de tabel shoppingCart.
     public function update($id, $data)
     {
-        $sql = "UPDATE CartItems SET Quantity = :Quantity WHERE SC_ShoppingCartID = :shoppingCartId;
-        UPDATE ShoppingCarts SET TotalPrice = :TotalPrice WHERE CM_CustomerNumber = :customerNumber;";
+        $sql = "UPDATE CartItems SET Quantity = :Quantity WHERE SC_ShoppingCartID = :shoppingCartId;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute([
             'customerNumber' => $id['customerNumber'],
             'shoppingcartID' => $id['shoppingCartId'],
-            'totalprice' => $data->getTotalPrice(),
             'quantity' => $data->getQuantity(),
         ]);
     }
@@ -77,8 +75,7 @@ class shoppingCartData implements ICrudData
             foreach ($object as $sc) {
                 $scArray[] = new shoppingCartModel(
                     $sc['ShoppingCartID'],
-                    $this->customerData->getById($sc['CM_CustomerNumber'])[0],
-                    $sc['TotalPrice']
+                    $this->accountData->getById($sc['AC_Email'])[0],
                 );
             }
             return $scArray;
@@ -86,8 +83,7 @@ class shoppingCartData implements ICrudData
 
         return new shoppingCartModel(
             $object['ShoppingCartID'],
-            $this->customerData->getById($object['CM_CustomerNumber'])[0],
-            $object['TotalPrice']
+            $this->accountData->getById($object['AC_Email'])[0],
         );
     }
 }

@@ -15,8 +15,9 @@ class orderModel
     private $trackAndTrace;
     private $orderStatus;
     private $orderDate;
+    private $totalPrice;
 
-    public function __construct($orderNumber, shippingAddressModel $shippingAddress, customerModel $customer, paymentModel $payment, shoppingCartModel $shoppingCart, $trackAndTrace, $orderStatus, $orderDate)
+    public function __construct($orderNumber, shippingAddressModel $shippingAddress, customerModel $customer, paymentModel $payment, shoppingCartModel $shoppingCart, $trackAndTrace, $orderStatus, $orderDate, $totalPrice)
     {
         $this->orderNumber = $orderNumber;
         $this->shippingAddress = $shippingAddress;
@@ -26,6 +27,7 @@ class orderModel
         $this->trackAndTrace = $trackAndTrace;
         $this->orderStatus = $orderStatus;
         $this->orderDate = $orderDate;
+        $this->totalPrice = $totalPrice;
     }
 
     public function getOrderNumber()
@@ -68,6 +70,11 @@ class orderModel
         return $this->orderDate;
     }
 
+    public function getTotalPrice()
+    {
+        return $this->totalPrice;
+    }
+
     public function setOrderNumber($orderNumber)
     {
         $this->orderNumber = $orderNumber;
@@ -106,5 +113,10 @@ class orderModel
     public function setOrderDate($orderDate)
     {
         $this->orderDate = $orderDate;
+    }
+
+    public function setTotalPrice($totalPrice)
+    {
+        $this->totalPrice = $totalPrice;
     }
 }

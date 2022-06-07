@@ -1,18 +1,16 @@
 <?php
-require_once "customerModel.php";
+require_once "accountModel.php";
 
 // Een klasse met een model voor shoppingCart. Hier bevinden alle methodes met getters en setters.
 class shoppingCartModel
 {
     private $shoppingCartID;
-    private customerModel $customer;
-    private $totalPrice;
+    private accountModel $account;
 
-    public function __construct($shoppingCartID, customerModel $customer, $totalPrice)
+    public function __construct($shoppingCartID, customerModel $account)
     {
         $this->shoppingCartID = $shoppingCartID;
-        $this->customer = $customer;
-        $this->totalPrice = $totalPrice;
+        $this->account = $account;
     }
 
     public function getShoppingCartID()
@@ -20,14 +18,9 @@ class shoppingCartModel
         return $this->shoppingCartID;
     }
 
-    public function getCustomer()
+    public function getAccount()
     {
-        return $this->customer;
-    }
-
-    public function getTotalPrice()
-    {
-        return $this->totalPrice;
+        return $this->account;
     }
 
     public function setShoppingCartID($shoppingCartID)
@@ -35,13 +28,8 @@ class shoppingCartModel
         $this->shoppingCartID = $shoppingCartID;
     }
 
-    public function setCustomer($customer)
+    public function setaccount($account)
     {
-        $this->customer = $customer;
-    }
-
-    public function setTotalPrice($totalPrice)
-    {
-        $this->totalPrice = $totalPrice;
+        $this->account = $account;
     }
 }
