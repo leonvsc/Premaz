@@ -7,7 +7,7 @@ class shoppingCartModel
     private $shoppingCartID;
     private accountModel $account;
 
-    public function __construct($shoppingCartID, customerModel $account)
+    public function __construct($shoppingCartID, accountModel $account)
     {
         $this->shoppingCartID = $shoppingCartID;
         $this->account = $account;
@@ -28,7 +28,7 @@ class shoppingCartModel
         $this->shoppingCartID = $shoppingCartID;
     }
 
-    public function setaccount($account)
+    public function setAccount($account)
     {
         $this->account = $account;
     }

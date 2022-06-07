@@ -48,8 +48,8 @@ class cartItemData implements ICrudData
         $sql = "INSERT INTO CartItems (SC_ShoppingCartID, PD_SKU, Quantity) VALUES (:SC_ShoppingCartID, :PD_SKU, :Quantity);";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute([
-            'SC_ShoppingCartID' => $data->getShoppingCartID(),
-            'PD_SKU' => $data->getProduct()->getSKU(), 
+            'SC_ShoppingCartID' => $data->getShoppingCart()->getShoppingCartID(),
+            'PD_SKU' => $data->getProduct()->getSKU(),
             'Quantity' => $data->getQuantity()
         ]);
     }

@@ -25,6 +25,7 @@ class productController implements ICrudController
     // Een methode om de getById functie in de data file op te roepen.
     public function read($id)
     {
+        return $this->data->getById($id);
     }
 
     // Een methode om de update functie in de data file op te roepen.

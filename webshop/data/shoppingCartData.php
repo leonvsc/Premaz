@@ -32,17 +32,23 @@ class shoppingCartData implements ICrudData
         return $this->arrayToModelArray($shoppingCartArray);
     }
 
+    public function getByEmail($email)
+    {
+        $sql = "SELECT * FROM ShoppingCarts WHERE AC_Email = :Email;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['Email' => $email]);
+        $shoppingCartArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($shoppingCartArray);
+    }
+
     // Methode om een nieuwe regel aan data te creeren in de tabel shoppingCart.
     public function create($data)
     {
-        $sql = "INSERT INTO `ShoppingCarts` (`CM_CustomerNumber`) VALUES (:customerNumber );
-        INSERT INTO `CartItems` (`SC_ShoppingCartID`, `PD_SKU`, `Quantity`) VALUES (:shoppingCartID, :SKU, :quantity);";
+        $sql = "INSERT INTO `ShoppingCarts` (`AC_Email`) VALUES (:email);";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute([
-            'customerNumber' => $data['customerNuber'],
-            'shoppingCartID' => $data['shoppingCartID'],
-            'SKU' => $data['SKU'],
-            'quantity' => $data['quantity']
+            'email' => $data->getAccount()->getEmail()
         ]);
     }
 
@@ -70,20 +76,14 @@ class shoppingCartData implements ICrudData
     // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
-        if (count($object) > 1) {
-            $scArray = [];
-            foreach ($object as $sc) {
-                $scArray[] = new shoppingCartModel(
-                    $sc['ShoppingCartID'],
-                    $this->accountData->getById($sc['AC_Email'])[0],
-                );
-            }
-            return $scArray;
+        $scArray = [];
+        foreach ($object as $shoppingCart) {
+            //ID, Account
+            $scArray[] = new shoppingCartModel(
+                $shoppingCart['ShoppingCartID'],
+                $this->accountData->getById($shoppingCart['AC_Email'])[0]
+            );
         }
-
-        return new shoppingCartModel(
-            $object['ShoppingCartID'],
-            $this->accountData->getById($object['AC_Email'])[0],
-        );
+        return $scArray;
     }
 }

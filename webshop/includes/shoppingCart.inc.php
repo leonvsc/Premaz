@@ -1,24 +1,36 @@
 <?php
+session_start();
+
+// TODO: Opschonen.
+
 require_once "../controller/shoppingCartController.php";
 require_once "../model/shoppingCartModel.php";
-require_once "../model/accountModel.php";
-require_once "";
+require_once "../controller/accountController.php";
+require_once "../controller/cartItemController.php";
+require_once "../model/cartItemModel.php";
+require_once "../controller/productController.php";
 
-$controller = new shoppingCartController();
+$shoppingCartController = new shoppingCartController();
+$accountController = new accountController();
+$cartItemController = new cartItemController();
+$productController = new productController();
 
-function generateUniqueNumber($prefix)
-{
-    $number = rand(10000, 99999);
-    $num_length = strlen((int)$number);
+$account = $accountController->read($_SESSION["email"]);
+$shoppingCartModel = new shoppingCartModel(NULL, $account[0]);
+$email = $shoppingCartModel->getAccount()->getEmail();
 
-    if ($num_length == 5) {
-        return $prefix . $number;
-    }
-}
+$shoppingCart = $shoppingCartController->readByEmail($email);
+$sku = $_GET['SKU'];
+$productModel = $productController->read($sku);
 
+// TODO: Als er nog geen shoppingcart is aangemaakt, maak deze aan en voeg daarna het product toe aan de winkelwagen.
+// Momenteel moet je 2x klikken. 1x voor het aanmaken van de shoppingcart en 1x voor het toevoegen van de producten.
 
-if (isset($_POST["submit"])) {
-    $accountmodel = new accountModel($email, $password, $role);
-    $shoppingCartModel = new shoppingCartModel(generateUniqueNumber("SC"), $customer, $totalPrice);
-    $controller->create($_POST["SKU"], $_POST["price"]);
+if ($shoppingCart) {
+    $cartItem = new CartItemModel(NULL, $shoppingCart[0], $productModel[0], 1);
+    $cartItemController->create($cartItem);
+    echo "Product toegevoegd";
+} else {
+    $createShoppingCart = $shoppingCartController->create($shoppingCartModel);
+    echo "Shoppingcart aangemaakt";
 }
