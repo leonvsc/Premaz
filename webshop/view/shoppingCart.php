@@ -1,8 +1,3 @@
-<?php
-// Start the session
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,22 +10,33 @@ session_start();
     <h1 style="text-align: center">Winkelwagen - Premaz Webshop</h1>
     <?php
     require_once "../data/shoppingCartData.php";
-    require_once "../data/productData.php";
+    require_once "../data/cartItemData.php";
 
-    echo $_SESSION['$SKUproduct'];
+    $shoppingCartData = new shoppingCartData;
+    $cartItemData = new cartItemData;
+    $allCartItemData = $cartItemData->getAll();
 
-    $data = new productData;
-    $productInfo = $data->getById($_SESSION['$SKUproduct']);
-
-    // $data = new shoppingCartData;
-    // $shoppingCartInfo = $data->getById($id);
-
-    $price = $productInfo[0]->getPrice();
-    $category = $productInfo[0]->getCategory();
-    $stock = $productInfo[0]->getStock();
+    for ($i = 0; $i < count($allCartItemData); ++$i) {
+        echo '<li>',
+        '<a class="col products-list" href="webshop.php">',
+        'Prijs van het product: €',
+        $allCartItemData[$i]->getCartItemId(),
+        '</li>',
+        '<li>',
+        'SKU van het product: ',
+        $allCartItemData[$i]->getShoppingCart(),
+        '</li>',
+        '<li>',
+        'Category van het product: ',
+        $allCartItemData[$i]->getProduct(),
+        '</li>',
+        '<li>',
+        'Voorraad van het product: ',
+        $allCartItemData[$i]->getQuantity(),
+        '</a>',
+        '</li>',
+        '<hr>';
+    }
     ?>
-    <h5>Het product kost : <?php echo $price ?></h5>
-    <h5>De categorie is: <?php echo $category ?></h5>
-    <h5>De voorraad is: <?php echo $stock ?></h5>
 </body>
 </html>

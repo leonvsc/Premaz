@@ -34,7 +34,7 @@ class cartItemData implements ICrudData
     // Methode om alle data binnen te halen van de tabel billingAddress gefiltert op de primary key (CartItemID).
     public function getById($id)
     {
-        $sql = "SELECT * FROM CartItems WHERE CartItemID = :id;";
+        $sql = "SELECT * FROM CartItems WHERE SC_ShoppingCartID = :id;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['id' => $id]);
         $cartItemArray = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -67,5 +67,16 @@ class cartItemData implements ICrudData
     // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
+        $cartItemArray = [];
+        foreach ($object as $cartItem) {
+            $cartItemArray[] = new productModel(
+                $cartItem['CartItemID'],
+                $cartItem['SC_ShoppingCartID'],
+                $cartItem['PD_SKU'],
+                $cartItem['Quantity']
+            );
+        }
+
+        return $cartItemArray;
     }
 }

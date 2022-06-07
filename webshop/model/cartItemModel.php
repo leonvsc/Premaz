@@ -33,7 +33,7 @@ class CartItemModel
     {
         return $this->product;
     }
-
+    // Deze mogelijk nog aanpassen door een wijziging in de DB (Quantity staat bij product?)
     public function getQuantity()
     {
         return $this->quantity;
