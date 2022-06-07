@@ -40,6 +40,24 @@ class productData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel product.
     public function create($data)
     {
+        $sql = "INSERT INTO `Products` (`SKU`, `Price`, `Stock`, `Category`) VALUES (:SKU, :Price, :Stock, :Category);";
+        $stmt = $this->db->connect()->prepare($sql);
+        $result = $stmt->execute([
+            'SKU' => $data->getSKU(),
+            'Price' => $data->getPrice(),
+            'Stock' => $data->getStock(),
+            'Category' => $data->getCategory()
+        ]);
+
+        try {
+            if ($result) {
+                return true;
+            } else {
+                throw new databaseException("Could not create product.");
+            }
+        } catch (databaseException $e) {
+            echo $e->getMessage();
+        }
     }
 
     // Methode om een regel aan data te updaten in de tabel product.
