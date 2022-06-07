@@ -13,18 +13,30 @@ class fileController
 
     public function import($file)
     {
-        $tFile = fopen($file, "r") or die("File not found"); //get file or throw message
-        $ar = array(); //empty array
+        $csvFile = fopen($file, "r") or die("File not found");
+        $productArray = array(); //empty array
 
-        while (!feof($tFile)) {
-            while (($row = fgetcsv($tFile, 0)) !== FALSE) {
-                array_push($ar, $row); //pushes every row as array element
+        while (!feof($csvFile)) {
+            while (($row = fgetcsv($csvFile, 0)) !== FALSE) {
+                array_push($productArray, $row);
             }
         }
 
-        foreach ($ar as $product) { //add student for ever array element
+        foreach ($productArray as $product) {
             $productModel = new productModel($product[0], $product[1], $product[2], $product[3]);
-            $this->data->create($productModel);
+            $insert = $this->data->create($productModel);
+        }
+
+        // TODO: Check of deze data al in de database staat.
+
+        try {
+            if ($insert == true) {
+                echo "<div class='alert alert-success'>Products has been added to the database.</div>";
+            } else {
+                throw new createException("Importing failed");
+            }
+        } catch (createException $e) {
+            echo $e->getMessage();
         }
     }
 }

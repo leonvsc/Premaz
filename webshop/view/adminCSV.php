@@ -9,10 +9,11 @@ if (!isset($_SESSION["email"])) {
 
 ?>
 
-<h1>CSV Upload - Producten</h1>
+<h1>CSV Import - Producten</h1>
 
-<form action="../includes/csvUpload.inc.php" method="post">
+<p>Format: SKU, Price, Quantity, Category</p>
+<form action="../includes/csvUpload.inc.php" method="post" enctype="multipart/form-data">
     Select file:
-    <input type="file" id="CSVfile" name="CSVfile">
-    <input type="submit" value="Upload" name="submit">
+    <input type="file" name="upload" accept="text/csv">
+    <input type="submit" value="import" name="import">
 </form>
