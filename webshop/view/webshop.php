@@ -31,7 +31,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="information-navbar" href="#">
+                    <a class="information-navbar" href="../../contact.php">
                         Klantenservice
                     </a>
                 </li>
