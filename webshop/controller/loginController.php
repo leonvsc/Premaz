@@ -74,6 +74,8 @@ class loginController
             } elseif ($this->checkDuplicateEmail($email) == true) { // Als emailadres al is geregistreerd.
                 throw new regularException("Your email has already been registered.");
             } else {
+                $hashedPassword = $this->encryptPassword($password);
+                $accountModel->setPassword($hashedPassword);
                 $this->data->signUpInsert($accountModel, $customerModel, $billingAddressModel, $shippingAddressModel);
             }
         } catch (inputException $e) {
@@ -109,5 +111,19 @@ class loginController
     public function checkDuplicateEmail($email)
     {
         return $this->data->checkDuplicateEmailDB($email);
+    }
+    public function encryptPassword($password)
+    {
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        return $hashedPassword;
+    }
+
+    public function decryptPassword($password, $hashedPassword)
+    {
+        if (password_verify($password, $hashedPassword)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
