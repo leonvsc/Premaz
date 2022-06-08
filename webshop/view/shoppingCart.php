@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,30 +13,39 @@
 <body>
     <h1 style="text-align: center">Winkelwagen - Premaz Webshop</h1>
     <?php
-    require_once "../data/shoppingCartData.php";
+    require_once "../controller/shoppingCartController.php";
     require_once "../data/cartItemData.php";
+    require_once "../controller/accountController.php";
+    require_once "../model/shoppingCartModel.php";
+    require_once "../data/shoppingCartData.php";
 
-    $shoppingCartData = new shoppingCartData;
+    $shoppingCartController = new shoppingCartController();
+    $accountController = new accountController();
     $cartItemData = new cartItemData;
-    $allCartItemData = $cartItemData->getAll();
+    $shoppingCartData = new shoppingCartData;
+    $account = $accountController->read($_SESSION["email"]);
+    $shoppingCartModel = new shoppingCartModel(NULL, $account[0]);
+    $email = $shoppingCartModel->getAccount()->getEmail();
+    $shoppingCartId = $shoppingCartData->getByEmail($email);
+    $allCartItemData = $cartItemData->getById($shoppingCartId[0]->getShoppingCartID());
 
     for ($i = 0; $i < count($allCartItemData); ++$i) {
         echo '<li>',
         '<a class="col products-list" href="webshop.php">',
-        'Prijs van het product: €',
-        $allCartItemData[$i]->getCartItemId(),
+        'Prijs van het product: ',
+        $allCartItemData[$i]->getSKU(),
         '</li>',
         '<li>',
         'SKU van het product: ',
-        $allCartItemData[$i]->getShoppingCart(),
+        $allCartItemData[$i]->getPrice(),
         '</li>',
         '<li>',
         'Category van het product: ',
-        $allCartItemData[$i]->getProduct(),
+        $allCartItemData[$i]->getStock(),
         '</li>',
         '<li>',
         'Voorraad van het product: ',
-        $allCartItemData[$i]->getQuantity(),
+        $allCartItemData[$i]->getCategory(),
         '</a>',
         '</li>',
         '<hr>';
