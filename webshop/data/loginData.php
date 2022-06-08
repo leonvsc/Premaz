@@ -14,19 +14,20 @@ class loginData
     }
 
     // Een methode om gebruikersnaam en wachtwoord uit de database op te halen.
-    public function getUserData($email, $password)
+    public function getUserData($email)
     {
-        $sql = "SELECT Email, Role FROM `Accounts` WHERE Email ='{$email}' AND password ='{$password}' LIMIT 1;";
+        $sql = "SELECT * FROM `Accounts` WHERE Email ='{$email}' LIMIT 1;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute();
         $accountArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if (empty($accountArray)) {
-            return false;
-        } else {
-            $account = new accountModel($email, $password, $accountArray[0]["Role"]);
-            return $account;
-        }
+        return $accountArray;
+        // if (empty($accountArray)) {
+        //     return false;
+        // } else {
+        //     $account = new accountModel($email, $password, $accountArray[0]["Role"]);
+        //     return $account;
+        // }
     }
 
     // Een methode om de gegevens van een model in de database op te slaan.

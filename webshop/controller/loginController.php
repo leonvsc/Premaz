@@ -14,33 +14,16 @@ class loginController
     // Een methode om de getUserData functie in de data file op te roepen.
     public function CheckLogin($email, $password)
     {
-        $account = $this->data->getUserData($email, $password);
+        $accountArray = $this->data->getUserData($email);
+        $accountModel = $this->createAccountModel($accountArray);
 
         try {
-
-            // Check of er een account bestaat
-            if ($account == false) {
-                // echo "Login failed";
+            if (empty($accountModel)) {
                 throw new loginException("No account found.");
-            }
-
-            // Check of email, wachtwoord en role overeenkomen.
-            elseif ($account->getEmail() == $email && $account->getPassword() == $password && $account->getRole() == "User") {
-                session_start();
-                // Maakt session variables aan
-                $_SESSION["email"] = $account->getEmail();
-                $_SESSION["role"] = $account->getRole();
-                // Stuurt de gebruiker naar index.php
-                header("Location: ../view/index.php");
-
-                // Check of email, wachtwoord en role overeenkomen.
-            } elseif ($account->getEmail() == $email && $account->getPassword() == $password && $account->getRole() == "Admin") {
-                session_start();
-                // Maakt session variables aan
-                $_SESSION["email"] = $account->getEmail();
-                $_SESSION["role"] = $account->getRole();
-                // Stuurt de gebruiker naar adminpanel.php
-                header("Location: ../view/adminpanel.php");
+            } elseif ($this->decryptPassword($password, $accountModel->getPassword()) == true) {
+                $this->checkRole($accountModel);
+            } else {
+                throw new loginException("Password incorrect!");
             }
         } catch (loginException $e) {
             echo $e->getMessage();
@@ -112,6 +95,49 @@ class loginController
     {
         return $this->data->checkDuplicateEmailDB($email);
     }
+
+    public function checkAccountAvailable($accountArray)
+    {
+        if (empty($accountArray[0]["Email"])) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function createAccountModel($accountArray)
+    {
+        try {
+            if ($this->checkAccountAvailable($accountArray) == false) {
+                return false;
+            } else {
+                $accountModel = new accountModel($accountArray[0]["Email"], $accountArray[0]["Password"], $accountArray[0]["Role"]);
+                return $accountModel;
+            }
+        } catch (loginException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function checkRole($accountModel)
+    {
+        if ($accountModel->getRole() === "User") {
+            session_start();
+            // Maakt session variables aan
+            $_SESSION["email"] = $accountModel->getEmail();
+            $_SESSION["role"] = $accountModel->getRole();
+            // Stuurt de gebruiker naar index.php
+            header("Location: ../view/index.php");
+        } elseif ($accountModel->getRole() === "Admin") {
+            session_start();
+            // Maakt session variables aan
+            $_SESSION["email"] = $accountModel->getEmail();
+            $_SESSION["role"] = $accountModel->getRole();
+            // Stuurt de gebruiker naar adminpanel.php
+            header("Location: ../view/adminpanel.php");
+        }
+    }
+
     public function encryptPassword($password)
     {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
