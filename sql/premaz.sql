@@ -106,9 +106,11 @@ CREATE TABLE `Invoices` (
 );
 
 CREATE TABLE `SearchTerms` (
-    `SearchTermID` VARCHAR(8) AUTO_INCREMENT,
+    `SearchTermID` INT NOT NULL AUTO_INCREMENT,
     `SearchTerm` VARCHAR(200),
-)
+    CONSTRAINT `SearchTermPK`
+        PRIMARY KEY(`SearchTermID`)
+);
 
 -- CustomerFK
 
