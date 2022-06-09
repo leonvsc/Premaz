@@ -46,6 +46,7 @@ CREATE TABLE `BillingAddress` (
 
 CREATE TABLE `Products` (
     `SKU` VARCHAR(20) NOT NULL,
+    `ProductName` VARCHAR(100) NOT NULL, 
     `Price` FLOAT NOT NULL,
     `Stock` INT NOT NULL,
     `Category` VARCHAR(30) NOT NULL,
@@ -102,6 +103,13 @@ CREATE TABLE `Invoices` (
     `InvoiceDate` DATE,
     CONSTRAINT `InvoicesPK`
         PRIMARY KEY(`InvoiceNumber`)
+);
+
+CREATE TABLE `SearchTerms` (
+    `SearchTermID` INT NOT NULL AUTO_INCREMENT,
+    `SearchTerm` VARCHAR(200),
+    CONSTRAINT `SearchTermPK`
+        PRIMARY KEY(`SearchTermID`)
 );
 
 -- CustomerFK
