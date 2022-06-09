@@ -13,5 +13,6 @@ if (!isset($_SESSION["email"])) {
 <li><a href="adminInvoice.php">Facturen</a></li>
 <li><a href="adminCustomers.php">Klanten</a></li>
 <li><a href="adminCSV.php">CSV Import - Producten</a></li>
+<a href="adminSearchTerms.php">Niet gevonden zoekresultaten</a>
 
 <li><a href="../includes/logout.inc.php">LOGOUT</a></li>
