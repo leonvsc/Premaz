@@ -4,13 +4,15 @@
 class productModel
 {
     private $SKU;
+    private $productName;
     private $price;
     private $stock;
     private $category;
 
-    public function __construct($SKU, $price, $stock, $category)
+    public function __construct($SKU, $productName, $price, $stock, $category)
     {
         $this->SKU = $SKU;
+        $this->productName = $productName;
         $this->price = $price;
         $this->stock = $stock;
         $this->category = $category;
@@ -19,6 +21,11 @@ class productModel
     public function getSKU()
     {
         return $this->SKU;
+    }
+
+    public function getProductName()
+    {
+        return $this->productName;
     }
 
     public function getPrice()
@@ -39,6 +46,11 @@ class productModel
     public function setSKU($SKU)
     {
         $this->SKU = $SKU;
+    }
+
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
     }
 
     public function setPrice($price)
