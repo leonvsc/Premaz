@@ -28,9 +28,19 @@ class productData implements ICrudData
     // Methode om alle data binnen te halen van de tabel product gefiltert op de primary key (SKU).
     public function getById($id)
     {
-        $sql = "SELECT Price, Category, Stock, SKU FROM `Products` WHERE SKU = :SKU LIMIT 1;";
+        $sql = "SELECT ProductName, Price, Category, Stock, SKU FROM `Products` WHERE SKU = :SKU LIMIT 1;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['SKU' => $id]);
+        $productArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($productArray);
+    }
+
+    public function getBySearchTerm($searchTerm)
+    {
+        $sql = "SELECT * FROM Products WHERE ProductName = :ProductName;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['ProductName' => $searchTerm]);
         $productArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $this->arrayToModelArray($productArray);
@@ -39,6 +49,25 @@ class productData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel product.
     public function create($data)
     {
+        $sql = "INSERT INTO `Products` (`SKU`, `ProductName` `Price`, `Stock`, `Category`) VALUES (:SKU, :ProductName, :Price, :Stock, :Category);";
+        $stmt = $this->db->connect()->prepare($sql);
+        $result = $stmt->execute([
+            'SKU' => $data->getSKU(),
+            'ProductName' => $data->getProductName(),
+            'Price' => $data->getPrice(),
+            'Stock' => $data->getStock(),
+            'Category' => $data->getCategory()
+        ]);
+
+        try {
+            if ($result) {
+                return true;
+            } else {
+                throw new databaseException("Could not create product.");
+            }
+        } catch (databaseException $e) {
+            echo $e->getMessage();
+        }
     }
 
     // Methode om een regel aan data te updaten in de tabel product.
@@ -58,6 +87,7 @@ class productData implements ICrudData
         foreach ($object as $product) {
             $productArray[] = new productModel(
                 $product['SKU'],
+                $product['ProductName'],
                 $product['Price'],
                 $product['Stock'],
                 $product['Category']

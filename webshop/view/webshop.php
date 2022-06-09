@@ -31,7 +31,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="information-navbar" href="#">
+                    <a class="information-navbar" href="../../contact.php">
                         Klantenservice
                     </a>
                 </li>
@@ -48,7 +48,9 @@
                     </a>
                 </div>
                 <div class="searchbar-div">
-                    <input type="text" placeholder="Search..." class="searchbar" />
+                    <form action="../includes/search.inc.php" method="post">
+                        <input type="text" placeholder="Search..." class="searchbar" name="search" required />
+                        <button type="submit" name="submit">Search</button>
                 </div>
                 <div class="login-and-shoppingcart">
                     <a href="login.php">

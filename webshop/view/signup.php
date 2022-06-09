@@ -29,7 +29,7 @@
 
             <tr>
                 <th>Phonenumber</th>
-                <td><input type="text" id="phonenumber" name="phonenumber" required></td>
+                <td><input type="text" id="phonenumber" name="phonenumber" placeholder="0612345678" required></td>
             </tr>
 
             <tr>
