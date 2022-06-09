@@ -27,6 +27,11 @@ class productController implements ICrudController
     {
     }
 
+    public function readBySearch($searchTerm)
+    {
+        return $this->data->getBySearchTerm($searchTerm);
+    }
+
     // Een methode om de update functie in de data file op te roepen.
     public function update($id, $data)
     {

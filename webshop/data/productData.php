@@ -37,6 +37,16 @@ class productData implements ICrudData
         return $this->arrayToModelArray($productArray);
     }
 
+    public function getBySearchTerm($searchTerm)
+    {
+        $sql = "SELECT * FROM Products WHERE SKU = :SKU;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['SKU' => $searchTerm]);
+        $productArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($productArray);
+    }
+
     // Methode om een nieuwe regel aan data te creeren in de tabel product.
     public function create($data)
     {
