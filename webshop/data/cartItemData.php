@@ -69,10 +69,10 @@ class cartItemData implements ICrudData
     {
         $cartItemArray = [];
         foreach ($object as $cartItem) {
-            $cartItemArray[] = new productModel(
+            $cartItemArray[] = new CartItemModel(
                 $cartItem['CartItemID'],
-                $cartItem['SC_ShoppingCartID'],
-                $cartItem['PD_SKU'],
+                $this->shoppingData->getById($cartItem['SC_ShoppingCartID'])[0],
+                $this->productData->getById($cartItem['PD_SKU'])[0],
                 $cartItem['Quantity']
             );
         }

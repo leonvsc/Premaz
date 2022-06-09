@@ -1,5 +1,6 @@
 <?php
 
+require_once "crudController.php";
 // Een klasse voor de controller van account. Hier wordt gebruikt gemaakt van de interface ICrudController om deze klasse verplichte functies te geven.
 class accountController implements ICrudController
 {
