@@ -12,33 +12,47 @@ $controller = new orderController();
 $orders = $controller->readAll();
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Bestellingen</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Admin - Orders</title>
+</head>
 
-<thead>
-    <tr>
-        <td>Order Number</td>
-        <td>Order Status</td>
-        <td>Customer Name</td>
-    </tr>
-</thead>
+<body>
+    <h1>Bestellingen</h1>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <td>Order Number</td>
+                <td>Order Status</td>
+                <td>Customer Name</td>
+            </tr>
+        </thead>
 
-<tbody>
-    <?php
-    foreach ($orders as $order) {
-        $customerName = $order->getCustomer()->getFirstName();
-        $orderNumber = $order->getOrderNumber();
-        $orderStatus = $order->getOrderStatus();
+        <tbody>
+            <?php
+            foreach ($orders as $order) {
+                $customerName = $order->getCustomer()->getFirstName();
+                $orderNumber = $order->getOrderNumber();
+                $orderStatus = $order->getOrderStatus();
 
-        echo "<br>";
-        echo "<tr>";
-        echo "<td>$orderNumber</td>";
-        echo "<td>$orderStatus</td>";
-        echo "<td>$customerName</td>";
-        echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>View details</a>";
-        echo "</tr>";
-    }
-    ?>
-</tbody>
+                echo "<tr>";
+                echo "<td>$orderNumber</td>";
+                echo "<td>$orderStatus</td>";
+                echo "<td>$customerName</td>";
+                echo "<td><a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>View details</a></td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
 
-<li><a href="adminpanel.php">Go back</a></li>
+    <a href="adminpanel.php" class="btn btn-secondary">Go back</a>
+</body>
+
+</html>

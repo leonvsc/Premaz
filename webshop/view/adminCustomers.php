@@ -13,35 +13,51 @@ $customers = $controller->readAll();
 
 ?>
 
-<h1>Klanten</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<thead>
-    <tr>
-        <td>Customer number</td>
-        <td>First name</td>
-        <td>Last name</td>
-        <td>Email</td>
-    </tr>
-</thead>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Admin - Klanten</title>
+</head>
 
-<tbody>
-    <?php
-    foreach ($customers as $customer) {
-        $customerNumber = $customer->getCustomerNumber();
-        $firstName = $customer->getFirstName();
-        $lastName = $customer->getLastName();
-        $email = $customer->getAccount()->getEmail();
+<body>
+    <h1>Klanten</h1>
 
-        echo "<br>";
-        echo "<tr>";
-        echo "<td>$customerNumber</td>";
-        echo "<td>$firstName</td>";
-        echo "<td>$lastName</td>";
-        echo "<td>$email</td>";
-        echo "<a href='customerdetails.php?customernumber={$customerNumber}' class='btn btn-primary'>View details</a>";
-        echo "</tr>";
-    }
-    ?>
-</tbody>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <td>Customer number</td>
+                <td>First name</td>
+                <td>Last name</td>
+                <td>Email</td>
+            </tr>
+        </thead>
 
-<li><a href="adminpanel.php">Go back</a></li>
+        <tbody>
+            <?php
+            foreach ($customers as $customer) {
+                $customerNumber = $customer->getCustomerNumber();
+                $firstName = $customer->getFirstName();
+                $lastName = $customer->getLastName();
+                $email = $customer->getAccount()->getEmail();
+
+                echo "<tr>";
+                echo "<td>$customerNumber</td>";
+                echo "<td>$firstName</td>";
+                echo "<td>$lastName</td>";
+                echo "<td>$email</td>";
+                echo "<td><a href='customerdetails.php?customernumber={$customerNumber}' class='btn btn-primary'>View details</a></td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+
+    <a href="adminpanel.php" class="btn btn-secondary">Go back</a>
+</body>
+
+</html>

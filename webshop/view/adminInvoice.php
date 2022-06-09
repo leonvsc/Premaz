@@ -12,36 +12,50 @@ $controller = new invoiceController();
 $invoices = $controller->readAll();
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Facturen</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Admin - Facturen</title>
+</head>
 
-<thead>
-    <tr>
-        <td>Invoice number</td>
-        <td>Prijs</td>
-        <td>Date</td>
-        <td>Payment status</td>
-    </tr>
-</thead>
+<body>
+    <h1>Facturen</h1>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <td>Invoice number</td>
+                <td>Prijs</td>
+                <td>Date</td>
+                <td>Payment status</td>
+            </tr>
+        </thead>
 
-<tbody>
-    <?php
-    foreach ($invoices as $invoice) {
-        $invoiceNumber = $invoice->getInvoiceNumber();
-        $price = $invoice->getPayment()->getPrice();
-        $date = $invoice->getInvoiceDate();
-        $paymentStatus = $invoice->getPayment()->getPaymentStatus();
+        <tbody>
+            <?php
+            foreach ($invoices as $invoice) {
+                $invoiceNumber = $invoice->getInvoiceNumber();
+                $price = $invoice->getPayment()->getPrice();
+                $date = $invoice->getInvoiceDate();
+                $paymentStatus = $invoice->getPayment()->getPaymentStatus();
 
-        echo "<br>";
-        echo "<tr>";
-        echo "<td>$invoiceNumber</td>";
-        echo "<td>$price</td>";
-        echo "<td>$date</td>";
-        echo "<td>$paymentStatus</td>";
-        echo "<a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>View details</a>";
-        echo "</tr>";
-    }
-    ?>
-</tbody>
+                echo "<tr>";
+                echo "<td>$invoiceNumber</td>";
+                echo "<td>$price</td>";
+                echo "<td>$date</td>";
+                echo "<td>$paymentStatus</td>";
+                echo "<td><a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>View details</a></td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
 
-<li><a href="adminpanel.php">Go back</a></li>
+    <a href="adminpanel.php" class="btn btn-secondary">Go back</a>
+</body>
+
+</html>
