@@ -51,5 +51,6 @@ session_start();
         '<hr>';
     }
     ?>
+    <a href="../includes/order.inc.php">Bestel de producten</a>
 </body>
 </html>
