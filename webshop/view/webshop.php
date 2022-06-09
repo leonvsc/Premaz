@@ -48,7 +48,14 @@
                     </a>
                 </div>
                 <div class="searchbar-div">
-                    <input type="text" placeholder="Search..." class="searchbar" />
+                    <form action="searchdb.php" method="post">
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            class="searchbar"
+                            name="search"
+                            required
+                        />
                 </div>
                 <div class="login-and-shoppingcart">
                     <a href="login.php">
