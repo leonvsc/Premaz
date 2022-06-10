@@ -1,6 +1,6 @@
 <?php
-require "../data/orderData.php";
-require "crudController.php";
+require_once "../data/orderData.php";
+require_once "crudController.php";
 
 // Een klasse voor de controller van order. Hier wordt gebruikt gemaakt van de interface ICrudController om deze klasse verplichte functies te geven.
 class orderController implements ICrudController
