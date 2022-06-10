@@ -36,24 +36,28 @@ session_start();
     for ($i = 0; $i < count($allCartItemData); ++$i) {
         echo '<li>',
         '<a class="col products-list" href="webshop.php">',
-        'SKU: ',
+        'CartItemId ',
         $allCartItemData[$i]->getCartItemId(),
         '</li>',
+        // '<li>',
+        // 'Stock: ',
+        // $allCartItemData[$i]->getProduct(),
+        // '</li>',
         '<li>',
-        'Stock: ',
-        $allCartItemData[$i]->getProduct(),
-        '</li>',
-        '<li>',
-        'Category: ',
+        'Quantity ',
         $allCartItemData[$i]->getQuantity(),
         '</a>',
         '</li>',
         '<hr>';
     }
     ?>
+<<<<<<< HEAD
     <a href="../includes/order.inc.php">Bestel de producten</a>
 =======
     
 >>>>>>> eb230cc0fe5a104396c0a4df613865c5f7ce5f04
+=======
+    <a href="order.php">Bestel de producten</a>
+>>>>>>> 36-bestelproces
 </body>
 </html>

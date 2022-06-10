@@ -74,9 +74,7 @@ CREATE TABLE `Orders` (
     `OrderNumber` VARCHAR(8) NOT NULL,
     `SA_ShippingAddressID` INT NOT NULL,
     `CM_CustomerNumber` VARCHAR(8) NOT NULL,
-    `PM_PaymentID` VARCHAR(8) NOT NULL,
     `SC_ShoppingCartID` INT NOT NULL,
-    `TrackAndTrace` VARCHAR(20),
     `OrderStatus` VARCHAR(20) NOT NULL,
     `OrderDate` DATE NOT NULL,
     `TotalPrice` FLOAT NOT NULL,
@@ -84,21 +82,21 @@ CREATE TABLE `Orders` (
         PRIMARY KEY (`OrderNumber`)
 );
 
-CREATE TABLE `Payments` (
-    `PaymentID` VARCHAR(8) NOT NULL,
-    `Price` FLOAT NOT NULL,
-    `Currency` VARCHAR(3) NOT NULL,
-    `Method` VARCHAR(20) NOT NULL,
-    `PaymentStatus` VARCHAR(20) NOT NULL,
-    `PaymentDate` DATE,
-    CONSTRAINT `PaymentsPK`
-    	PRIMARY KEY (`PaymentID`)
-);
+-- CREATE TABLE `Payments` (
+--     `PaymentID` VARCHAR(8) NOT NULL,
+--     `Price` FLOAT NOT NULL,
+--     `Currency` VARCHAR(3) NOT NULL,
+--     `Method` VARCHAR(20) NOT NULL,
+--     `PaymentStatus` VARCHAR(20) NOT NULL,
+--     `PaymentDate` DATE,
+--     CONSTRAINT `PaymentsPK`
+--     	PRIMARY KEY (`PaymentID`)
+-- );
 
 CREATE TABLE `Invoices` (
     `InvoiceNumber` VARCHAR(8) NOT NULL,
     `BA_BillingAddressID` INT NOT NULL,
-    `PM_PaymentID` VARCHAR(8) NOT NULL,
+    `OD_OrderNumber` VARCHAR(8) NOT NULL,
     `VATNumber` VARCHAR(20),
     `InvoiceDate` DATE,
     CONSTRAINT `InvoicesPK`
@@ -139,10 +137,6 @@ ADD CONSTRAINT OD_CustomerFK
 FOREIGN KEY (CM_CustomerNumber) REFERENCES Customers(CustomerNumber);
 
 ALTER TABLE Orders
-ADD CONSTRAINT OD_PaymentFK
-FOREIGN KEY (PM_PaymentID) REFERENCES Payments(PaymentID);
-
-ALTER TABLE Orders
 ADD CONSTRAINT OD_ShoppingcartFK
 FOREIGN KEY (SC_ShoppingCartID) REFERENCES ShoppingCarts(ShoppingCartID);
 
@@ -153,8 +147,8 @@ ADD CONSTRAINT IV_BillingAddressFK
 FOREIGN KEY (BA_BillingAddressID) REFERENCES BillingAddress(BillingAddressID);
 
 ALTER TABLE Invoices
-ADD CONSTRAINT IV_PaymentFK
-FOREIGN KEY (PM_PaymentID) REFERENCES Payments(PaymentID);
+ADD CONSTRAINT IV_OrderFK
+FOREIGN KEY (OD_OrderNumber) REFERENCES Orders(OrderNumber);
 
 -- ShippingAddressFK
 ALTER TABLE ShippingAddress
