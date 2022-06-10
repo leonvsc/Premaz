@@ -57,11 +57,22 @@ class cartItemData implements ICrudData
     // Methode om een regel aan data te updaten in de tabel cartItem.
     public function update($id, $data)
     {
+        $sql = "UPDATE CartItems SET SC_ShoppingCartID = :SC_ShoppingCartID, PD_SKU = :PD_SKU, Quantity = :Quantity WHERE CartItemID = :CartItemID;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute([
+            'CartItemID' => $id,
+            'SC_ShoppingCartID' => $data->getShoppingCart()->getShoppingCartID(),
+            'PD_SKU' => $data->getProduct()->getSKU(),
+            'Quantity' => $data->getQuantity()
+        ]);
     }
 
     // Methode om een regel aan data te deleten in de tabel cartItem.
     public function delete($id)
     {
+        $sql = "DELETE FROM CartItems WHERE CartItemID = :CartItemID;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['CartItemID' => $id]);
     }
 
     // Methode om van de associative array een array van de juiste modellen te maken.

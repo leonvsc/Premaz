@@ -53,7 +53,15 @@ class customerData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel customer.
     public function create($data)
     {
-        //
+        $sql = "INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES (:CustomerNumber, :AC_Email, :FirstName, :LastName, :PhoneNumber);";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute([
+            'CustomerNumber' => $data->getCustomerNumber(),
+            'AC_Email' => $data->getEmail(),
+            'FirstName' => $data->getFirstName(),
+            'LastName' => $data->getLastName(),
+            'PhoneNumber' => $data->getPhoneNumber()
+        ]);
     }
 
     // Methode om een regel aan data te updaten in de tabel customer.

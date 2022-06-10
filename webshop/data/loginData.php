@@ -57,6 +57,10 @@ class loginData
         $saCity = $shippingAddressModel->getCity();
         $saCountry = $shippingAddressModel->getCountry();
 
+        // TODO: De addressen kunnen eventueel geinsert worden via de controller create functies van billing en shipping adres.
+        // Dit kan denk ik ook voor accounts en customer. Je kan de modellen dan als parameter meegeven met deze create functies.
+        // Deze functies kunnen dan de data in de database zetten en hiermee voorkom je dubbele code.
+
         $sql = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');
         INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});
         INSERT INTO `BillingAddress` (`CM_CustomerNumber`, `Street`, `HouseNumber`, `PostalCode`, `City`, `Country`) VALUES ('{$customerNumber}', '{$baStreet}', '{$baHouseNumber}', '{$baPostalCode}', '{$baCity}', '{$baCountry}');

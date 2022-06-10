@@ -16,6 +16,7 @@ class invoiceController implements ICrudController
     // Een methode om de create functie in de data file op te roepen.
     public function create($data)
     {
+        return $this->data->create($data);
     }
 
     // Een methode om de getAll functie in de data file op te roepen.
@@ -39,10 +40,12 @@ class invoiceController implements ICrudController
     // Een methode om de update functie in de data file op te roepen.
     public function update($id, $data)
     {
+        return $this->data->update($id, $data);
     }
 
     // Een methode om de delete functie in de data file op te roepen.
     public function delete($id)
     {
+        return $this->data->delete($id);
     }
 }

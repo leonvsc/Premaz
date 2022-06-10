@@ -59,6 +59,8 @@ class productData implements ICrudData
             'Category' => $data->getCategory()
         ]);
 
+        // TODO: Willen we in elke create en update functie een exception throwen? Deze staat momenteel alleen in productData.
+
         try {
             if ($result) {
                 return true;
@@ -73,11 +75,33 @@ class productData implements ICrudData
     // Methode om een regel aan data te updaten in de tabel product.
     public function update($id, $data)
     {
+        $sql = "UPDATE `Products` SET `ProductName` = :ProductName, `Price` = :Price, `Stock` = :Stock, `Category` = :Category WHERE `SKU` = :SKU;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $result = $stmt->execute([
+            'SKU' => $id,
+            'ProductName' => $data->getProductName(),
+            'Price' => $data->getPrice(),
+            'Stock' => $data->getStock(),
+            'Category' => $data->getCategory()
+        ]);
+
+        try {
+            if ($result) {
+                return true;
+            } else {
+                throw new databaseException("Could not update product.");
+            }
+        } catch (databaseException $e) {
+            echo $e->getMessage();
+        }
     }
 
     // Methode om een regel aan data te deleten in de tabel product.
     public function delete($id)
     {
+        $sql = "DELETE FROM `Products` WHERE `SKU` = :SKU;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $result = $stmt->execute(['SKU' => $id]);
     }
 
     // Methode om van de associative array een array van de juiste modellen te maken.

@@ -15,6 +15,12 @@ class paymentData implements ICrudData
     // Methode om alle data binnen te halen van de tabel payment.
     public function getAll()
     {
+        $sql = "SELECT * FROM Payments;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+        $paymentArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($paymentArray);
     }
 
     // Methode om alle data binnen te halen van de tabel payment gefiltert op de primary key (PaymentID).
@@ -31,16 +37,39 @@ class paymentData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel payment.
     public function create($data)
     {
+        $sql = "INSERT INTO `Payments` (`PaymentID`, `Price`, `Currency`, `Method`, `PaymentStatus`, `PaymentDate`) VALUES (:PaymentID, :Price, :Currency, :Method, :PaymentStatus, :PaymentDate);";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute([
+            'PaymentID' => $data->getPaymentID(),
+            'Price' => $data->getPaymentPrice(),
+            'Currency' => $data->getPaymentCurrency(),
+            'Method' => $data->getPaymentMethod(),
+            'PaymentStatus' => $data->getPaymentStatus(),
+            'PaymentDate' => $data->getPaymentDate()
+        ]);
     }
 
     // Methode om een regel aan data te updaten in de tabel payment.
     public function update($id, $data)
     {
+        $sql = "UPDATE `Payments` SET `Price` = :Price, `Currency` = :Currency, `Method` = :Method, `PaymentStatus` = :PaymentStatus, `PaymentDate` = :PaymentDate WHERE `PaymentID` = :PaymentID;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute([
+            'PaymentID' => $id,
+            'Price' => $data->getPaymentPrice(),
+            'Currency' => $data->getPaymentCurrency(),
+            'Method' => $data->getPaymentMethod(),
+            'PaymentStatus' => $data->getPaymentStatus(),
+            'PaymentDate' => $data->getPaymentDate()
+        ]);
     }
 
     // Methode om een regel aan data te deleten in de tabel payment.
     public function delete($id)
     {
+        $sql = "DELETE FROM `Payments` WHERE `PaymentID` = :PaymentID;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['PaymentID' => $id]);
     }
 
     // Methode om van de associative array een array van de juiste modellen te maken.

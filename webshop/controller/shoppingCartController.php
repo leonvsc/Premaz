@@ -21,11 +21,13 @@ class shoppingCartController implements ICrudController
     // Een methode om de getAll functie in de data file op te roepen.
     public function readAll()
     {
+        return $this->data->getAll();
     }
 
     // Een methode om de getById functie in de data file op te roepen.
     public function read($id)
     {
+        return $this->data->getById($id);
     }
 
     public function readByEmail($email)
@@ -36,10 +38,12 @@ class shoppingCartController implements ICrudController
     // Een methode om de update functie in de data file op te roepen.
     public function update($id, $data)
     {
+        return $this->data->update($id, $data);
     }
 
     // Een methode om de delete functie in de data file op te roepen.
     public function delete($id)
     {
+        return $this->data->delete($id);
     }
 }
