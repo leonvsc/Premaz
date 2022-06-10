@@ -54,7 +54,7 @@
 
             <tr>
                 <th>Postal code</th>
-                <td><input type="text" id="postal-code" name="postal-code" required></td>
+                <td><input type="text" id="postal-code" name="postal-code" placeholder="1234AA" maxlength="6" required></td>
             </tr>
 
             <tr>
