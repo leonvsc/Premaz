@@ -13,7 +13,7 @@ if (!isset($_SESSION["email"])) {
 
 <p>Format: SKU, Price, Quantity, Category</p>
 <form action="../includes/csvUpload.inc.php" method="post" enctype="multipart/form-data">
-    Select file:
+    Selecteer bestand:
     <input type="file" name="upload" accept="text/csv">
     <input type="submit" value="import" name="import">
 </form>

@@ -17,10 +17,10 @@ $invoices = $controller->readAll();
 
 <thead>
     <tr>
-        <td>Invoice number</td>
+        <td>Factuurnummer</td>
         <td>Prijs</td>
-        <td>Date</td>
-        <td>Payment status</td>
+        <td>Factuurdatum</td>
+        <td>Betalingsstatus</td>
     </tr>
 </thead>
 
@@ -38,10 +38,10 @@ $invoices = $controller->readAll();
         echo "<td>$price</td>";
         echo "<td>$date</td>";
         echo "<td>$paymentStatus</td>";
-        echo "<a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>View details</a>";
+        echo "<a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>Zie details</a>";
         echo "</tr>";
     }
     ?>
 </tbody>
 
-<li><a href="adminpanel.php">Go back</a></li>
+<li><a href="adminpanel.php">Ga terug</a></li>

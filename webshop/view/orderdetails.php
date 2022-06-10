@@ -24,7 +24,7 @@ echo $orderdetails[0]->getCustomer()->getAccount()->getEmail();
 // TODO: We kunnen deze pagina voor een klant en admin gebruiken. Of we maken 2 aparte.
 
 if ($_SESSION["role"] != "Admin") {
-    echo "<li><a href='customerOrder.php'>Go back</a></li>";
+    echo "<li><a href='customerOrder.php'>Ga terug</a></li>";
 } else {
-    echo "<li><a href='adminOrder.php'>Go back</a></li>";
+    echo "<li><a href='adminOrder.php'>Ga terug</a></li>";
 }

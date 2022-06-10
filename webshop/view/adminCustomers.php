@@ -17,9 +17,9 @@ $customers = $controller->readAll();
 
 <thead>
     <tr>
-        <td>Customer number</td>
-        <td>First name</td>
-        <td>Last name</td>
+        <td>Klantnummer</td>
+        <td>Voornaam</td>
+        <td>Achternaam</td>
         <td>Email</td>
     </tr>
 </thead>
@@ -38,10 +38,10 @@ $customers = $controller->readAll();
         echo "<td>$firstName</td>";
         echo "<td>$lastName</td>";
         echo "<td>$email</td>";
-        echo "<a href='customerdetails.php?customernumber={$customerNumber}' class='btn btn-primary'>View details</a>";
+        echo "<a href='customerdetails.php?customernumber={$customerNumber}' class='btn btn-primary'>Zie details</a>";
         echo "</tr>";
     }
     ?>
 </tbody>
 
-<li><a href="adminpanel.php">Go back</a></li>
+<li><a href="adminpanel.php">Ga terug</a></li>

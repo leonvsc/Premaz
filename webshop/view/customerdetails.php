@@ -30,4 +30,4 @@ echo $saDetails[0]->getCity();
 // Bij klanten die geen adres gelinkt hebben komt er een foutmelding.
 
 ?>
-<li><a href="adminCustomers.php">Go back</a></li>
+<li><a href="adminCustomers.php">Ga terug</a></li>

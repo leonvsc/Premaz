@@ -14,4 +14,4 @@ if (!isset($_SESSION["email"])) {
 <li><a href="adminCustomers.php">Klanten</a></li>
 <li><a href="adminCSV.php">CSV Import - Producten</a></li>
 
-<li><a href="../includes/logout.inc.php">LOGOUT</a></li>
+<li><a href="../includes/logout.inc.php">Uitloggen</a></li>

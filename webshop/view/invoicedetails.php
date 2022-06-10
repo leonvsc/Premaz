@@ -31,7 +31,7 @@ echo $invoicedetails[0]->getPayment()->getMethod();
 
 
 if ($_SESSION["role"] != "Admin") {
-    echo "<li><a href='customerInvoice.php'>Go back</a></li>";
+    echo "<li><a href='customerInvoice.php'>Ga terug</a></li>";
 } else {
-    echo "<li><a href='adminInvoice.php'>Go back</a></li>";
+    echo "<li><a href='adminInvoice.php'>Ga terug</a></li>";
 }

@@ -17,9 +17,9 @@ $orders = $controller->readAll();
 
 <thead>
     <tr>
-        <td>Order Number</td>
-        <td>Order Status</td>
-        <td>Customer Name</td>
+        <td>Bestelnummer</td>
+        <td>Bestelstatus</td>
+        <td>Klantnaam</td>
     </tr>
 </thead>
 
@@ -35,10 +35,10 @@ $orders = $controller->readAll();
         echo "<td>$orderNumber</td>";
         echo "<td>$orderStatus</td>";
         echo "<td>$customerName</td>";
-        echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>View details</a>";
+        echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>Zie details</a>";
         echo "</tr>";
     }
     ?>
 </tbody>
 
-<li><a href="adminpanel.php">Go back</a></li>
+<li><a href="adminpanel.php">Ga terug</a></li>

@@ -31,9 +31,9 @@ if (empty($orders)) {
 } else { ?>
     <thead>
         <tr>
-            <td>Order Number</td>
-            <td>Order Status</td>
-            <td>Order Date</td>
+            <td>Bestelnummer</td>
+            <td>Bestelstatus</td>
+            <td>Besteldatum</td>
         </tr>
     </thead>
 
@@ -49,7 +49,7 @@ if (empty($orders)) {
         echo "<td>$orderNumber</td>";
         echo "<td>$orderStatus</td>";
         echo "<td>$orderDate</td>";
-        echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>View details</a>";
+        echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>Zie details</a>";
         echo "</tr>";
     }
 }

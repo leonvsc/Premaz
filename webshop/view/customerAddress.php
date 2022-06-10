@@ -57,14 +57,14 @@ echo "<td>$saCountry</td>";
 echo "</tr>";
 ?>
 
-<h2>Billing address</h2>
+<h2>Factuuradres</h2>
 <thead>
     <tr>
-        <td>Street</td>
-        <td>House number</td>
-        <td>Postal code</td>
-        <td>City</td>
-        <td>Country</td>
+        <td>Straat</td>
+        <td>Huisnummer</td>
+        <td>Postcode</td>
+        <td>Plaats</td>
+        <td>Land</td>
     </tr>
 </thead>
 

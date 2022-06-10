@@ -34,12 +34,12 @@ if (empty($invoices)) {
 } else { ?>
     <thead>
         <tr>
-            <td>Invoice number</td>
-            <td>Invoice date</td>
-            <td>Price</td>
-            <td>Method</td>
+            <td>Factuurnummer</td>
+            <td>Factuurdatum</td>
+            <td>Prijs</td>
+            <td>Betaalmethode</td>
             <td>Status</td>
-            <td>Payment date</td>
+            <td>Betaaldatum</td>
         </tr>
     </thead>
 
@@ -61,7 +61,7 @@ if (empty($invoices)) {
         echo "<td>$method</td>";
         echo "<td>$status</td>";
         echo "<td>$paymentDate</td>";
-        echo "<a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>View details</a>";
+        echo "<a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>Zie details</a>";
         echo "</tr>";
     }
 }
