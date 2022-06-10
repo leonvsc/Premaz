@@ -1,21 +1,22 @@
 <?php
 require_once 'billingAddressModel.php';
 require_once 'paymentModel.php';
+require_once 'orderModel.php';
 
 // Een klasse met een model voor invoice. Hier bevinden alle methodes met getters en setters.
 class invoiceModel
 {
     private $invoiceNumber;
     private billingAddressModel $billingAddress;
-    private paymentModel $payment;
+    private orderModel $order;
     private $vatNumber;
     private $invoiceDate;
 
-    public function __construct($invoiceNumber, billingAddressModel $billingAddress, paymentModel $payment, $vatNumber, $invoiceDate)
+    public function __construct($invoiceNumber, billingAddressModel $billingAddress, orderModel $order, $vatNumber, $invoiceDate)
     {
         $this->invoiceNumber = $invoiceNumber;
         $this->billingAddress = $billingAddress;
-        $this->payment = $payment;
+        $this->order = $order;
         $this->vatNumber = $vatNumber;
         $this->invoiceDate = $invoiceDate;
     }
@@ -30,9 +31,9 @@ class invoiceModel
         return $this->billingAddress;
     }
 
-    public function getPayment()
+    public function getOrderNumber()
     {
-        return $this->payment;
+        return $this->order;
     }
 
     public function getVatNumber()

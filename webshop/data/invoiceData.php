@@ -1,21 +1,21 @@
 <?php
 
 require_once "billingAddressData.php";
-require_once "paymentData.php";
 require_once "../model/invoiceModel.php";
 require_once "exceptions.php";
+require_once "orderData.php";
 
 // Klasse voor alle SQL van invoice. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class invoiceData implements ICrudData
 {
     private $db;
-    private $paymentData;
+    private $orderData;
     private $baData;
 
     public function __construct()
     {
         $this->db = new database();
-        $this->paymentData = new paymentData();
+        $this->orderData = new orderData();
         $this->baData = new billingAddressData();
     }
 
@@ -76,7 +76,7 @@ class invoiceData implements ICrudData
             $invoiceArray[] = new invoiceModel(
                 $invoice['InvoiceNumber'],
                 $this->baData->getById($invoice['BA_BillingAddressID'])[0],
-                $this->paymentData->getById($invoice['PM_PaymentID'])[0],
+                $this->orderData->getById($invoice['OD_OrderNumber'])[0],
                 $invoice['VATNumber'],
                 $invoice['InvoiceDate']
             );

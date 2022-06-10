@@ -5,6 +5,7 @@ if (isset($_SESSION["email"])) {
     $email = $_SESSION["email"];
     echo "<li><a href='account.php'>$email</a></li>";
     echo "<li><a href='../includes/logout.inc.php'>LOGOUT</a></li>";
+    echo "<li><a href='productOverview.php'>Productenpagina</a></li>";
 
 } else {
 

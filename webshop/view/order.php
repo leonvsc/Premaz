@@ -43,6 +43,7 @@ session_start();
      $postalCode ?></h5>
     <h5>De stad is: <?php echo $city ?></h5>
     <h5>Het land is: <?php echo $country ?></h5>
+    <a href="../includes/order.inc.php">Betaal de bestelling</a>
     <!-- Orderdetails -->
     <!-- Knop komen om te betalen, 
     geeft feedback,

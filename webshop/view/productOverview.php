@@ -17,6 +17,8 @@ session_start();
 
 <body>
     <h1 style="text-align: center">Products - Premaz Webshop</h1>
+    <a href="shoppingCart.php">Ga naar de winkelwagen</a><br />
+    <a href="order.php">Ga naar de bestelling</a>
     <ul>
         <?php
         require_once "../data/productData.php";

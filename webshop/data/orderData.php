@@ -3,7 +3,6 @@ require_once "database.php";
 require_once "../model/orderOverviewModel.php";
 require_once "crudData.php";
 require_once "shoppingCartData.php";
-require_once "paymentData.php";
 require_once "customerData.php";
 require_once "shippingAddressData.php";
 require_once "exceptions.php";
@@ -19,7 +18,6 @@ class orderData implements ICrudData
         $this->db = new database();
         $this->shoppingCart = new shoppingCartData();
         $this->customer = new customerData();
-        $this->payment = new paymentData();
         $this->shippingAddress = new shippingAddressData();
     }
 
@@ -89,7 +87,6 @@ class orderData implements ICrudData
             $orderArray[] = new orderOverviewModel(
                 $order['OrderNumber'],
                 $this->customer->getById($order['CM_CustomerNumber'])[0],
-                $order['TrackAndTrace'],
                 $order['OrderStatus'],
                 $order['OrderDate']
             );

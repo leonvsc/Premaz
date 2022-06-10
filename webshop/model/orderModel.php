@@ -1,6 +1,5 @@
 <?php
 require_once 'shippingAddressModel.php';
-require_once 'paymentModel.php';
 require_once 'customerModel.php';
 require_once 'shoppingCartModel.php';
 
@@ -10,21 +9,17 @@ class orderModel
     private $orderNumber;
     private shippingAddressModel $shippingAddress;
     private customerModel $customer;
-    private paymentModel $payment;
     private shoppingCartModel $shoppingCart;
-    private $trackAndTrace;
     private $orderStatus;
     private $orderDate;
     private $totalPrice;
 
-    public function __construct($orderNumber, shippingAddressModel $shippingAddress, customerModel $customer, paymentModel $payment, shoppingCartModel $shoppingCart, $trackAndTrace, $orderStatus, $orderDate, $totalPrice)
+    public function __construct($orderNumber, shippingAddressModel $shippingAddress, customerModel $customer, shoppingCartModel $shoppingCart, $orderStatus, $orderDate, $totalPrice)
     {
         $this->orderNumber = $orderNumber;
         $this->shippingAddress = $shippingAddress;
         $this->customer = $customer;
-        $this->payment = $payment;
         $this->shoppingCart = $shoppingCart;
-        $this->trackAndTrace = $trackAndTrace;
         $this->orderStatus = $orderStatus;
         $this->orderDate = $orderDate;
         $this->totalPrice = $totalPrice;
@@ -45,19 +40,9 @@ class orderModel
         return $this->customer;
     }
 
-    public function getPayment()
-    {
-        return $this->payment;
-    }
-
     public function getShoppingCart()
     {
         return $this->shoppingCart;
-    }
-
-    public function getTrackAndTrace()
-    {
-        return $this->trackAndTrace;
     }
 
     public function getOrderStatus()
@@ -90,19 +75,9 @@ class orderModel
         $this->customer = $customer;
     }
 
-    public function setPayment(paymentModel $payment)
-    {
-        $this->payment = $payment;
-    }
-
     public function setShoppingCart(shoppingCartModel $shoppingCart)
     {
         $this->shoppingCart = $shoppingCart;
-    }
-
-    public function setTrackAndTrace($trackAndTrace)
-    {
-        $this->trackAndTrace = $trackAndTrace;
     }
 
     public function setOrderStatus($orderStatus)

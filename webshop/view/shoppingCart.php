@@ -32,21 +32,21 @@ session_start();
     for ($i = 0; $i < count($allCartItemData); ++$i) {
         echo '<li>',
         '<a class="col products-list" href="webshop.php">',
-        'SKU: ',
+        'CartItemId ',
         $allCartItemData[$i]->getCartItemId(),
         '</li>',
+        // '<li>',
+        // 'Stock: ',
+        // $allCartItemData[$i]->getProduct(),
+        // '</li>',
         '<li>',
-        'Stock: ',
-        $allCartItemData[$i]->getProduct(),
-        '</li>',
-        '<li>',
-        'Category: ',
+        'Quantity ',
         $allCartItemData[$i]->getQuantity(),
         '</a>',
         '</li>',
         '<hr>';
     }
     ?>
-    <a href="../includes/order.inc.php">Bestel de producten</a>
+    <a href="order.php">Bestel de producten</a>
 </body>
 </html>

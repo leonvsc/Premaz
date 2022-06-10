@@ -7,23 +7,15 @@ class orderOverviewModel
 {
     private $orderNumber;
     private customerModel $customer;
-    private $trackAndTrace;
     private $orderStatus;
     private $orderDate;
 
-    public function __construct($orderNumber, customerModel $customer, $trackAndTrace, $orderStatus, $orderDate)
+    public function __construct($orderNumber, customerModel $customer, $orderStatus, $orderDate)
     {
         $this->orderNumber = $orderNumber;
         $this->customer = $customer;
-        $this->trackAndTrace = $trackAndTrace;
         $this->orderStatus = $orderStatus;
         $this->orderDate = $orderDate;
-    }
-
-
-    public function getTrackAndTrace()
-    {
-        return $this->trackAndTrace;
     }
 
 
