@@ -23,7 +23,7 @@ class fileController
         }
 
         foreach ($productArray as $product) {
-            $productModel = new productModel($product[0], $product[1], $product[2], $product[3]);
+            $productModel = new productModel($product[0], $product[1], $product[2], $product[3], $product[4]);
             $insert = $this->data->create($productModel);
         }
 

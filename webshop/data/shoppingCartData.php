@@ -19,6 +19,12 @@ class shoppingCartData implements ICrudData
     // Methode om alle data binnen te halen van de tabel shoppingCart.
     public function getAll()
     {
+        $sql = "SELECT * FROM ShoppingCart;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+        $shoppingCartArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($shoppingCartArray);
     }
 
     // Methode om alle data binnen te halen van de tabel shoppingCart gefiltert op de primary key (ShoppingCartID).

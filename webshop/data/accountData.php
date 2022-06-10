@@ -21,6 +21,8 @@ class accountData implements ICrudData
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute();
         $accountArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArray($accountArray);
     }
 
     // Methode om alle data binnen te halen van de tabel accounts gefiltert op de primary key (email).

@@ -55,16 +55,37 @@ class invoiceData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel invoice.
     public function create($data)
     {
+        $sql = "INSERT INTO `Invoices` (`InvoiceNumber`, `BA_BillingAddressID`, `PM_PaymentID`, `VATNumber`, `InvoiceDate`) VALUES (:InvoiceNumber, :BA_BillingAddressID, :PM_PaymentID, :VATNumber, :InvoiceDate);";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute([
+            'InvoiceNumber' => $data->getInvoiceNumber(),
+            'BA_BillingAddressID' => $data->getBillingAddressID(),
+            'PM_PaymentID' => $data->getPaymentID(),
+            'VATNumber' => $data->getVATNumber(),
+            'InvoiceDate' => $data->getInvoiceDate()
+        ]);
     }
 
     // Methode om een regel aan data te updaten in de tabel invoice.
     public function update($id, $data)
     {
+        $sql = "UPDATE `Invoices` SET `InvoiceNumber` = :InvoiceNumber, `BA_BillingAddressID` = :BA_BillingAddressID, `PM_PaymentID` = :PM_PaymentID, `VATNumber` = :VATNumber, `InvoiceDate` = :InvoiceDate WHERE `InvoiceNumber` = :id;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute([
+            'InvoiceNumber' => $data->getInvoiceNumber(),
+            'BA_BillingAddressID' => $data->getBillingAddressID(),
+            'PM_PaymentID' => $data->getPaymentID(),
+            'VATNumber' => $data->getVATNumber(),
+            'InvoiceDate' => $data->getInvoiceDate(),
+        ]);
     }
 
     // Methode om een regel aan data te deleten in de tabel invoice.
     public function delete($id)
     {
+        $sql = "DELETE FROM `Invoices` WHERE `InvoiceNumber` = :id;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['id' => $id]);
     }
 
     // Methode om van de associative array een array van de juiste modellen te maken.
