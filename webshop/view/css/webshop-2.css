@@ -5,6 +5,14 @@
     --margin-right: 10%;
 }
 
+.margin-left {
+    margin-left: var(--margin-left);
+}
+
+.margin-right {
+    margin-right: var(--margin-right);
+}
+
 .nav-logo {
     height: 4rem;
     width: auto;

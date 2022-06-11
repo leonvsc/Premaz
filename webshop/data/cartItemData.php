@@ -70,9 +70,9 @@ class cartItemData implements ICrudData
     // Methode om een regel aan data te deleten in de tabel cartItem.
     public function delete($id)
     {
-        $sql = "DELETE FROM CartItems WHERE CartItemID = :CartItemID;";
+        $sql = "DELETE FROM CartItems WHERE SC_ShoppingCartID = :ShoppingCartID;";
         $stmt = $this->db->connect()->prepare($sql);
-        $stmt->execute(['CartItemID' => $id]);
+        $stmt->execute(['ShoppingCartID' => $id]);
     }
 
     // Methode om van de associative array een array van de juiste modellen te maken.

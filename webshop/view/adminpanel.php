@@ -14,6 +14,7 @@ if (!isset($_SESSION["email"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/footer.css" />
     <title>Admin Panel</title>
 </head>
 
@@ -33,6 +34,9 @@ if (!isset($_SESSION["email"])) {
     </div>
 
     <li><a href="../includes/logout.inc.php" class="btn btn-secondary">LOGOUT</a></li>
+    <?php 
+    include_once "footer.php";
+    ?>
 </body>
 
 </html>
