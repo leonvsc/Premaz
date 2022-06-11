@@ -78,10 +78,10 @@ class shippingAddressData implements ICrudData
     // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {
-        $saArray = [];
+        $shippingArray = [];
         foreach ($object as $address) {
             //billingAddressID, customer, street, housenumber, postalcode, city, country
-            $saArray[] = new shippingAddressModel(
+            $shippingArray[] = new shippingAddressModel(
                 $address['ShippingAddressID'],
                 $this->customerData->getById($address['CM_CustomerNumber'])[0],
                 $address['Street'],
@@ -91,6 +91,6 @@ class shippingAddressData implements ICrudData
                 $address['Country']
             );
         }
-        return $saArray;
+        return $shippingArray;
     }
 }
