@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 <?php
 session_start();
 ?>
 
-=======
->>>>>>> eb230cc0fe5a104396c0a4df613865c5f7ce5f04
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +11,6 @@ session_start();
     <title>Winkelwagen</title>
 </head>
 <body>
-<<<<<<< HEAD
     <h1 style="text-align: center">Winkelwagen - Premaz Webshop</h1>
     <?php
     require_once "../controller/shoppingCartController.php";
@@ -51,13 +47,6 @@ session_start();
         '<hr>';
     }
     ?>
-<<<<<<< HEAD
-    <a href="../includes/order.inc.php">Bestel de producten</a>
-=======
-    
->>>>>>> eb230cc0fe5a104396c0a4df613865c5f7ce5f04
-=======
     <a href="order.php">Bestel de producten</a>
->>>>>>> 36-bestelproces
 </body>
 </html>

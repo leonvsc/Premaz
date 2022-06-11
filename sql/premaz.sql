@@ -71,7 +71,7 @@ CREATE TABLE `CartItems` (
 );
 
 CREATE TABLE `Orders` (
-    `OrderNumber` VARCHAR(8) NOT NULL,
+    `OrderNumber` INT NOT NULL AUTO_INCREMENT,
     `SA_ShippingAddressID` INT NOT NULL,
     `CM_CustomerNumber` VARCHAR(8) NOT NULL,
     `SC_ShoppingCartID` INT NOT NULL,
@@ -96,7 +96,7 @@ CREATE TABLE `Orders` (
 CREATE TABLE `Invoices` (
     `InvoiceNumber` VARCHAR(8) NOT NULL,
     `BA_BillingAddressID` INT NOT NULL,
-    `OD_OrderNumber` VARCHAR(8) NOT NULL,
+    `OD_OrderNumber` INT NOT NULL,
     `VATNumber` VARCHAR(20),
     `InvoiceDate` DATE,
     CONSTRAINT `InvoicesPK`

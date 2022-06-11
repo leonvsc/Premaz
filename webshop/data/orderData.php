@@ -59,7 +59,7 @@ class orderData implements ICrudData
     {
         $sql = "INSERT INTO Orders (SC_ShoppingCartID) VALUES (:shoppingCartId);";
         $stmt = $this->db->connect()->prepare($sql);
-        $stmt->execute(['shoppingCartId' => $data->getShoppingCartID()]);
+        $stmt->execute(['shoppingCartId' => $data->getShoppingCart()->getShoppingCartID()]);
     }
 
     // Methode om een regel aan data te updaten in de tabel order.
