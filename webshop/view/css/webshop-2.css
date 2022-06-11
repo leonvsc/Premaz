@@ -1,0 +1,238 @@
+:root {
+    background-image: linear-gradient(#96a3a542, #76b5c442);
+    font-family: "Poppins", sans-serif;
+    --margin-left: 10%;
+    --margin-right: 10%;
+}
+
+.nav-logo {
+    height: 4rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+.nav-logo-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.test-navbar {
+    display: flex;
+    height: 60px;
+    position: sticky;
+    margin-left: var(--margin-left);
+    margin-right: var(--margin-right);
+}
+
+.navbar-color {
+    background-color: rgb(137, 255, 255);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-right: 0%;
+    margin-left: 0%;
+    position: sticky;
+}
+
+.searchbar {
+    padding: 6px;
+    border: 5px;
+    border-color: black;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-left: 16px;
+    font-size: 17px;
+    border-radius: 10px;
+    width: 500px;
+    height: 20px;
+}
+
+.searchbar-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.login-and-shoppingcart {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.account-icon {
+    height: 2rem;
+    width: auto;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+.shoppingcart {
+    height: 2rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+.categories-items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    margin-left: var(--margin-left);
+    margin-right: var(--margin-right);
+}
+
+.nav-button {
+    transition: 0.3s;
+    text-align: center;
+    border-radius: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.nav-button:hover {
+    color: #a500009f;
+    transition: 0.3s;
+}
+
+.nav-button:link,
+.nav-button:visited {
+    font-size: 1rem;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* .information-navbar-top {
+    background-color: white;
+} */
+
+.information-navbar-items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: flex-end;
+    margin-left: var(--margin-left);
+    margin-right: var(--margin-right);
+}
+
+.information-navbar {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.information-navbar:link,
+.information-navbar:visited {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.tegels {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: var(--margin-left);
+    margin-right: var(--margin-right);
+    margin-top: 20px;
+}
+
+.tegel {
+    margin-left: 20px;
+    width: 50%;
+    height: 300px;
+    background-color: #7eb4e2;
+}
+
+.informationtile {
+    width: 45%;
+    height: 300px;
+    background-color: antiquewhite;
+    margin-left: 20px;
+}
+
+.small-tiles {
+    display: flex;
+    width: 40%;
+    flex-wrap: nowrap;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.information-navbar-over-ons-menu {
+    display: none;
+    list-style: none;
+    z-index: 100;
+    width: 200px;
+}
+
+.information-navbar-over-ons-menu li {
+    list-style: none;
+    border-bottom: 1px solid #fff;
+    padding: 0 40px 10px 20px;
+    margin: 10px;
+}
+
+.information-navbar-over-ons {
+    font-weight: bold;
+}
+
+.information-navbar-over-ons:link,
+.information-navbar-over-ons:visited {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .information-navbar-over-ons-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background: #7eb4e2;
+    border-radius: 5px;
+    padding-top: 6px;
+}
+
+.sales-image {
+    width: 100%;
+    height: 100%;
+}
+
+.image-tile {
+    width: 100%;
+    height: 100%;
+}
+
+.test-tussenstuk-deel {
+    margin-left: var(--margin-left);
+    margin-right: var(--margin-right);
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.tegel-2 {
+    margin-left: 20px;
+    width: 50%;
+    height: 200px;
+    background-color: #7eb4e2;
+}
+
+.small-tiles-2 {
+    display: flex;
+    width: 40%;
+    flex-wrap: nowrap;
+    flex: 1;
+    justify-content: flex-end;
+}

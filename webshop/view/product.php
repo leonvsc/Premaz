@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <title>Product</title>
 </head>
 
@@ -41,15 +42,15 @@
     $stock = $productInfo[0]->getStock();
     ?>
     <!-- Toon de informatie van het product op de webpagina-->
+    <img src="img/products/<?php echo $SKU ?>.jpg" alt="Product Image" class="nav-logo" />
     <h5>Het product kost : <?php echo $price ?></h5>
     <h5>De SKU is: <?php echo $SKU ?></h5>
     <h5>De categorie is: <?php echo $category ?></h5>
     <h5>De voorraad is: <?php echo $stock ?></h5>
     <br />
 
-    <form action="../includes/shoppingCart.inc.php" method="post">
-    <input type="submit" name="submit, <?php $SKU; ', '; $price; ?>" value="Voeg toe aan winkelwagen" />
-    </form>
-    <a href="shoppingCart.php">Klik hier</a>
+    <a href="../includes/shoppingCart.inc.php?SKU=<?php echo $SKU?>" class="btn">Voeg toe aan winkelwagen</a>
+    <br />
+    <a href="shoppingCart.php">Ga naar de winkelwagen</a>
 </body>
 </html>
