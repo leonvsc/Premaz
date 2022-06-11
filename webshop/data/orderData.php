@@ -67,6 +67,21 @@ class orderData implements ICrudData
             'OrderDate' => $data->getOrderDate(),
             'TotalPrice' => $data->getTotalPrice()
         ]);
+
+        $s = $this->getLastId();
+        return $s;
+
+        #sorry dat ik zo loop te kloten
+    }
+
+    public function getLastId()
+    {
+        $sql = "SELECT OrderNumber FROM Orders ORDER BY OrderNumber DESC LIMIT 1;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result[0];
     }
 
     // Methode om een regel aan data te updaten in de tabel order.
