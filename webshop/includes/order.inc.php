@@ -22,6 +22,7 @@ $customerController = new customerController();
 $customer = $customerController->readByEmail($_SESSION["email"]);
 $customerinfo = $customer[0]->getCustomerNumber();
 $shippingAdressInfo = $shippingAdressData->getByCustomerNumber($customer[0]->getCustomerNumber());
+var_dump($shippingAdressInfo);
 
 $street = $shippingAdressInfo[0]->getStreet();
 $houseNumber = $shippingAdressInfo[0]->getHouseNumber();
@@ -33,6 +34,6 @@ $shoppingCartData = $shoppingCartController->readByEmail($_SESSION["email"]);
 $orderModel = new orderModel(NULL, $shippingAdressInfo[0], $customer[0], $shoppingCartData[0], NULL, date("Y/m/d"), NULL);
 $shoppingCartid = $orderModel->getShoppingCart()->getShoppingCartID();
 $createOrder = $orderController->create($orderModel);
-var_dump($order);
+var_dump($orderModel);
 
 var_dump($shoppingCartData);
