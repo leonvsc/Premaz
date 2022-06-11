@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/webshop-2.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <title>Signup</title>
 </head>
 
 <body>
+    <?php 
+    include_once "header.php";
+    ?>
     <h1 class="text-center">Signup - Premaz Webshop</h1>
     <form action="../includes/signup.inc.php" method="post">
         <table class="table table-hover table-bordered">
@@ -50,7 +55,7 @@
 
             <tr>
                 <th>House number</th>
-                <td><input type="text" id="house-number" name="house-number" class="form-control" required></td>
+                <td><input type="text" id="house-number" name="house-number" class="form-control" maxlength="6" required></td>
             </tr>
 
             <tr>
@@ -60,7 +65,7 @@
 
             <tr>
                 <th>City</th>
-                <td><input type="text" id="city" name="city" class="form-control" required></td>
+                <td><input type="text" id="city" name="city" placeholder="1234AB" class="form-control" required></td>
             </tr>
 
             <tr>
@@ -85,6 +90,9 @@
             </tr>
         </table>
     </form>
+    <?php 
+    include_once "footer.php";
+    ?>
 </body>
 
 </html>

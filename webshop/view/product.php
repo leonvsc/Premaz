@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/webshop-2.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <title>Product</title>
 </head>
 
 <body>
+    <?php 
+    include_once "header.php";
+    ?>
     <h1 style="text-align: center">Product - Premaz Webshop</h1>
     <?php
     require_once "../data/productData.php";
@@ -52,5 +57,8 @@
     <a href="../includes/shoppingCart.inc.php?SKU=<?php echo $SKU?>" class="btn">Voeg toe aan winkelwagen</a>
     <br />
     <a href="shoppingCart.php">Ga naar de winkelwagen</a>
+    <?php 
+    include_once "footer.php";
+    ?>
 </body>
 </html>

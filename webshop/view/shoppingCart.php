@@ -8,9 +8,16 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/shoppingCart.css" />
+    <link rel="stylesheet" href="css/webshop-2.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <title>Winkelwagen</title>
 </head>
 <body>
+    <?php 
+    include_once "header.php";
+    ?>
     <h1 style="text-align: center">Winkelwagen - Premaz Webshop</h1>
     <?php
     require_once "../controller/shoppingCartController.php";
@@ -30,15 +37,30 @@ session_start();
     $allCartItemData = $cartItemData->getById($shoppingCartId[0]->getShoppingCartID());
 
     for ($i = 0; $i < count($allCartItemData); ++$i) {
-        echo '<li>',
-        '<a class="col products-list" href="webshop.php">',
-        'CartItemId ',
-        $allCartItemData[$i]->getCartItemId(),
+        echo 
+        '<div class="product-image-div">',
+        '<a class="col products-list" href="product.php?SKU=', 
+        $allCartItemData[$i]->getProduct()->getSKU(), 
+        '">',
+        '<img src="img/products/', 
+        $allCartItemData[$i]->getProduct()->getSKU(), 
+        '.jpg" alt="Product Image" class="product-image" />',
+        '</a>',
+        '</div>',
+        '<li>',
+        '<a class="col" href="webshop.php">',
+        'Naam: ',
+        $allCartItemData[$i]->getProduct()->getProductName(),
         '</li>',
-        // '<li>',
-        // 'Stock: ',
-        // $allCartItemData[$i]->getProduct(),
-        // '</li>',
+        '<li>',
+        '<a class="col" href="webshop.php">',
+        'Prijs: €',
+        $allCartItemData[$i]->getProduct()->getPrice(),
+        '</li>',
+        '<li>',
+        'Categorie: ',
+        $allCartItemData[$i]->getProduct()->getCategory(),
+        '</li>',
         '<li>',
         'Quantity ',
         $allCartItemData[$i]->getQuantity(),
@@ -47,6 +69,9 @@ session_start();
         '<hr>';
     }
     ?>
-    <a href="order.php">Bestel de producten</a>
+    <a href="order.php" class="btn">Bestel de producten</a>
+    <?php 
+    include_once "footer.php";
+    ?>
 </body>
 </html>

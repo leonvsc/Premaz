@@ -57,9 +57,16 @@ class orderData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel order.
     public function create($data)
     {
-        $sql = "INSERT INTO Orders (SC_ShoppingCartID) VALUES (:shoppingCartId);";
+        $sql = "INSERT INTO Orders (`SA_ShippingAddressID`, CM_CustomerNumber, SC_ShoppingCartID, OrderStatus, OrderDate, `TotalPrice`) VALUES (:SA_ShippingAddressID, :CM_CustomerNumber, :SC_ShoppingCartID, :OrderStatus, :OrderDate, :TotalPrice);";
         $stmt = $this->db->connect()->prepare($sql);
-        $stmt->execute(['shoppingCartId' => $data->getShoppingCart()->getShoppingCartID()]);
+        $stmt->execute([
+            'SA_ShippingAddressID' => $data->getShippingAddress()->getShippingAddressID(),
+            'CM_CustomerNumber' => $data->getCustomer()->getCustomerNumber(),
+            'SC_ShoppingCartID' => $data->getShoppingCart()->getShoppingCartID(),
+            'OrderStatus' => $data->getOrderStatus(),
+            'OrderDate' => $data->getOrderDate(),
+            'TotalPrice' => $data->getTotalPrice()
+        ]);
     }
 
     // Methode om een regel aan data te updaten in de tabel order.

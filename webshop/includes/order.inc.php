@@ -22,18 +22,15 @@ $customerController = new customerController();
 $customer = $customerController->readByEmail($_SESSION["email"]);
 $customerinfo = $customer[0]->getCustomerNumber();
 $shippingAdressInfo = $shippingAdressData->getByCustomerNumber($customer[0]->getCustomerNumber());
-var_dump($shippingAdressInfo);
-
-$street = $shippingAdressInfo[0]->getStreet();
-$houseNumber = $shippingAdressInfo[0]->getHouseNumber();
-$postalCode = $shippingAdressInfo[0]->getPostalCode();
-$city = $shippingAdressInfo[0]->getCity();
-$country = $shippingAdressInfo[0]->getCountry();
 
 $shoppingCartData = $shoppingCartController->readByEmail($_SESSION["email"]);
-$orderModel = new orderModel(NULL, $shippingAdressInfo[0], $customer[0], $shoppingCartData[0], NULL, date("Y/m/d"), NULL);
+$orderModel = new orderModel(NULL, $shippingAdressInfo[0], $customer[0], $shoppingCartData[0], "Betaald", date("Y/m/d"), 100.50);
 $shoppingCartid = $orderModel->getShoppingCart()->getShoppingCartID();
 $createOrder = $orderController->create($orderModel);
-var_dump($orderModel);
-
-var_dump($shoppingCartData);
+$orderShoppingCartId = $orderData->getById($shoppingCartid);
+$cartItemController->delete($shoppingCartid);
+echo "De bestelling is betaald",
+    '<br />',
+    '<br />',
+    '<br />',
+    '<a href="../view/productOverview.php">Keer terug naar de productenpagina</a>';

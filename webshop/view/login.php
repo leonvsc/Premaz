@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/webshop-2.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <title>Account</title>
 </head>
 
 <body>
+    <?php 
+    include_once "header.php";
+    ?>
     <h1 class="text-center">Login - Premaz Webshop</h1>
     <form action="../includes/login.inc.php" method="post">
         <table class="table table-hover table-bordered">
@@ -32,6 +37,9 @@
             </tr>
         </table>
     </form>
+    <?php 
+    include_once "footer.php";
+    ?>
 </body>
 
 </html>
