@@ -34,6 +34,11 @@ class searchData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel product.
     public function create($data)
     {
+        $sql = "INSERT INTO `SearchTerms` (`SearchTerm`) VALUES (:SearchTerm);";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute([
+            'SearchTerm' => $data,
+        ]);
     }
     // Methode om een regel aan data te updaten in de tabel product.
     public function update($id, $data)
@@ -54,6 +59,7 @@ class searchData implements ICrudData
         $searchArray = [];
         foreach ($object as $search) {
             $searchArray[] = new searchModel(
+                $search['SearchTermID'],
                 $search['SearchTerm'],
             );
         }

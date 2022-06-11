@@ -15,6 +15,7 @@ class searchController implements ICrudController
     // Een methode om de create functie in de data file op te roepen.
     public function create($data)
     {
+        return $this->data->create($data);
     }
 
     // Een methode om de getAll functie in de data file op te roepen.

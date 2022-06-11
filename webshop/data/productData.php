@@ -39,9 +39,9 @@ class productData implements ICrudData
 
     public function getBySearchTerm($searchTerm)
     {
-        $sql = "SELECT * FROM Products WHERE ProductName = :ProductName;";
+        $sql = "SELECT * FROM Products WHERE ProductName LIKE '%{$searchTerm}%';";
         $stmt = $this->db->connect()->prepare($sql);
-        $stmt->execute(['ProductName' => $searchTerm]);
+        $stmt->execute();
         $productArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $this->arrayToModelArray($productArray);
