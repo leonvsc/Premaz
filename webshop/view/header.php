@@ -49,6 +49,7 @@
                         <form action="../includes/search.inc.php" method="post">
                             <input type="text" placeholder="Search..." class="searchbar" name="search" required />
                             <button type="submit" name="submit">Search</button>
+                        </form>
                     </div>
                     <div class="login-and-shoppingcart">
                         <a href="account.php">

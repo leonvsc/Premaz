@@ -8,6 +8,10 @@
 }
 
 .product-image-div {
-    width: 150px;
+    width: 250px;
     height: auto;
+}
+
+.product-info {
+    display: flex;
 }

@@ -82,19 +82,8 @@ CREATE TABLE `Orders` (
         PRIMARY KEY (`OrderNumber`)
 );
 
--- CREATE TABLE `Payments` (
---     `PaymentID` VARCHAR(8) NOT NULL,
---     `Price` FLOAT NOT NULL,
---     `Currency` VARCHAR(3) NOT NULL,
---     `Method` VARCHAR(20) NOT NULL,
---     `PaymentStatus` VARCHAR(20) NOT NULL,
---     `PaymentDate` DATE,
---     CONSTRAINT `PaymentsPK`
---     	PRIMARY KEY (`PaymentID`)
--- );
-
 CREATE TABLE `Invoices` (
-    `InvoiceNumber` VARCHAR(8) NOT NULL,
+    `InvoiceNumber` INT NOT NULL AUTO_INCREMENT,
     `BA_BillingAddressID` INT NOT NULL,
     `OD_OrderNumber` INT NOT NULL,
     `VATNumber` VARCHAR(20),

@@ -91,11 +91,14 @@ class orderData implements ICrudData
         $orderArray = [];
 
         foreach ($object as $order) {
-            $orderArray[] = new orderOverviewModel(
+            $orderArray[] = new orderModel(
                 $order['OrderNumber'],
-                $this->customer->getById($order['CM_CustomerNumber'])[0],
+                $this->shippingAddress->getShippingAddressID($order['SA_ShippingAddressID'])[0],
+                $this->customer->getCustomerNumber($order['CM_CustomerNumber'])[0],
+                $this->shoppingCart->getById($order['SC_ShoppingCartID'])[0],
                 $order['OrderStatus'],
-                $order['OrderDate']
+                $order['OrderDate'],
+                $order['TotalPrice'],
             );
         }
         return $orderArray;
