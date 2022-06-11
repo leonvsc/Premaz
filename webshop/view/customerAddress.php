@@ -42,18 +42,6 @@ $ba = $baController->readCustomerNumber($customerNumber);
     <title>Customer - Addressen</title>
 </head>
 
-<<<<<<< HEAD
-<h2>Factuuradres</h2>
-<thead>
-    <tr>
-        <td>Straat</td>
-        <td>Huisnummer</td>
-        <td>Postcode</td>
-        <td>Plaats</td>
-        <td>Land</td>
-    </tr>
-</thead>
-=======
 <body>
     <h2>Shipping address</h2>
     <table class="table table-hover table-bordered">
@@ -66,7 +54,6 @@ $ba = $baController->readCustomerNumber($customerNumber);
                 <td>Country</td>
             </tr>
         </thead>
->>>>>>> 54-frontend-admin-panel
 
         <?php
 

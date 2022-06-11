@@ -12,41 +12,6 @@ $controller = new invoiceController();
 $invoices = $controller->readAll();
 
 ?>
-<<<<<<< HEAD
-
-<h1>Facturen</h1>
-
-<thead>
-    <tr>
-        <td>Factuurnummer</td>
-        <td>Prijs</td>
-        <td>Factuurdatum</td>
-        <td>Betalingsstatus</td>
-    </tr>
-</thead>
-
-<tbody>
-    <?php
-    foreach ($invoices as $invoice) {
-        $invoiceNumber = $invoice->getInvoiceNumber();
-        $price = $invoice->getPayment()->getPrice();
-        $date = $invoice->getInvoiceDate();
-        $paymentStatus = $invoice->getPayment()->getPaymentStatus();
-
-        echo "<br>";
-        echo "<tr>";
-        echo "<td>$invoiceNumber</td>";
-        echo "<td>$price</td>";
-        echo "<td>$date</td>";
-        echo "<td>$paymentStatus</td>";
-        echo "<a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>Zie details</a>";
-        echo "</tr>";
-    }
-    ?>
-</tbody>
-
-<li><a href="adminpanel.php">Ga terug</a></li>
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -94,4 +59,3 @@ $invoices = $controller->readAll();
 </body>
 
 </html>
->>>>>>> 54-frontend-admin-panel

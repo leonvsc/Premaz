@@ -12,38 +12,6 @@ $controller = new orderController();
 $orders = $controller->readAll();
 
 ?>
-<<<<<<< HEAD
-
-<h1>Bestellingen</h1>
-
-<thead>
-    <tr>
-        <td>Bestelnummer</td>
-        <td>Bestelstatus</td>
-        <td>Klantnaam</td>
-    </tr>
-</thead>
-
-<tbody>
-    <?php
-    foreach ($orders as $order) {
-        $customerName = $order->getCustomer()->getFirstName();
-        $orderNumber = $order->getOrderNumber();
-        $orderStatus = $order->getOrderStatus();
-
-        echo "<br>";
-        echo "<tr>";
-        echo "<td>$orderNumber</td>";
-        echo "<td>$orderStatus</td>";
-        echo "<td>$customerName</td>";
-        echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>Zie details</a>";
-        echo "</tr>";
-    }
-    ?>
-</tbody>
-
-<li><a href="adminpanel.php">Ga terug</a></li>
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,4 +56,3 @@ $orders = $controller->readAll();
 </body>
 
 </html>
->>>>>>> 54-frontend-admin-panel

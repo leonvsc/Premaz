@@ -25,9 +25,6 @@ if (isset($_SESSION["email"])) {
     <title>Account</title>
 </head>
 
-<<<<<<< HEAD
-<li><a href="index.php">Ga terug naar de homepagina</a></li>
-=======
 <body>
     <div class="list-group">
         <a href="customerOrder.php" class=" list-group-item col-1">Bestellingen</a>
@@ -39,4 +36,3 @@ if (isset($_SESSION["email"])) {
 </body>
 
 </html>
->>>>>>> 54-frontend-admin-panel

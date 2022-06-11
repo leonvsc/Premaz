@@ -19,9 +19,6 @@ if (!isset($_SESSION["email"])) {
 
 <body>
 
-<<<<<<< HEAD
-<li><a href="../includes/logout.inc.php">Uitloggen</a></li>
-=======
     <h1>Welkom op het admin panel</h1>
 
     <div class="list-group">
@@ -35,4 +32,3 @@ if (!isset($_SESSION["email"])) {
 </body>
 
 </html>
->>>>>>> 54-frontend-admin-panel

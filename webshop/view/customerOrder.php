@@ -28,39 +28,6 @@ $orders = $controller->readByCustomerNumber($customerNumber);
 <!DOCTYPE html>
 <html lang="en">
 
-<<<<<<< HEAD
-<h1>Bestellingen</h1>
-<?php
-if (empty($orders)) {
-    echo "Geen bestellingen beschikbaar";
-} else { ?>
-    <thead>
-        <tr>
-            <td>Bestelnummer</td>
-            <td>Bestelstatus</td>
-            <td>Besteldatum</td>
-        </tr>
-    </thead>
-
-    <tbody>
-    <?php
-    foreach ($orders as $order) {
-        $orderNumber = $order->getOrderNumber();
-        $orderStatus = $order->getOrderStatus();
-        $orderDate = $order->getOrderDate();
-
-        echo "<br>";
-        echo "<tr>";
-        echo "<td>$orderNumber</td>";
-        echo "<td>$orderStatus</td>";
-        echo "<td>$orderDate</td>";
-        echo "<a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>Zie details</a>";
-        echo "</tr>";
-    }
-}
-    ?>
-    </tbody>
-=======
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -105,4 +72,3 @@ if (empty($orders)) {
 </body>
 
 </html>
->>>>>>> 54-frontend-admin-panel

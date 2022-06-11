@@ -9,16 +9,6 @@ if (!isset($_SESSION["email"])) {
 
 ?>
 
-<<<<<<< HEAD
-<h1>CSV Import - Producten</h1>
-
-<p>Format: SKU, Price, Quantity, Category</p>
-<form action="../includes/csvUpload.inc.php" method="post" enctype="multipart/form-data">
-    Selecteer bestand:
-    <input type="file" name="upload" accept="text/csv">
-    <input type="submit" value="import" name="import">
-</form>
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,4 +33,3 @@ if (!isset($_SESSION["email"])) {
 </body>
 
 </html>
->>>>>>> 54-frontend-admin-panel
