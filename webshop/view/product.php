@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/webshop-2.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/product.css" />
     <title>Product</title>
 </head>
 
@@ -47,7 +48,9 @@
     $stock = $productInfo[0]->getStock();
     ?>
     <!-- Toon de informatie van het product op de webpagina-->
-    <img src="img/products/<?php echo $SKU ?>.jpg" alt="Product Image" class="nav-logo" />
+    <div class="product-image-div">
+        <img src="img/products/<?php echo $SKU ?>.jpg" alt="Product Image" class="product-image" />
+    </div>
     <h5>Het product kost : <?php echo $price ?></h5>
     <h5>De SKU is: <?php echo $SKU ?></h5>
     <h5>De categorie is: <?php echo $category ?></h5>
@@ -56,7 +59,6 @@
 
     <a href="../includes/shoppingCart.inc.php?SKU=<?php echo $SKU?>" class="btn">Voeg toe aan winkelwagen</a>
     <br />
-    <a href="shoppingCart.php">Ga naar de winkelwagen</a>
     <?php 
     include_once "footer.php";
     ?>
