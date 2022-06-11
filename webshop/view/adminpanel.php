@@ -17,7 +17,11 @@ if (!isset($_SESSION["email"])) {
     <title>Admin Panel</title>
 </head>
 
-<body>
+<li><a href="adminOrder.php">Bestellingen</a></li>
+<li><a href="adminInvoice.php">Facturen</a></li>
+<li><a href="adminCustomers.php">Klanten</a></li>
+<li><a href="adminCSV.php">CSV Import - Producten</a></li>
+<a href="adminSearchTerms.php">Niet gevonden zoekresultaten</a>
 
     <h1>Welkom op het admin panel</h1>
 
