@@ -55,7 +55,7 @@ function googleTranslateElementInit() {
                         </a>
                     </div>
                     <div class="searchbar-div">
-                        <form action="../includes/search.inc.php" method="post">
+                        <form action="../view/searchResults.php" method="post">
                             <input type="text" placeholder="Search..." class="searchbar" name="search" required />
                             <button type="submit" name="submit">Search</button>
                         </form>

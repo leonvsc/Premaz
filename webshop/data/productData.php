@@ -46,6 +46,18 @@ class productData implements ICrudData
         return $this->arrayToModelArray($productArray);
     }
 
+    // Hetzelfde als getBySearchTerm() maar zoekt ook op sku en gebruikt niet arrayToModelArray()
+    public function getAllWhere($where)
+    {
+        $sql = "SELECT * FROM `Products` where `ProductName` LIKE '%" . $where . "%' OR `SKU` LIKE '%" . $where . "%'"; 
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute();
+
+        $data = $stmt->fetchAll();
+
+        return $data;
+    }
+
     // Methode om een nieuwe regel aan data te creeren in de tabel product.
     public function create($data)
     {
