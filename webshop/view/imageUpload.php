@@ -33,7 +33,7 @@ if (!isset($_SESSION["email"])) {
       <input type="submit" value="Upload Image" name="submit">
     </form>
     <?php
-    $target_dir = "img/products";
+    $target_dir = "img/products/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
