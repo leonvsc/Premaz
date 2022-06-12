@@ -1,7 +1,7 @@
 <?php
 
 require_once "billingAddressData.php";
-require_once "../model/invoiceModel.php";
+require_once  dirname(__FILE__) . "/../model/invoiceModel.php";
 require_once "exceptions.php";
 require_once "orderData.php";
 

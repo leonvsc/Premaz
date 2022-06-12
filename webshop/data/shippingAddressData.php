@@ -1,6 +1,6 @@
 <?php
 require_once "customerData.php";
-require_once "../model/shippingAddressModel.php";
+require_once dirname(__FILE__) . "/../model/shippingAddressModel.php";
 require_once "exceptions.php";
 
 // Klasse voor alle SQL van shippingAddress. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.

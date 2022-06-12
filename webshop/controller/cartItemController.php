@@ -1,5 +1,5 @@
 <?php
-require_once "../data/cartItemData.php";
+require_once dirname(__FILE__) . "/../data/cartItemData.php";
 require_once "crudController.php";
 
 // Een klasse voor de controller van cartItem. Hier wordt gebruikt gemaakt van de interface ICrudController om deze klasse verplichte functies te geven.

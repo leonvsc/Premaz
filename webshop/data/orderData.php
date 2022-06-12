@@ -1,7 +1,7 @@
 <?php
 require_once "database.php";
-require_once "../model/orderOverviewModel.php";
-require_once "../model/orderModel.php";
+require_once dirname(__FILE__) . "/../model/orderOverviewModel.php";
+require_once dirname(__FILE__) . "/../model/orderModel.php";
 require_once "crudData.php";
 require_once "shoppingCartData.php";
 require_once "customerData.php";

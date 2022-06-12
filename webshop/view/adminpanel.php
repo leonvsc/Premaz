@@ -22,6 +22,7 @@ if (!isset($_SESSION["email"])) {
 <li><a href="adminInvoice.php">Facturen</a></li>
 <li><a href="adminCustomers.php">Klanten</a></li>
 <li><a href="adminCSV.php">CSV Import - Producten</a></li>
+<li><a href="imageUpload.php">Importeer een afbeelding</a></li>
 <a href="adminSearchTerms.php">Niet gevonden zoekresultaten</a>
 
     <h1>Welkom op het admin panel</h1>

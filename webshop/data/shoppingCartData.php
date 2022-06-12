@@ -1,6 +1,6 @@
 <?php
 require_once "accountData.php";
-require_once "../model/shoppingCartModel.php";
+require_once dirname(__FILE__) . "/../model/shoppingCartModel.php";
 require_once "exceptions.php";
 require_once "crudData.php";
 

@@ -1,5 +1,5 @@
 <?php
-require_once "../data/customerData.php";
+require_once dirname(__FILE__) . "/../data/customerData.php";
 require_once "crudController.php";
 
 // Een klasse voor de controller van customer. Hier wordt gebruikt gemaakt van de interface ICrudController om deze klasse verplichte functies te geven.
