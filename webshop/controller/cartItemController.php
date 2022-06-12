@@ -42,4 +42,9 @@ class cartItemController implements ICrudController
     {
         return $this->data->delete($id);
     }
+
+    public function deleteBySKU($id)
+    {
+        return $this->data->deleteBySKU($id);
+    }
 }

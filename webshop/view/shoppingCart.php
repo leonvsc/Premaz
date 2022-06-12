@@ -61,6 +61,7 @@ session_start();
         $allCartItemData[$i]->getQuantity(),
         '</li>',
         '</ul>',
+        '<a href="../includes/shoppingCartRemove.inc.php?SKU=', $allCartItemData[$i]->getProduct()->getSKU(), '" class="btn margin-left">Verwijder uit de winkelwagen</a>',
         '<hr>';
     }
     ?>

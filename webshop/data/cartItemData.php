@@ -75,6 +75,13 @@ class cartItemData implements ICrudData
         $stmt->execute(['ShoppingCartID' => $id]);
     }
 
+    public function deleteBySKU($id)
+    {
+        $sql = "DELETE FROM CartItems WHERE PD_SKU = :SKU;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['SKU' => $id]);
+    }
+
     // Methode om van de associative array een array van de juiste modellen te maken.
     public function arrayToModelArray($object)
     {

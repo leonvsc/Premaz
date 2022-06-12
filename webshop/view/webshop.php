@@ -28,32 +28,40 @@
         </div>
         <div class="small-tiles">
             <div class="tegel">
-                <img src="img/products/EXT-SSD-MID-001.jpg" alt="image mouse" class="image-tile" />
+                <img src="img/products/EXT-SSD-MID-001.jpg" alt="image product" class="image-tile" />
             </div>
             <div class="tegel">
-                <img src="img/products/KEY-MEC-HIG-002.jpg" alt="image laptop" class="image-tile" />
+                <img src="img/products/KEY-MEC-HIG-002.jpg" alt="image product" class="image-tile" />
             </div>
         </div>
     </section>
-    <!-- <section class="test-tussenstuk">
+    <section class="test-tussenstuk">
         <div class="test-tussenstuk-deel">
-            <h3>Dit is een tussenstuk</h3>
+            <h3>Nieuwe producten</h3>
         </div>
-    </section> -->
-    <!-- <section class="tegels">
-        <div class="small-tiles">
-            <div class="tegel">
-                <img src="img/image-mouse-1.jpg" alt="image mouse" class="image-tile" />
+    </section>
+    <section class="tegels-products">
+        <div class="small-tiles-products">
+            <div class="tegel-products">
+                <img src="img/products/MON-LCD-LOW-001.jpg" alt="image product" class="image-tile" />
             </div>
-            <div class="tegel">
-                <img src="img/image-laptop-1.jpg" alt="image laptop" class="image-tile" />
+            <div class="tegel-products">
+                <img src="img/products/KEY-MEC-MID-001.jpg" alt="image product" class="image-tile" />
+            </div>
+            <div class="tegel-products">
+                <img src="img/products/MOU-OFI-LOW-001.jpg" alt="image product" class="image-tile" />
+            </div>
+            <div class="tegel-products">
+                <img src="img/products/USB-64G-MID-002.jpg" alt="image product" class="image-tile" />
+            </div>
+            <div class="tegel-products">
+                <img src="img/products/MOU-GAM-HIG-001.jpg" alt="image product" class="image-tile" />
+            </div>
+            <div class="tegel-products">
+                <img src="img/products/MON-AMO-HIG-001.jpg" alt="image product" class="image-tile" />
             </div>
         </div>
-        <div class="informationtile">
-            https://www.pexels.com/photo/a-red-sale-tags-on-red-and-black-background-5625008/
-            <img src="img/Sale-image-1.jpg" alt="sales image" class="sales-image" />
-        </div>
-    </section> -->
+    </section>
     <?php 
     include_once "footer.php";
     ?>

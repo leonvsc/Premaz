@@ -8,7 +8,7 @@
     list-style: none;
     display: flex;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .footer-item {
@@ -17,7 +17,7 @@
 }
 
 .footer-link {
-    font-size: 1.6rem;
+    font-size: 1rem;
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
@@ -27,20 +27,20 @@
 }
 
 .footer-logo {
-    height: 8rem;
+    height: 4rem;
     display: block;
     margin: 0 auto;
     margin-bottom: 5rem;
 }
 
 .footer-copyright {
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: rgb(0, 0, 0);
     text-align: center;
 }
 
 .footer-copyright .footer-link {
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 /* Change the style for phone usage */
