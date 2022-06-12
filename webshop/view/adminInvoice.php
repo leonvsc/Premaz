@@ -3,7 +3,11 @@ session_start();
 if (!isset($_SESSION["email"])) {
     header("Location: ../view/login.php");
 } elseif ($_SESSION["role"] != "Admin") {
-    header("Location: ../view/index.php"); // TODO: Redirect to own account page or something else?
+    header("Location: ../view/index.php");
+} 
+
+if ($_SESSION["role"] == "User" && isset($_SESSION["email"])) {
+    header("Location: ../view/account.php");
 }
 
 require_once "../controller/invoiceController.php";
@@ -21,19 +25,24 @@ $invoices = $controller->readAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/webshop-2.css" />
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <title>Admin - Facturen</title>
 </head>
 
 <body>
+    <?php 
+    include_once "header.php";
+    ?>
+    <div class="margin-left margin-right">
     <h1>Facturen</h1>
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <td>Invoice number</td>
+                <td>Factuurnummer</td>
                 <td>Prijs</td>
-                <td>Date</td>
-                <td>Payment status</td>
+                <td>Datum</td>
+                <td>Betaalstatus</td>
             </tr>
         </thead>
 
@@ -50,14 +59,14 @@ $invoices = $controller->readAll();
                 echo "<td>$price</td>";
                 echo "<td>$date</td>";
                 echo "<td>$paymentStatus</td>";
-                echo "<td><a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>View details</a></td>";
                 echo "</tr>";
             }
             ?>
         </tbody>
     </table>
 
-    <a href="adminpanel.php" class="btn btn-secondary">Go back</a>
+    <a href="adminpanel.php" class="btn btn-secondary">Ga terug</a>
+    </div>
     <?php 
     include_once "footer.php";
     ?>

@@ -33,7 +33,6 @@
                 <td>
                     <input type="submit" name="submit" value="Login" class="btn btn-primary">
                     <a href="signup.php" value="signup" class="btn btn-secondary">Signup</a>
-                    <a href="forgotPassword.php" value="password" class="btn btn-success">Forgot Password</a>
                 </td>
             </tr>
         </table>

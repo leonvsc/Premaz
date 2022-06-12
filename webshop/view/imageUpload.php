@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION["email"])) {
     header("Location: ../view/login.php");
 } elseif ($_SESSION["role"] != "Admin") {
-    header("Location: ../view/index.php"); // TODO: Redirect to own account page or something else?
+    header("Location: ../view/webshop.php"); // TODO: Redirect to own account page or something else?
 }
 ?>
 
@@ -14,12 +14,19 @@ if (!isset($_SESSION["email"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/webshop-2.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <title>ImageUpload</title>
 </head>
 <body>
-    <h1 style="text-align: center">Products - Premaz Webshop</h1>
+    <?php
+    include_once "header.php";
+    ?>
+    <div class="margin-left margin-right">
+    <h1 style="text-align: center">Afbeelding uploaden - admin</h1>
     <form action="imageUpload.php" method="post" enctype="multipart/form-data">
-        Select image to upload:
+        Selecteer een .jpg afbeelding om te uploaden:
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
     </form>
@@ -54,9 +61,8 @@ if (!isset($_SESSION["email"])) {
     }
     
     // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    if($imageFileType != "jpg") {
+      echo "Sorry, alleen een jpg afbeelding is toegestaan";
       $uploadOk = 0;
     }
     
@@ -71,7 +77,8 @@ if (!isset($_SESSION["email"])) {
         echo "Sorry, there was an error uploading your file.";
       }
     }
+    echo "</div>";
+    include_once "footer.php";
     ?>
-
 </body>
 </html>

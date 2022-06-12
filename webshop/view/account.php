@@ -2,6 +2,8 @@
 session_start();
 if (!isset($_SESSION["email"])) {
     header("Location: ../view/login.php");
+} elseif ($_SESSION["role"] == "Admin") {
+    header("Location: ../view/adminpanel.php");
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +42,7 @@ if (!isset($_SESSION["email"])) {
         <a href="customerAddress.php" class=" list-group-item col-1">Mijn adressen</a>
     </div>
 
-    <a href="index.php" class="btn btn-secondary margin-left">Go back to homepage</a>
+    <a href="webshop.php" class="btn btn-secondary margin-left">Ga terug naar de hoofdpagina</a>
     <?php 
     include_once "footer.php";
     ?>
