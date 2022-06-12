@@ -11,6 +11,9 @@ require_once "exceptions.php";
 class orderData implements ICrudData
 {
     private $db;
+    private $shoppingCart;
+    private $customer;
+    private $shippingAddress;
 
 
     public function __construct()
@@ -109,7 +112,7 @@ class orderData implements ICrudData
             $orderArray[] = new orderModel(
                 $order['OrderNumber'],
                 $this->shippingAddress->getById($order['SA_ShippingAddressID'])[0],
-                $this->customer->getCustomerNumber($order['CM_CustomerNumber'])[0],
+                $this->customer->getById($order['CM_CustomerNumber'])[0],
                 $this->shoppingCart->getById($order['SC_ShoppingCartID'])[0],
                 $order['OrderStatus'],
                 $order['OrderDate'],
