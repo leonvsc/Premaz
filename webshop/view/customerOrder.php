@@ -1,5 +1,9 @@
 <?php
 session_start();
+session_start();
+if (!isset($_SESSION["email"])) {
+    header("Location: ../view/login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +34,7 @@ session_start();
         echo "<li><a href='signup.php'>SIGN UP</a></li>";
         echo "<li><a href='login.php'>Login</a></li>";
     }
-    // TODO: Afschermen zodat alleen de juiste gebruiker hierbij kan.
+
     
     require_once "../controller/orderController.php";
     require_once "../controller/customerController.php";
