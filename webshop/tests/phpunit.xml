@@ -1,6 +1,7 @@
-<testsuites>
-  <testsuite name="testing">
-    <directory>*Test.php</directory>
-    <file>accountDataTest.php</file>
-  </testsuite>
-</testsuites>
+<phpunit bootstrap="src/autoload.php">
+  <testsuites>
+    <testsuite name="money">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
