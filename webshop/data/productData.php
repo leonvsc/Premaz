@@ -2,7 +2,7 @@
 require_once "exceptions.php";
 require_once 'database.php';
 require_once 'crudData.php';
-require_once "../model/productModel.php";
+require_once dirname(__FILE__) . "/../model/productModel.php";
 
 // Klasse voor alle SQL van product. Hier wordt gebruikt gemaakt van de interface ICrudData om deze klasse verplichte functies te geven.
 class productData implements ICrudData

@@ -1,5 +1,5 @@
 <?php
-require_once "../../vendor/autoload.php";
+require_once dirname(__FILE__) . "/../../vendor/autoload.php";
 
 // Aanmaken van een variabele om de Dotenv package te gebruiken.
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
