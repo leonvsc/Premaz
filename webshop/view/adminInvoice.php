@@ -40,9 +40,8 @@ $invoices = $controller->readAll();
         <thead>
             <tr>
                 <td>Factuurnummer</td>
+                <td>Factuurdatum</td>
                 <td>Prijs</td>
-                <td>Datum</td>
-                <td>Betaalstatus</td>
             </tr>
         </thead>
 
@@ -50,15 +49,14 @@ $invoices = $controller->readAll();
             <?php
             foreach ($invoices as $invoice) {
                 $invoiceNumber = $invoice->getInvoiceNumber();
-                $price = $invoice->getPayment()->getPrice();
-                $date = $invoice->getInvoiceDate();
-                $paymentStatus = $invoice->getPayment()->getPaymentStatus();
+                $invoiceDate = $invoice->getInvoiceDate();
+                $price = $invoice->getOrder()->getTotalPrice();
 
+                echo "<br>";
                 echo "<tr>";
                 echo "<td>$invoiceNumber</td>";
+                echo "<td>$invoiceDate</td>";
                 echo "<td>$price</td>";
-                echo "<td>$date</td>";
-                echo "<td>$paymentStatus</td>";
                 echo "</tr>";
             }
             ?>

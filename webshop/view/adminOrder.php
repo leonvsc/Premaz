@@ -57,7 +57,6 @@ $orders = $controller->readAll();
                 echo "<td>$orderNumber</td>";
                 echo "<td>$orderStatus</td>";
                 echo "<td>$customerName</td>";
-                echo "<td><a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>View details</a></td>";
                 echo "</tr>";
             }
             ?>

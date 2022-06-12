@@ -34,7 +34,7 @@ if ($_SESSION["role"] == "User" && isset($_SESSION["email"])) {
 
     <div class="list-group">
         <a href="adminOrder.php" class="list-group-item col-1">Bestellingen</a>
-        <a href="adminInvoice.php" class="list-group-item col-1">Facturen</a>
+        <!-- <a href="adminInvoice.php" class="list-group-item col-1">Facturen</a> -->
         <a href="adminCustomers.php" class="list-group-item col-1">Klanten</a>
         <a href="adminCSV.php" class="list-group-item col-1">CSV Import - Producten</a>
         <a href="adminSearchTerms.php" class="list-group-item col-1">Niet gevonden zoekresultaten</a>
