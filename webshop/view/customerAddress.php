@@ -21,7 +21,7 @@ if (!isset($_SESSION["email"])) {
 </head>
 
 <body>
-    <?php 
+    <?php
     include_once "header.php";
     echo '<div class="margin-left margin-right">';
     if (isset($_SESSION["email"])) {
@@ -31,23 +31,21 @@ if (!isset($_SESSION["email"])) {
         echo "<a href='../includes/logout.inc.php' class='list-group-item'>LOGOUT</a>";
         echo "</div>";
     } else {
-    
+
         echo "<li><a href='signup.php'>SIGN UP</a></li>";
         echo "<li><a href='login.php'>Login</a></li>";
     }
-    // TODO: Afschermen zodat alleen de juiste gebruiker hierbij kan.
-    
     require_once "../controller/shippingAddressController.php";
     require_once "../controller/billingAddressController.php";
     require_once "../controller/customerController.php";
-    
+
     $saController = new shippingAddressController;
     $baController = new billingAddressController;
     $customerController = new customerController;
-    
+
     $customer = $customerController->readByEmail($_SESSION["email"]);
     $customerNumber = $customer[0]->getCustomerNumber();
-    
+
     $sa = $saController->readCustomerNumber($customerNumber);
     $ba = $baController->readCustomerNumber($customerNumber);
     ?>
@@ -112,7 +110,7 @@ if (!isset($_SESSION["email"])) {
         echo "</tr>";
         ?>
     </table>
-    <?php 
+    <?php
     echo "</div>";
     include_once "footer.php";
     ?>
