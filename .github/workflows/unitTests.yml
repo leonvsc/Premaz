@@ -15,6 +15,6 @@ jobs:
         uses: php-actions/phpunit@v3
         with:
           bootstrap: vendor/autoload.php
-          configuration: tests/phpunit.xml
+          configuration: webshop/phpunit.xml
           args: --coverage-text
           php_version: "7.4"
