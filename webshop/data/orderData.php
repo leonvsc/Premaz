@@ -1,6 +1,7 @@
 <?php
 require_once "database.php";
 require_once "../model/orderOverviewModel.php";
+require_once "../model/orderModel.php";
 require_once "crudData.php";
 require_once "shoppingCartData.php";
 require_once "customerData.php";
@@ -32,7 +33,7 @@ class orderData implements ICrudData
         $stmt->execute();
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->arrayToModelArray($orderArray);
+        return $this->arrayToModelArrayOverview($orderArray);
     }
 
     // Methode om alle data binnen te halen van de tabel order gefiltert op de primary key (OrderNumber).
@@ -46,6 +47,16 @@ class orderData implements ICrudData
         return $this->arrayToModelArray($orderArray);
     }
 
+    public function getByIdOverview($id)
+    {
+        $sql = "SELECT * FROM Orders WHERE OrderNumber = :id;";
+        $stmt = $this->db->connect()->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->arrayToModelArrayOverview($orderArray);
+    }
+
     // Methode om alle data binnen te halen van de tabel order gefiltert op CustomerNumber.
     public function getAllByCustomerNumber($customerNumber)
     {
@@ -54,7 +65,7 @@ class orderData implements ICrudData
         $stmt->execute(['customernumber' => $customerNumber]);
         $orderArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $this->arrayToModelArray($orderArray);
+        return $this->arrayToModelArrayOverview($orderArray);
     }
 
     // Methode om een nieuwe regel aan data te creeren in de tabel order.
@@ -117,6 +128,21 @@ class orderData implements ICrudData
                 $order['OrderStatus'],
                 $order['OrderDate'],
                 $order['TotalPrice'],
+            );
+        }
+        return $orderArray;
+    }
+
+    public function arrayToModelArrayOverview($object)
+    {
+        $orderArray = [];
+
+        foreach ($object as $order) {
+            $orderArray[] = new orderOverviewModel(
+                $order['OrderNumber'],
+                $this->customer->getById($order['CM_CustomerNumber'])[0],
+                $order['OrderStatus'],
+                $order['OrderDate'],
             );
         }
         return $orderArray;

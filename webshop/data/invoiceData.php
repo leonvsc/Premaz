@@ -55,12 +55,12 @@ class invoiceData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel invoice.
     public function create($data)
     {
-        $sql = "INSERT INTO `Invoices` (`InvoiceNumber`, `BA_BillingAddressID`, `PM_PaymentID`, `VATNumber`, `InvoiceDate`) VALUES (:InvoiceNumber, :BA_BillingAddressID, :PM_PaymentID, :VATNumber, :InvoiceDate);";
+        $sql = "INSERT INTO `Invoices` (`InvoiceNumber`, `BA_BillingAddressID`, `OD_OrderNumber`, `VATNumber`, `InvoiceDate`) VALUES (:InvoiceNumber, :BA_BillingAddressID, :OD_OrderNumber, :VATNumber, :InvoiceDate);";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute([
-            'InvoiceNumber' => $data->getInvoiceNumber(),
-            'BA_BillingAddressID' => $data->getBillingAddressID(),
-            'PM_PaymentID' => $data->getPaymentID(),
+            'InvoiceNumber' => null,
+            'BA_BillingAddressID' => $data->getBillingAddress()->getBillingAddressID(),
+            'OD_OrderNumber' => $data->getOrder()->getOrderNumber(),
             'VATNumber' => $data->getVATNumber(),
             'InvoiceDate' => $data->getInvoiceDate()
         ]);
@@ -69,12 +69,12 @@ class invoiceData implements ICrudData
     // Methode om een regel aan data te updaten in de tabel invoice.
     public function update($id, $data)
     {
-        $sql = "UPDATE `Invoices` SET `InvoiceNumber` = :InvoiceNumber, `BA_BillingAddressID` = :BA_BillingAddressID, `PM_PaymentID` = :PM_PaymentID, `VATNumber` = :VATNumber, `InvoiceDate` = :InvoiceDate WHERE `InvoiceNumber` = :id;";
+        $sql = "UPDATE `Invoices` SET `InvoiceNumber` = :InvoiceNumber, `BA_BillingAddressID` = :BA_BillingAddressID,`OD_OrderNumber` = :OD_OrderNumber, `VATNumber` = :VATNumber, `InvoiceDate` = :InvoiceDate WHERE `InvoiceNumber` = :id;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute([
             'InvoiceNumber' => $data->getInvoiceNumber(),
             'BA_BillingAddressID' => $data->getBillingAddressID(),
-            'PM_PaymentID' => $data->getPaymentID(),
+            'OD_OrderNumber' => $data->getOrder()->getOrderNumber(),
             'VATNumber' => $data->getVATNumber(),
             'InvoiceDate' => $data->getInvoiceDate(),
         ]);

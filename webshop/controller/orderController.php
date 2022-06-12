@@ -30,6 +30,11 @@ class orderController implements ICrudController
         return $this->data->getById($id);
     }
 
+    public function readForOverview($id)
+    {
+        return $this->data->getByIdOverview($id);
+    }
+
     // Een methode om de getAllByCustomerNumber functie in de data file op te roepen.
     public function readByCustomerNumber($customerNumber)
     {

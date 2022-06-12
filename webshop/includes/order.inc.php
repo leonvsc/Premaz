@@ -38,16 +38,19 @@ $orderModel = new orderModel(NULL, $shippingAddressModel[0], $customer[0], $shop
 $createOrder = $orderController->create($orderModel); //TODO: Vergeet niet te uncommenten
 $orderNumber = $createOrder["OrderNumber"];
 // $shoppingCartId = $shoppingCartData[0]->getShoppingCartID();
-$orderShoppingCartId = $orderController->read($orderNumber);
+#$orderShoppingCartId = $orderController->read($orderNumber);
+$orderModel->setOrderNumber($orderNumber);
+
 $invoiceModel = new invoiceModel(NULL, $billingAddressModel[0], $orderModel, NULL, date("Y/m/d"));
 
 $createInvoice = $invoiceController->create($invoiceModel);
 
-$cartItemController->delete($shoppingCartid);
+$cartItemController->delete($shoppingCartData[0]->getShoppingCartID());
 
-echo $createOrder["OrderNumber"];
 echo "De bestelling is betaald",
 '<br />',
 '<br />',
 '<br />',
 '<a href="../view/productOverview.php">Keer terug naar de productenpagina</a>';
+
+//Zucht

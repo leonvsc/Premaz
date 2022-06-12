@@ -30,7 +30,7 @@ class invoiceModel
         return $this->billingAddress;
     }
 
-    public function getOrderNumber()
+    public function getOrder()
     {
         return $this->order;
     }

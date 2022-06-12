@@ -12,7 +12,7 @@ $controller = new orderController;
 
 $ordernumber = $_GET['ordernumber'];
 
-$orderdetails = $controller->read($ordernumber);
+$orderdetails = $controller->readForOverview($ordernumber);
 
 
 echo $orderdetails[0]->getOrderNumber();
