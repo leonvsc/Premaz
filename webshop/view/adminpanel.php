@@ -15,6 +15,7 @@ if (!isset($_SESSION["email"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <title>Admin Panel</title>
 </head>
 

@@ -12,6 +12,7 @@ session_start();
     <link rel="stylesheet" href="css/shoppingCart.css" />
     <link rel="stylesheet" href="css/webshop-2.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <title>Winkelwagen</title>
 </head>
 <body>
@@ -38,7 +39,7 @@ session_start();
 
     for ($i = 0; $i < count($allCartItemData); ++$i) {
         echo 
-        '<div class="product-image-div">',
+        '<div class="product-image-div margin-left">',
         '<a class="col products-list" href="product.php?SKU=', 
         $allCartItemData[$i]->getProduct()->getSKU(), 
         '">',
@@ -47,29 +48,23 @@ session_start();
         '.jpg" alt="Product Image" class="product-image" />',
         '</a>',
         '</div>',
+        '<ul class="coll margin-left">',
         '<li>',
-        '<a class="col" href="webshop.php">',
-        'Naam: ',
         $allCartItemData[$i]->getProduct()->getProductName(),
         '</li>',
         '<li>',
-        '<a class="col" href="webshop.php">',
         'Prijs: €',
         $allCartItemData[$i]->getProduct()->getPrice(),
         '</li>',
         '<li>',
-        'Categorie: ',
-        $allCartItemData[$i]->getProduct()->getCategory(),
-        '</li>',
-        '<li>',
-        'Quantity ',
+        'Aantal ',
         $allCartItemData[$i]->getQuantity(),
-        '</a>',
         '</li>',
+        '</ul>',
         '<hr>';
     }
     ?>
-    <a href="order.php" class="btn">Bestel de producten</a>
+    <a href="order.php" class="btn margin-left">Bestel de producten</a>
     <?php 
     include_once "footer.php";
     ?>

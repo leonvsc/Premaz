@@ -46,7 +46,7 @@ function googleTranslateElementInit() {
             <div class="navbar-color">
                 <div class="test-navbar">
                     <div class="nav-logo-div">
-                        <a>
+                        <a href="webshop.php">
                             <img
                                 src="img/logo-premaz-website.png"
                                 alt="Premaz logo"

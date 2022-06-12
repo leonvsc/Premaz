@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/webshop-2.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <title>Customer - Bestellingen</title>
 </head>
 

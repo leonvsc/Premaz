@@ -12,13 +12,14 @@ session_start();
     <link rel="stylesheet" href="css/order.css" />
     <link rel="stylesheet" href="css/webshop-2.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <title>Bestelling</title>
 </head>
 <body>
     <?php 
     include_once "header.php";
     ?>
-    <h1 style="text-align: center">Bestelling - Premaz Webshop</h1>
+    <h1 style="text-align: center">Bestellingdetails</h1>
 
     <?php
     require_once "../data/orderData.php";
@@ -55,7 +56,7 @@ session_start();
 
     for ($i = 0; $i < count($allCartItemData); ++$i) {
         echo 
-        '<div class="product-image-div">',
+        '<div class="product-image-div margin-left">',
         '<a class="col products-list" href="product.php?SKU=', 
         $allCartItemData[$i]->getProduct()->getSKU(), 
         '">',
@@ -64,13 +65,12 @@ session_start();
         '.jpg" alt="Product Image" class="product-image" />',
         '</a>',
         '</div>',
+        '<ul class="margin-left">',
         '<li>',
-        '<a class="col" href="webshop.php">',
         'Naam: ',
         $allCartItemData[$i]->getProduct()->getProductName(),
         '</li>',
         '<li>',
-        '<a class="col" href="webshop.php">',
         'Prijs: €',
         $allCartItemData[$i]->getProduct()->getPrice(),
         '</li>',
@@ -81,20 +81,22 @@ session_start();
         '<li>',
         'Quantity ',
         $allCartItemData[$i]->getQuantity(),
-        '</a>',
         '</li>',
+        '</ul>',
         '<hr>';
     }
 
 
     ?>
     <!-- Het factuuradres van de klant tonen -->
+    <div class="margin-left">
     <h4>Adresgegevens:</h4>
     <h5>Straatnaam en huisnummer: <?php echo $street, ' ', $houseNumber ?></h5>
     <h5>Postcode: <?php echo $postalCode ?></h5>
     <h5>Stad: <?php echo $city ?></h5>
     <h5>Land: <?php echo $country ?></h5>
     <a href="../includes/order.inc.php" class="btn">Betaal de bestelling</a>
+    </div>
     <!-- Orderdetails -->
     <!-- Knop komen om te betalen, 
     geeft feedback,
