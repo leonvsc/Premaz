@@ -34,11 +34,11 @@
             </div>
         </div>
     </section>
-    <section class="test-tussenstuk">
+    <!-- <section class="test-tussenstuk">
         <div class="test-tussenstuk-deel">
             <h3>Dit is een tussenstuk</h3>
         </div>
-    </section>
+    </section> -->
     <!-- <section class="tegels">
         <div class="small-tiles">
             <div class="tegel">

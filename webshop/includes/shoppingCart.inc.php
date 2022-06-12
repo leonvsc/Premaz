@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// TODO: Opschonen.
+// Dit bestand maakt een winkelwagen aan of voegt een item aan de winkelwagen toe wanneer er een winkelwagen is gemaakt.
 
 require_once "../controller/shoppingCartController.php";
 require_once "../model/shoppingCartModel.php";
@@ -23,8 +23,6 @@ $shoppingCart = $shoppingCartController->readByEmail($email);
 $sku = $_GET['SKU'];
 $productModel = $productController->read($sku);
 
-// TODO: Als er nog geen shoppingcart is aangemaakt, maak deze aan en voeg daarna het product toe aan de winkelwagen.
-// Momenteel moet je 2x klikken. 1x voor het aanmaken van de shoppingcart en 1x voor het toevoegen van de producten.
 
 if (!$shoppingCart) {
     $createShoppingCart = $shoppingCartController->create($shoppingCartModel);

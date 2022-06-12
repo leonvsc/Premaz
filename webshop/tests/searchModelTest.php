@@ -3,7 +3,7 @@ use PHPUnit\Framework\TestCase;
 
 require_once dirname(__FILE__) . '/../model/searchModel.php';
 
-// Unit test om te kijken of de functies in de productModel werken
+// Unit test om te kijken of de functies in de searchModel werken
 final class searchModelTest extends TestCase
 {
     public function testconstruct()

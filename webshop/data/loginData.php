@@ -22,12 +22,6 @@ class loginData
         $accountArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $accountArray;
-        // if (empty($accountArray)) {
-        //     return false;
-        // } else {
-        //     $account = new accountModel($email, $password, $accountArray[0]["Role"]);
-        //     return $account;
-        // }
     }
 
     // Een methode om de gegevens van een model in de database op te slaan.
@@ -56,10 +50,6 @@ class loginData
         $saPostalCode = $shippingAddressModel->getPostalCode();
         $saCity = $shippingAddressModel->getCity();
         $saCountry = $shippingAddressModel->getCountry();
-
-        // TODO: De addressen kunnen eventueel geinsert worden via de controller create functies van billing en shipping adres.
-        // Dit kan denk ik ook voor accounts en customer. Je kan de modellen dan als parameter meegeven met deze create functies.
-        // Deze functies kunnen dan de data in de database zetten en hiermee voorkom je dubbele code.
 
         $sql = "INSERT INTO `Accounts` (`Email`, `Password`, `Role`) VALUES ('{$email}', '{$password}', 'User');
         INSERT INTO `Customers` (`CustomerNumber`, `AC_Email`, `FirstName`, `LastName`, `PhoneNumber`) VALUES ('{$customerNumber}', '{$email}', '{$firstName}', '{$lastName}', {$phoneNumber});

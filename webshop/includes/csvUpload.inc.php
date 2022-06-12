@@ -1,5 +1,5 @@
 <?php
-
+// Dit bestand zorgt ervoor dat de data van het csv bestand in de database wordt gezet
 require_once "../controller/fileController.php";
 
 $controller = new fileController;

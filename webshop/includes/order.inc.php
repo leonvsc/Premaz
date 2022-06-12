@@ -13,8 +13,6 @@ require_once "../model/invoiceModel.php";
 require_once "../data/shippingAddressData.php";
 require_once "../controller/invoiceController.php";
 require_once "../data/orderData.php";
-# dat is de shoppingcart. Ja?. je zit in de var shippingaddress
-#wtf
 $orderController = new orderController();
 $cartItemController = new cartItemController();
 $invoiceController = new invoiceController();
@@ -31,14 +29,9 @@ $billingAddressModel = $billingAddressController->readCustomerNumber($customer[0
 $shoppingCartData = $shoppingCartController->readByEmail($_SESSION["email"]);
 $orderModel = new orderModel(NULL, $shippingAddressModel[0], $customer[0], $shoppingCartData[0], "Betaald", date("Y/m/d"), 100.50);
 
-
-// $shoppingCartid = $orderModel->getShoppingCart()->getShoppingCartID();
-// var_dump($shoppingCartid);
-
-$createOrder = $orderController->create($orderModel); //TODO: Vergeet niet te uncommenten
+$createOrder = $orderController->create($orderModel);
 $orderNumber = $createOrder["OrderNumber"];
-// $shoppingCartId = $shoppingCartData[0]->getShoppingCartID();
-#$orderShoppingCartId = $orderController->read($orderNumber);
+
 $orderModel->setOrderNumber($orderNumber);
 
 $invoiceModel = new invoiceModel(NULL, $billingAddressModel[0], $orderModel, NULL, date("Y/m/d"));
@@ -52,5 +45,3 @@ echo "De bestelling is betaald",
 '<br />',
 '<br />',
 '<a href="../view/productOverview.php">Keer terug naar de productenpagina</a>';
-
-//Zucht

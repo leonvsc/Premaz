@@ -1,5 +1,5 @@
 <?php
-
+// Classes welke aangeroepen worden in het geval van een error
 class signUpException extends Exception
 {
     public function __construct($message = "", $code = 0, Throwable $previous = null)

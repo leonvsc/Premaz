@@ -1,4 +1,5 @@
 <?php
+// Dit bestand inssert de data van het registreren.
 require_once '../controller/loginController.php';
 require_once '../model/accountModel.php';
 require_once '../model/customerModel.php';

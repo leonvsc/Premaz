@@ -10,7 +10,7 @@ class fileController
     {
         $this->data = new productData();
     }
-
+    // Een functie welke zorgt voor de import van het csv bestand
     public function import($file)
     {
         $csvFile = fopen($file, "r") or die("File not found");
