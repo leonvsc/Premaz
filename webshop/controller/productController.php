@@ -12,6 +12,11 @@ class productController implements ICrudController
         $this->data = new productData();
     }
 
+    public function getAllWhere($searchTerm) 
+    {
+        return $this->data->getAllWhere($searchTerm);
+    }
+
     // Een methode om de create functie in de data file op te roepen.
     public function create($data)
     {

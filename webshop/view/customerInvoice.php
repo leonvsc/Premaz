@@ -21,7 +21,7 @@ session_start();
 </head>
 
 <body>
-    <?php 
+    <?php
     include_once "header.php";
     ?>
     <div class="margin-left margin-right">
@@ -62,9 +62,6 @@ session_start();
                     <td>Factuurnummer</td>
                     <td>Factuurdatum</td>
                     <td>Prijs</td>
-                    <td>Methode</td>
-                    <td>Satus</td>
-                    <td>betaaldatum</td>
                 </tr>
             </thead>
 
@@ -73,19 +70,13 @@ session_start();
             foreach ($invoices as $invoice) {
                 $invoiceNumber = $invoice->getInvoiceNumber();
                 $invoiceDate = $invoice->getInvoiceDate();
-                $price = $invoice->getPayment()->getPrice();
-                $method = $invoice->getPayment()->getMethod();
-                $status = $invoice->getPayment()->getPaymentStatus();
-                $paymentDate = $invoice->getPayment()->getPaymentDate();
+                $price = $invoice->getOrder()->getTotalPrice();
 
                 echo "<br>";
                 echo "<tr>";
                 echo "<td>$invoiceNumber</td>";
                 echo "<td>$invoiceDate</td>";
                 echo "<td>$price</td>";
-                echo "<td>$method</td>";
-                echo "<td>$status</td>";
-                echo "<td>$paymentDate</td>";
                 echo "<td><a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>View details</a></td>";
                 echo "</tr>";
             }
