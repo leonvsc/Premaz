@@ -23,7 +23,7 @@ if (!isset($_SESSION["email"])) {
 <body>
     <?php 
     include_once "header.php";
-    // TODO: Afschermen zodat alleen de juiste gebruiker hierbij kan.
+
     if (isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
         echo "<div class='list-group align-items-start margin-left'>";

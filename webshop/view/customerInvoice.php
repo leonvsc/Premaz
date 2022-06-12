@@ -1,10 +1,9 @@
 <?php
 session_start();
-
-
-// TODO: Afschermen zodat alleen de juiste gebruiker hierbij kan.
-
-
+session_start();
+if (!isset($_SESSION["email"])) {
+    header("Location: ../view/login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +76,6 @@ session_start();
                 echo "<td>$invoiceNumber</td>";
                 echo "<td>$invoiceDate</td>";
                 echo "<td>$price</td>";
-                echo "<td><a href='invoicedetails.php?invoicenumber={$invoiceNumber}' class='btn btn-primary'>View details</a></td>";
                 echo "</tr>";
             }
         }

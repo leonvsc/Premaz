@@ -65,7 +65,7 @@ class customerData implements ICrudData
     }
 
     // Methode om een regel aan data te updaten in de tabel customer.
-    public function update($id, $data) //TODO: Double check variables
+    public function update($id, $data)
     {
         $sql = "UPDATE Customers SET FirstName = :firstName, LastName = :lastName, PhoneNumber = :phonenumber WHERE CustomerNumber = :id;";
         $stmt = $this->db->connect()->prepare($sql);
