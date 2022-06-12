@@ -32,7 +32,7 @@ class shippingAddressData implements ICrudData
         $sql = "SELECT * FROM ShippingAddress WHERE ShippingAddressID = :ShippingAddressID;";
         $stmt = $this->db->connect()->prepare($sql);
         $stmt->execute(['ShippingAddressID' => $id]);
-        $shippingArray = $stmt->fetch(PDO::FETCH_ASSOC);
+        $shippingArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $this->arrayToModelArray($shippingArray);
     }

@@ -84,8 +84,6 @@ class orderData implements ICrudData
 
         $s = $this->getLastId();
         return $s;
-
-        #sorry dat ik zo loop te kloten
     }
 
     public function getLastId()
