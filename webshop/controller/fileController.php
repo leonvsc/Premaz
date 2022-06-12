@@ -1,14 +1,32 @@
 <?php
 require_once "../data/productData.php";
 require_once "../model/productModel.php";
+require_once "../controller/productController.php";
 
 class fileController
 {
     private $data;
+    private $controller;
 
     public function __construct()
     {
         $this->data = new productData();
+        $this->controller = new productController();
+    }
+
+    public function checkProductExistence($productArray)
+    {
+        $existingProducts = $this->controller->readAll();
+
+        foreach ($productArray as $product) {
+
+            foreach ($existingProducts as $exists) {
+                if ($product[0] == $exists->getSKU())
+                    return true;
+            }
+
+            return false;
+        }
     }
     // Een functie welke zorgt voor de import van het csv bestand
     public function import($file)
@@ -22,18 +40,23 @@ class fileController
             }
         }
 
+        $existingProducts = $this->controller->readAll();
+        $exists = $this->checkProductExistence($productArray);
+
         foreach ($productArray as $product) {
-            $productModel = new productModel($product[0], $product[1], $product[2], $product[3], $product[4]);
-            $insert = $this->data->create($productModel);
+
+            if ($exists == false) {
+                $productModel = new productModel($product[0], $product[1], $product[2], $product[3], $product[4]);
+                $this->data->create($productModel);
+            }
         }
 
-        // TODO: Check of deze data al in de database staat.
 
         try {
-            if ($insert == true) {
+            if ($exists == false) {
                 echo "<div class='alert alert-success'>Products has been added to the database.</div>";
             } else {
-                throw new createException("Importing failed");
+                echo "<div class='alert alert-warning'>Product is already in the database.</div>";
             }
         } catch (createException $e) {
             echo $e->getMessage();

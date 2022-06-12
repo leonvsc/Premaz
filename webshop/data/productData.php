@@ -61,7 +61,7 @@ class productData implements ICrudData
     // Methode om een nieuwe regel aan data te creeren in de tabel product.
     public function create($data)
     {
-        $sql = "INSERT INTO `Products` (`SKU`, `ProductName` `Price`, `Stock`, `Category`) VALUES (:SKU, :ProductName, :Price, :Stock, :Category);";
+        $sql = "INSERT INTO `Products` (`SKU`, `ProductName`, `Price`, `Stock`, `Category`)VALUES (:SKU, :ProductName, :Price, :Stock, :Category);";
         $stmt = $this->db->connect()->prepare($sql);
         $result = $stmt->execute([
             'SKU' => $data->getSKU(),
@@ -70,18 +70,6 @@ class productData implements ICrudData
             'Stock' => $data->getStock(),
             'Category' => $data->getCategory()
         ]);
-
-        // TODO: Willen we in elke create en update functie een exception throwen? Deze staat momenteel alleen in productData.
-
-        try {
-            if ($result) {
-                return true;
-            } else {
-                throw new databaseException("Could not create product.");
-            }
-        } catch (databaseException $e) {
-            echo $e->getMessage();
-        }
     }
 
     // Methode om een regel aan data te updaten in de tabel product.
@@ -96,16 +84,6 @@ class productData implements ICrudData
             'Stock' => $data->getStock(),
             'Category' => $data->getCategory()
         ]);
-
-        try {
-            if ($result) {
-                return true;
-            } else {
-                throw new databaseException("Could not update product.");
-            }
-        } catch (databaseException $e) {
-            echo $e->getMessage();
-        }
     }
 
     // Methode om een regel aan data te deleten in de tabel product.
