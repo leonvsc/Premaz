@@ -16,11 +16,3 @@ jobs:
                   key: ${{ secrets.KEY }}
                   port: ${{ secrets.PORT }}
                   script: ./scripts/dev-premaz.sh
-            - name: Adding unit test to github actions
-            - uses: actions/checkout@v2
-            - uses: php-actions/composer@v5
-            - uses: php-actions/phpunit@v3
-              with: 
-                configuration: test/phpunit/phpunit.xml
-                log_junit: test/phpunit/_junit/junit.xml
-                memory_limit: 256M
