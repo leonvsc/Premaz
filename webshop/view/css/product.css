@@ -1,0 +1,17 @@
+.products-list {
+    align-content: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-image-div {
+    width: 250px;
+    height: auto;
+}
+
+.product-info {
+    display: flex;
+}
