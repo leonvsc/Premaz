@@ -18,7 +18,7 @@ session_start();
 <body>
     <?php 
     include_once "header.php";
-
+    echo '<div class="margin-left margin-right">';
     if (isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
         echo "<div class='list-group align-items-start'>";
@@ -67,14 +67,15 @@ session_start();
                 echo "<td>$orderNumber</td>";
                 echo "<td>$orderStatus</td>";
                 echo "<td>$orderDate</td>";
-                echo "<td><a href='orderdetails.php?ordernumber={$orderNumber}' class='btn btn-primary'>View details</a></td>";
                 echo "</tr>";
             }
         }
+
             ?>
             </tbody>
         </table>
         <?php 
+        echo '</div>';
         include_once "footer.php";
         ?>
 </body>

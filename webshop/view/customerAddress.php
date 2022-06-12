@@ -19,7 +19,7 @@ session_start();
 <body>
     <?php 
     include_once "header.php";
-
+    echo '<div class="margin-left margin-right">';
     if (isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
         echo "<div class='list-group align-items-start'>";
@@ -109,6 +109,7 @@ session_start();
         ?>
     </table>
     <?php 
+    echo "</div>";
     include_once "footer.php";
     ?>
 </body>

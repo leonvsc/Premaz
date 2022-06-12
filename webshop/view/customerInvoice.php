@@ -1,33 +1,10 @@
 <?php
 session_start();
 
-if (isset($_SESSION["email"])) {
-    $email = $_SESSION["email"];
-    echo "<div class='list-group align-items-start'>";
-    echo "<a href='account.php' class='list-group-item '>$email</a>";
-    echo "<a href='../includes/logout.inc.php' class='list-group-item'>LOGOUT</a>";
-    echo "</div>";
-} else {
 
-    echo "<li><a href='signup.php'>SIGN UP</a></li>";
-    echo "<li><a href='login.php'>Login</a></li>";
-}
 // TODO: Afschermen zodat alleen de juiste gebruiker hierbij kan.
 
-require_once "../controller/invoiceController.php";
-require_once "../controller/billingAddressController.php";
-require_once "../controller/customerController.php";
 
-$invoiceController = new invoiceController;
-$baController = new billingAddressController;
-$customerController = new customerController;
-
-$customer = $customerController->readByEmail($_SESSION["email"]);
-$customerNumber = $customer[0]->getCustomerNumber();
-$ba = $baController->readCustomerNumber($customerNumber);
-$baID = $ba[0]->getBillingAddressID();
-
-$invoices = $invoiceController->readByBillingAddressID($baID);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,8 +24,35 @@ $invoices = $invoiceController->readByBillingAddressID($baID);
     <?php 
     include_once "header.php";
     ?>
+    <div class="margin-left margin-right">
     <h1>Facturen</h1>
     <?php
+    if (isset($_SESSION["email"])) {
+        $email = $_SESSION["email"];
+        echo "<div class='list-group align-items-start'>";
+        echo "<a href='account.php' class='list-group-item '>$email</a>";
+        echo "<a href='../includes/logout.inc.php' class='list-group-item'>LOGOUT</a>";
+        echo "</div>";
+    } else {
+    
+        echo "<li><a href='signup.php'>SIGN UP</a></li>";
+        echo "<li><a href='login.php'>Login</a></li>";
+    }
+    require_once "../controller/invoiceController.php";
+    require_once "../controller/billingAddressController.php";
+    require_once "../controller/customerController.php";
+
+    $invoiceController = new invoiceController;
+    $baController = new billingAddressController;
+    $customerController = new customerController;
+
+    $customer = $customerController->readByEmail($_SESSION["email"]);
+    $customerNumber = $customer[0]->getCustomerNumber();
+    $ba = $baController->readCustomerNumber($customerNumber);
+    $baID = $ba[0]->getBillingAddressID();
+
+    $invoices = $invoiceController->readByBillingAddressID($baID);
+
     if (empty($invoices)) {
         echo "Geen facturen beschikbaar";
     } else { ?>
@@ -89,6 +93,7 @@ $invoices = $invoiceController->readByBillingAddressID($baID);
             ?>
             </tbody>
         </table>
+    </div>
         <?php 
         include_once "footer.php";
         ?>
